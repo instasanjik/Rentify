@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0464599129F32DCF004E082D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0464599029F32DCF004E082D /* Main.storyboard */; };
 		0493858829F2BE060032386F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858729F2BE060032386F /* AppDelegate.swift */; };
 		0493858A29F2BE060032386F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858929F2BE060032386F /* SceneDelegate.swift */; };
 		0493858C29F2BE060032386F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858B29F2BE060032386F /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0464599029F32DCF004E082D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0493858429F2BE060032386F /* Rentify App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rentify App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0493858729F2BE060032386F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0493858929F2BE060032386F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				0493858929F2BE060032386F /* SceneDelegate.swift */,
 				0493858B29F2BE060032386F /* ViewController.swift */,
 				0493858D29F2BE060032386F /* Authorization.storyboard */,
+				0464599029F32DCF004E082D /* Main.storyboard */,
 				0493859029F2BE070032386F /* Assets.xcassets */,
 				0493859229F2BE070032386F /* LaunchScreen.storyboard */,
 				0493859529F2BE070032386F /* Info.plist */,
@@ -154,6 +157,7 @@
 				0493859429F2BE070032386F /* LaunchScreen.storyboard in Resources */,
 				0493859129F2BE070032386F /* Assets.xcassets in Resources */,
 				0493858F29F2BE060032386F /* Authorization.storyboard in Resources */,
+				0464599129F32DCF004E082D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
