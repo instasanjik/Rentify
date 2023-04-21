@@ -10,7 +10,7 @@
 		0493858829F2BE060032386F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858729F2BE060032386F /* AppDelegate.swift */; };
 		0493858A29F2BE060032386F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858929F2BE060032386F /* SceneDelegate.swift */; };
 		0493858C29F2BE060032386F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858B29F2BE060032386F /* ViewController.swift */; };
-		0493858F29F2BE060032386F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0493858D29F2BE060032386F /* Main.storyboard */; };
+		0493858F29F2BE060032386F /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0493858D29F2BE060032386F /* Authorization.storyboard */; };
 		0493859129F2BE070032386F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0493859029F2BE070032386F /* Assets.xcassets */; };
 		0493859429F2BE070032386F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0493859229F2BE070032386F /* LaunchScreen.storyboard */; };
 		62DDDE3A6A96FA9C05EEA8A8 /* Pods_Rentify_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8D68F3870B396A8E6A1177 /* Pods_Rentify_App.framework */; };
@@ -21,7 +21,7 @@
 		0493858729F2BE060032386F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0493858929F2BE060032386F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0493858B29F2BE060032386F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0493858E29F2BE060032386F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0493858E29F2BE060032386F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authorization.storyboard; sourceTree = "<group>"; };
 		0493859029F2BE070032386F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0493859329F2BE070032386F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0493859529F2BE070032386F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 				0493858729F2BE060032386F /* AppDelegate.swift */,
 				0493858929F2BE060032386F /* SceneDelegate.swift */,
 				0493858B29F2BE060032386F /* ViewController.swift */,
-				0493858D29F2BE060032386F /* Main.storyboard */,
+				0493858D29F2BE060032386F /* Authorization.storyboard */,
 				0493859029F2BE070032386F /* Assets.xcassets */,
 				0493859229F2BE070032386F /* LaunchScreen.storyboard */,
 				0493859529F2BE070032386F /* Info.plist */,
@@ -88,7 +88,6 @@
 				2D55D672E7D11E948353CBF9 /* Pods-Rentify App.debug.xcconfig */,
 				49C7FF34EA1637050E1E93BE /* Pods-Rentify App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,7 +153,7 @@
 			files = (
 				0493859429F2BE070032386F /* LaunchScreen.storyboard in Resources */,
 				0493859129F2BE070032386F /* Assets.xcassets in Resources */,
-				0493858F29F2BE060032386F /* Main.storyboard in Resources */,
+				0493858F29F2BE060032386F /* Authorization.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,12 +215,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0493858D29F2BE060032386F /* Main.storyboard */ = {
+		0493858D29F2BE060032386F /* Authorization.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0493858E29F2BE060032386F /* Base */,
 			);
-			name = Main.storyboard;
+			name = Authorization.storyboard;
 			sourceTree = "<group>";
 		};
 		0493859229F2BE070032386F /* LaunchScreen.storyboard */ = {
@@ -362,7 +361,7 @@
 				INFOPLIST_FILE = "Rentify App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authorization;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -391,7 +390,7 @@
 				INFOPLIST_FILE = "Rentify App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Authorization;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
