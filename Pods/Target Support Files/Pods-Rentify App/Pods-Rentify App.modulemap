@@ -1,0 +1,6 @@
+framework module Pods_Rentify_App {
+  umbrella header "Pods-Rentify App-umbrella.h"
+
+  export *
+  module * { export * }
+}

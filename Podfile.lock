@@ -1,0 +1,16 @@
+PODS:
+  - SVPinView (1.0.11)
+
+DEPENDENCIES:
+  - SVPinView (~> 1.0)
+
+SPEC REPOS:
+  trunk:
+    - SVPinView
+
+SPEC CHECKSUMS:
+  SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
+
+PODFILE CHECKSUM: 3fe131829f85586944f7c57b711b2a328c11bae8
+
+COCOAPODS: 1.11.3
