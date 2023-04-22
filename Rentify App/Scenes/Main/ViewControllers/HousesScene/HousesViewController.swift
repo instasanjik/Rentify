@@ -13,6 +13,8 @@ class HousesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        housesTableView.delegate = self
+        housesTableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
