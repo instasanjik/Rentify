@@ -1,20 +1,24 @@
 PODS:
   - SVPinView (1.0.11)
+  - SVProgressHUD (2.2.5)
   - SwiftyGif (5.4.3)
 
 DEPENDENCIES:
   - SVPinView (~> 1.0)
+  - SVProgressHUD
   - SwiftyGif
 
 SPEC REPOS:
   trunk:
     - SVPinView
+    - SVProgressHUD
     - SwiftyGif
 
 SPEC CHECKSUMS:
   SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
 
-PODFILE CHECKSUM: 782955e61f1d2bcd7eb363c6d757e1bd29ab3765
+PODFILE CHECKSUM: f89fb161b18fd1d649eb4e66c5481391e1750248
 
 COCOAPODS: 1.11.3

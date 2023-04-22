@@ -117,7 +117,7 @@
         <!--Sign Up-->
         <scene sceneID="u7f-np-eIN">
             <objects>
-                <viewController id="fFR-r4-rrY" sceneMemberID="viewController">
+                <viewController id="fFR-r4-rrY" customClass="SignUpViewController" customModule="Rentify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r3e-Ub-jrN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,18 +184,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="left" distribution="equalCentering" alignment="firstBaseline" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ekI-AC-rWL">
-                                <rect key="frame" x="24" y="519" width="171.66666666666666" height="18"/>
+                                <rect key="frame" x="24" y="519" width="284" height="25"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" terms and privacy police" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0r-vi-Qu1">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="18"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LB-EK-FeL">
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="107" id="GLa-vX-wVz"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <inset key="titleEdgeInsets" minX="10" minY="1" maxX="-10" maxY="0.0"/>
+                                        <state key="normal" title="I accept the " image="checkbox_off">
+                                            <color key="titleColor" red="0.043137254899999998" green="0.043137254899999998" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="checkboxButtonTapped:" destination="fFR-r4-rrY" eventType="touchUpInside" id="QLa-aE-KGW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usa-Y1-Rdg">
+                                        <rect key="frame" x="112" y="-5" width="172" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title=" terms and privacy police">
+                                            <color key="titleColor" systemColor="tintColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="xIl-Lq-Hfr" kind="showDetail" id="73M-cv-Prv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP3-aA-3wf">
-                                <rect key="frame" x="24" y="569" width="345" height="56"/>
+                                <rect key="frame" x="24" y="576" width="345" height="56"/>
                                 <color key="backgroundColor" red="0.043137254899999998" green="0.043137254899999998" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Hs8-VN-Dp4"/>
@@ -263,6 +282,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="cBx-h4-Sux"/>
+                    <connections>
+                        <outlet property="checkboxButton" destination="9LB-EK-FeL" id="bnU-kc-Zej"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBS-yp-ruS" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,7 +311,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’ve sent a confirmation code to your email address hel***.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6k-Z8-cZR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’ve sent a confirmation code to your email address kos***.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6k-Z8-cZR">
                                 <rect key="frame" x="24" y="235" width="345" height="38.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -643,7 +665,7 @@
         <!--Reset password-->
         <scene sceneID="Ze0-N1-hgz">
             <objects>
-                <viewController title="Reset password" id="n4p-6R-XXa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OTPViewController" title="Reset password" id="n4p-6R-XXa" customClass="OTPViewController" customModule="Rentify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ygb-8W-DaD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -706,9 +728,9 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYS-lg-jbk">
-                                <rect key="frame" x="188" y="357.33333333333331" width="181" height="34"/>
+                                <rect key="frame" x="117" y="357.33333333333331" width="252" height="34"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Send code again  0:59">
+                                <state key="normal" title="Send code again in 59 seconds">
                                     <color key="titleColor" red="0.043137254899999998" green="0.043137254899999998" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -736,6 +758,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qBJ-Nb-xgv"/>
+                    <connections>
+                        <outlet property="OTPView" destination="r4c-Dn-kef" id="4Wi-hM-Wz9"/>
+                        <outlet property="sendCodeAgainButton" destination="aYS-lg-jbk" id="Qrq-0X-jEd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2P-YJ-dFN" sceneMemberID="firstResponder"/>
             </objects>
@@ -744,7 +770,7 @@
         <!--New password-->
         <scene sceneID="omx-l1-MNK">
             <objects>
-                <viewController title="New password" id="8RW-fU-5al" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewPasswordViewController" title="New password" id="8RW-fU-5al" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lFe-cN-twk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -851,7 +877,7 @@
         <!--Password Recovery-->
         <scene sceneID="L2Q-SG-fLN">
             <objects>
-                <viewController id="3yt-3e-sas" sceneMemberID="viewController">
+                <viewController id="3yt-3e-sas" customClass="PasswordChangedViewController" customModule="Rentify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A2u-oh-9Hj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -897,6 +923,9 @@ succesfully</string>
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backToLoginTapped:" destination="3yt-3e-sas" eventType="touchUpInside" id="UL2-ry-9HJ"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stars_Group" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-Nc-IUE">
                                 <rect key="frame" x="126.66666666666669" y="195" width="140" height="140"/>
@@ -956,14 +985,76 @@ succesfully</string>
             </objects>
             <point key="canvasLocation" x="-2877" y="-32"/>
         </scene>
+        <!-- Terms and privacy police-->
+        <scene sceneID="Axx-7v-PMG">
+            <objects>
+                <viewController title=" Terms and privacy police" id="xIl-Lq-Hfr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SDT-oV-CR4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Do-B1-sFk">
+                                <rect key="frame" x="16" y="59" width="361" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <mutableString key="text">Lorem Ipsum
+"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum blandit porta. Nullam vulputate sem eu pretium hendrerit. Maecenas sollicitudin mi dignissim porttitor congue. Nullam gravida accumsan malesuada. Morbi interdum laoreet nisi ut tincidunt. Donec at scelerisque erat. Maecenas a erat sit amet lacus feugiat maximus quis non ex. Cras quis mi ac lectus posuere volutpat vitae vel odio. Maecenas dui enim, molestie nec eleifend ac, placerat in arcu. Morbi in ipsum non eros ultricies sagittis. Fusce interdum ultricies nisl.
+
+Donec aliquet neque in elit tempor, sed vulputate felis tincidunt. Vestibulum semper, nisl sed posuere vestibulum, augue leo volutpat dui, eget mollis nisl magna et ligula. Pellentesque vulputate consectetur sodales. Praesent aliquet et orci in dapibus. Aliquam sed augue magna. Integer enim mi, viverra eget semper ac, tincidunt et tortor. Vestibulum pellentesque orci et nisi venenatis, et tincidunt sapien venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur mi felis, dignissim sed risus a, finibus pharetra magna. Sed tempus elit nulla, ac consequat libero rhoncus eu. Pellentesque sed elit turpis. Pellentesque posuere nisi vel nisi porta mollis. Etiam tempus, nulla sed rhoncus eleifend, est erat fermentum tellus, et aliquet nibh risus posuere nunc. Ut porttitor nibh vel mauris faucibus, ut rutrum nulla ullamcorper. Aliquam pellentesque tristique pulvinar. Suspendisse ultrices nulla eu nulla porttitor efficitur.
+
+Suspendisse iaculis lectus in neque malesuada, ut faucibus justo aliquet. Sed hendrerit sodales orci in blandit. Curabitur imperdiet, neque eu suscipit rhoncus, nisi lectus tincidunt nulla, sit amet dapibus ante ligula et augue. Praesent auctor pulvinar eros nec aliquet. Morbi pretium turpis eu felis sagittis, nec consequat leo tempor. Curabitur mattis vehicula turpis eu cursus. Curabitur non neque sem. Praesent gravida risus quis aliquam euismod. Fusce nec aliquam ipsum, non imperdiet risus. In a elit sagittis, consectetur purus in, lacinia erat. Proin id ornare magna. Duis libero quam, ultricies aliquet quam sed, varius volutpat risus. Proin ligula felis, ultricies vel ullamcorper et, mattis sed ipsum. Vestibulum malesuada neque ac ante accumsan consectetur ut quis nunc.
+
+Maecenas non arcu nec enim iaculis vestibulum in cursus urna. Mauris quis eros eros. Fusce ut nibh ut sapien finibus condimentum. Praesent mattis arcu est, vitae posuere turpis tempus vestibulum. Nulla pulvinar semper risus, ac placerat tortor laoreet eget. Praesent sed cursus ipsum. In iaculis mauris in pulvinar consectetur. Donec nulla felis, placerat ac ligula a, consequat blandit nulla. Morbi sed massa sed lacus aliquam venenatis. Morbi a finibus libero. Nunc pretium elit sit amet varius semper. Ut non mattis tortor. Nunc condimentum maximus auctor. Vestibulum id eros molestie neque posuere tincidunt quis id quam. Aliquam non ligula at risus auctor vehicula eget at nibh. Ut vel turpis non ante laoreet consectetur et vel nisi.
+
+Nam tellus ipsum, commodo id ante vitae, sagittis tincidunt turpis. Duis at sodales neque. Suspendisse non imperdiet mauris. Vestibulum sollicitudin, neque nec aliquet pretium, nisl neque rutrum lacus, at scelerisque dui sapien in ante. Quisque rhoncus tortor quis sapien efficitur, quis blandit mi consequat. Phasellus a consequat lacus. Cras eget cursus leo. Aliquam posuere elementum odio, quis tincidunt neque fermentum at.
+
+Cras eros purus, congue ut odio finibus, suscipit vehicula metus. Nulla bibendum dolor eu dapibus congue. In hac habitasse platea dictumst. In lacinia, tortor eget eleifend vehicula, libero massa scelerisque massa, ac eleifend ex nulla et urna. Ut molestie, enim quis eleifend imperdiet, elit sapien lacinia massa, non convallis eros nisi id ligula. Aliquam quis lacus in leo congue placerat at a tellus. Quisque feugiat massa non venenatis porttitor.
+
+Sed urna sapien, mollis vel odio vitae, vulputate iaculis massa. Maecenas et turpis quis libero vehicula suscipit. Duis felis nibh, egestas eget felis vel, facilisis eleifend orci. Fusce placerat ornare mauris quis vestibulum. In quis ornare nunc. Cras convallis mollis sem eu ullamcorper. Donec quis risus augue. Praesent nec fermentum lectus. Quisque nec leo nisi. In erat turpis, viverra ac mi non, accumsan laoreet nibh. Maecenas auctor dui velit, ut hendrerit urna pellentesque et. Cras et quam mi. Nulla at ultrices quam. Integer tempus ligula sit amet mi eleifend, non convallis sapien scelerisque.
+
+In laoreet enim sed ipsum egestas, quis laoreet libero semper. Mauris quis dui in nulla condimentum commodo. Aenean ultricies et arcu eu vestibulum. Fusce eget nulla nunc. Suspendisse potenti. Aliquam vel tortor bibendum, tempor arcu ac, condimentum massa. Mauris hendrerit sit amet neque sed tincidunt.
+
+Vestibulum vel sodales urna. Donec quis faucibus eros, efficitur venenatis odio. Morbi malesuada sed urna ut lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam et maximus sem. Cras leo dolor, elementum suscipit volutpat nec, blandit et enim. Nam sed lectus augue. Nam ullamcorper, ligula sit amet semper vehicula, ipsum urna congue ligula, in eleifend leo ante a lacus. Donec blandit quam sapien, at pretium felis maximus at. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam facilisis, purus non scelerisque tempor, quam lectus iaculis augue, a semper est nisl nec metus. Morbi et condimentum tortor, in gravida enim. Nunc at mauris quis felis dapibus imperdiet in eget velit. Phasellus maximus quis augue ac rhoncus. Aliquam consequat sagittis venenatis.
+
+</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="93Q-lF-4kj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="93Q-lF-4kj" firstAttribute="bottom" secondItem="8Do-B1-sFk" secondAttribute="bottom" id="Ebu-eZ-UnH"/>
+                            <constraint firstItem="8Do-B1-sFk" firstAttribute="leading" secondItem="93Q-lF-4kj" secondAttribute="leading" constant="16" id="JVk-7Z-GBv"/>
+                            <constraint firstItem="93Q-lF-4kj" firstAttribute="trailing" secondItem="8Do-B1-sFk" secondAttribute="trailing" constant="16" id="POJ-Eh-DKB"/>
+                            <constraint firstItem="8Do-B1-sFk" firstAttribute="top" secondItem="93Q-lF-4kj" secondAttribute="top" id="ebZ-Ph-K38"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4K5-75-1DH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYp-77-3cW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1807" y="1203"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Illustration_Main" width="1263" height="1094"/>
         <image name="Launch Screen" width="1572" height="3408"/>
         <image name="Star_Mini_Purple" width="46" height="44"/>
         <image name="Stars_Group" width="364" height="336"/>
+        <image name="checkbox_off" width="20" height="20"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -11,6 +11,9 @@
 		047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03329F3BE0600C5FCBB /* SKTextField.swift */; };
 		047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03529F3BED200C5FCBB /* LoginViewController.swift */; };
 		047FA03829F3C1B000C5FCBB /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03729F3C1B000C5FCBB /* PasswordRecoveryViewController.swift */; };
+		047FA03A29F3C2F600C5FCBB /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03929F3C2F600C5FCBB /* OTPViewController.swift */; };
+		047FA03C29F3C5B500C5FCBB /* PasswordChangedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03B29F3C5B500C5FCBB /* PasswordChangedViewController.swift */; };
+		047FA03E29F3C68000C5FCBB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03D29F3C68000C5FCBB /* SignUpViewController.swift */; };
 		048CCDD229F3AE4300919FB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048CCDD129F3AE4300919FB6 /* Main.storyboard */; };
 		048CCDD829F3B91900919FB6 /* LaunchScreen_GIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 048CCDD729F3B91900919FB6 /* LaunchScreen_GIF.gif */; };
 		0493858829F2BE060032386F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858729F2BE060032386F /* AppDelegate.swift */; };
@@ -27,6 +30,9 @@
 		047FA03329F3BE0600C5FCBB /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		047FA03529F3BED200C5FCBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		047FA03729F3C1B000C5FCBB /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		047FA03929F3C2F600C5FCBB /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		047FA03B29F3C5B500C5FCBB /* PasswordChangedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangedViewController.swift; sourceTree = "<group>"; };
+		047FA03D29F3C68000C5FCBB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		048CCDD129F3AE4300919FB6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		048CCDD729F3B91900919FB6 /* LaunchScreen_GIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LaunchScreen_GIF.gif; sourceTree = "<group>"; };
 		0493858429F2BE060032386F /* Rentify App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rentify App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +85,9 @@
 				0493858B29F2BE060032386F /* OpeningScreenViewController.swift */,
 				047FA03529F3BED200C5FCBB /* LoginViewController.swift */,
 				047FA03729F3C1B000C5FCBB /* PasswordRecoveryViewController.swift */,
+				047FA03929F3C2F600C5FCBB /* OTPViewController.swift */,
+				047FA03B29F3C5B500C5FCBB /* PasswordChangedViewController.swift */,
+				047FA03D29F3C68000C5FCBB /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -310,8 +319,11 @@
 				0493858C29F2BE060032386F /* OpeningScreenViewController.swift in Sources */,
 				047FA03829F3C1B000C5FCBB /* PasswordRecoveryViewController.swift in Sources */,
 				0493858829F2BE060032386F /* AppDelegate.swift in Sources */,
+				047FA03E29F3C68000C5FCBB /* SignUpViewController.swift in Sources */,
+				047FA03A29F3C2F600C5FCBB /* OTPViewController.swift in Sources */,
 				047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */,
 				0493858A29F2BE060032386F /* SceneDelegate.swift in Sources */,
+				047FA03C29F3C5B500C5FCBB /* PasswordChangedViewController.swift in Sources */,
 				047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
