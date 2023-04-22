@@ -1,16 +1,20 @@
 PODS:
   - SVPinView (1.0.11)
+  - SwiftyGif (5.4.3)
 
 DEPENDENCIES:
   - SVPinView (~> 1.0)
+  - SwiftyGif
 
 SPEC REPOS:
   trunk:
     - SVPinView
+    - SwiftyGif
 
 SPEC CHECKSUMS:
   SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
+  SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
 
-PODFILE CHECKSUM: 3fe131829f85586944f7c57b711b2a328c11bae8
+PODFILE CHECKSUM: 782955e61f1d2bcd7eb363c6d757e1bd29ab3765
 
 COCOAPODS: 1.11.3

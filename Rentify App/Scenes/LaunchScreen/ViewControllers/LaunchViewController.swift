@@ -6,24 +6,37 @@
 //
 
 import UIKit
+import SwiftyGif
 
 class LaunchViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        do {
+            let gif = try UIImage(gifName: "LaunchScreen_GIF.gif")
+            let imageview = UIImageView(gifImage: gif, loopCount: 1)
+            imageview.frame = view.bounds
+            view.addSubview(imageview)
+            imageview.delegate = self
+        } catch {
+            print(error)
+        }
     }
-    */
 
+}
+
+extension LaunchViewController: SwiftyGifDelegate {
+    func gifDidStop(sender: UIImageView) {
+        let storyboard = UIStoryboard(name: "Authorization", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "OpeningScreenViewController")
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 }

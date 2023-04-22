@@ -7,5 +7,5 @@ target 'Rentify App' do
 
   # Pods for Rentify App
   pod 'SVPinView', '~> 1.0'
-
+  pod 'SwiftyGif'
 end
