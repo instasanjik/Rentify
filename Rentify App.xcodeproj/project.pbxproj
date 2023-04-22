@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */; };
 		048CCDD229F3AE4300919FB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048CCDD129F3AE4300919FB6 /* Main.storyboard */; };
+		048CCDD829F3B91900919FB6 /* LaunchScreen_GIF in Resources */ = {isa = PBXBuildFile; fileRef = 048CCDD729F3B91900919FB6 /* LaunchScreen_GIF */; };
 		0493858829F2BE060032386F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858729F2BE060032386F /* AppDelegate.swift */; };
 		0493858A29F2BE060032386F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858929F2BE060032386F /* SceneDelegate.swift */; };
 		0493858C29F2BE060032386F /* OpeningScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858B29F2BE060032386F /* OpeningScreenViewController.swift */; };
@@ -18,7 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		048CCDD129F3AE4300919FB6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		048CCDD729F3B91900919FB6 /* LaunchScreen_GIF */ = {isa = PBXFileReference; lastKnownFileType = file; path = LaunchScreen_GIF; sourceTree = "<group>"; };
 		0493858429F2BE060032386F /* Rentify App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rentify App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0493858729F2BE060032386F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0493858929F2BE060032386F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		047FA02F29F3B9AA00C5FCBB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		048CCDD329F3AF1B00919FB6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +111,9 @@
 		048CCDD529F3AF3600919FB6 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				048CCDD729F3B91900919FB6 /* LaunchScreen_GIF */,
 				0493859529F2BE070032386F /* Info.plist */,
 				0493859029F2BE070032386F /* Assets.xcassets */,
-				0493859229F2BE070032386F /* LaunchScreen.storyboard */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -109,6 +121,8 @@
 		048CCDD629F3AF4700919FB6 /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
+				0493859229F2BE070032386F /* LaunchScreen.storyboard */,
+				047FA02F29F3B9AA00C5FCBB /* ViewControllers */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -219,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0493859429F2BE070032386F /* LaunchScreen.storyboard in Resources */,
+				048CCDD829F3B91900919FB6 /* LaunchScreen_GIF in Resources */,
 				048CCDD229F3AE4300919FB6 /* Main.storyboard in Resources */,
 				0493859129F2BE070032386F /* Assets.xcassets in Resources */,
 				0493858F29F2BE060032386F /* Authorization.storyboard in Resources */,
@@ -277,6 +292,7 @@
 				0493858C29F2BE060032386F /* OpeningScreenViewController.swift in Sources */,
 				0493858829F2BE060032386F /* AppDelegate.swift in Sources */,
 				0493858A29F2BE060032386F /* SceneDelegate.swift in Sources */,
+				047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
