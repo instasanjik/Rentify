@@ -10,26 +10,18 @@ import UIKit
 class MainListViewController: UIViewController {
 
     @IBOutlet weak var listTableView: UITableView!
+    @IBOutlet weak var typesCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         listTableView.dataSource = self
         listTableView.delegate = self
-
-        // Do any additional setup after loading the view.
+        listTableView.showsVerticalScrollIndicator = false
+        
+        typesCollectionView.delegate = self
+        typesCollectionView.dataSource = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,3 +47,43 @@ extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+extension MainListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeCollectionViewCell", for: indexPath) as! TypeCollectionViewCell
+        if indexPath.row == 0 {
+            cell.iconImageView.image = UIImage(named: "Buildings_Icon")
+            cell.nameLabel.text = "All ads"
+        } else if indexPath.row == 1 {
+            cell.iconImageView.image = UIImage(named: "House_Icon")
+            cell.nameLabel.text = "Houses"
+        } else if indexPath.row == 2 {
+            cell.iconImageView.image = UIImage(named: "Buildings_Icon")
+            cell.nameLabel.text = "Apartments"
+        } else {
+            cell.iconImageView.image = UIImage(named: "Buildings_Icon")
+            cell.nameLabel.text = "Rooms"
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var text = ""
+        if indexPath.row == 0 {
+            text = "All ads"
+        } else if indexPath.row == 1 {
+            text = "Houses"
+        } else if indexPath.row == 2 {
+            text = "Apartments"
+        } else {
+            text = "Rooms"
+        }
+        return CGSize(width: text.width(withConstrainedHeight: 20, font: UIFont.systemFont(ofSize: 15)) + 24 + 32 + 8, height: 40)
+    }
+    
+    
+}

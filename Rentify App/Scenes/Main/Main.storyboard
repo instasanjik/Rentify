@@ -31,15 +31,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="e6h-4H-McO"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WW7-xn-DOt">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WW7-xn-DOt">
                                     <size key="itemSize" width="113" height="46"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TypeCollectionViewCell" reuseIdentifier="TypeCollectionViewCell" id="yKI-PS-dNT" customClass="TypeCollectionViewCell" customModule="Rentify_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="40"/>
+                                        <rect key="frame" x="24" y="0.0" width="113" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tei-oN-NYO">
                                             <rect key="frame" x="0.0" y="0.0" width="113" height="40"/>
@@ -54,7 +54,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u1k-BQ-vNX">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Buildings_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="u1k-BQ-vNX">
                                                             <rect key="frame" x="16" y="8" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="24" id="Bi5-uM-bAl"/>
@@ -82,6 +82,7 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
                                                             <color key="value" red="0.90588235294117647" green="0.92549019607843142" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -93,10 +94,15 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="113" height="40"/>
+                                        <connections>
+                                            <outlet property="bgView" destination="dF1-rX-S7O" id="hhC-TE-fdF"/>
+                                            <outlet property="iconImageView" destination="u1k-BQ-vNX" id="tqc-kb-wht"/>
+                                            <outlet property="nameLabel" destination="Vk6-LW-UK2" id="t3f-fk-ngC"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Im-7x-yaF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Im-7x-yaF">
                                 <rect key="frame" x="24" y="311" width="345" height="507"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -294,6 +300,7 @@
                     <navigationItem key="navigationItem" id="8RD-5L-QCD"/>
                     <connections>
                         <outlet property="listTableView" destination="7Im-7x-yaF" id="mMr-wb-YJK"/>
+                        <outlet property="typesCollectionView" destination="dc0-zO-9Ji" id="NNp-S6-lhq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -514,7 +521,7 @@
         <!--Main Tabbar View Controller-->
         <scene sceneID="RAZ-KT-cLn">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dHL-QC-1I4" customClass="MainTabbarViewController" customModule="Rentify_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabbarController" automaticallyAdjustsScrollViewInsets="NO" id="dHL-QC-1I4" customClass="MainTabbarViewController" customModule="Rentify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U3R-99-jxT">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -1107,6 +1114,7 @@
         <image name="Bathtub" width="56" height="56"/>
         <image name="Bed" width="56" height="56"/>
         <image name="Building_Main" width="1572" height="892"/>
+        <image name="Buildings_Icon" width="32" height="32"/>
         <image name="Favorites_With_Price" width="1380" height="680"/>
         <image name="House-1" width="1380" height="720"/>
         <image name="Houses_With_Left" width="1380" height="680"/>

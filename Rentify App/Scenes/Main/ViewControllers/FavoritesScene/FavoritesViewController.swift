@@ -15,6 +15,7 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        mainTableView.showsVerticalScrollIndicator = false
     }
 
 }
@@ -22,7 +23,7 @@ class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

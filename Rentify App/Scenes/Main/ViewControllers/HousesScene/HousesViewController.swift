@@ -15,7 +15,7 @@ class HousesViewController: UIViewController {
         super.viewDidLoad()
         housesTableView.delegate = self
         housesTableView.dataSource = self
-
+        housesTableView.showsVerticalScrollIndicator = false
         // Do any additional setup after loading the view.
     }
     

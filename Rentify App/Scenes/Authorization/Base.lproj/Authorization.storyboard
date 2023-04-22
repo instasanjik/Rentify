@@ -229,6 +229,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="SignUpTapped:" destination="fFR-r4-rrY" eventType="touchUpInside" id="ulJ-Yd-sKM"/>
                                     <segue destination="rrI-yr-I1B" kind="show" id="Kul-ay-3il"/>
                                 </connections>
                             </button>
@@ -490,6 +491,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginTapped:" destination="N7v-HC-D5i" eventType="touchUpInside" id="Ojg-gc-MMU"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="izZ-4e-zW4">
                                 <rect key="frame" x="77.333333333333329" y="786" width="238.66666666666669" height="30"/>
@@ -996,7 +1000,7 @@ succesfully</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Do-B1-sFk">
                                 <rect key="frame" x="16" y="59" width="361" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">Lorem Ipsum
+                                <string key="text">Lorem Ipsum
 "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
 "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum blandit porta. Nullam vulputate sem eu pretium hendrerit. Maecenas sollicitudin mi dignissim porttitor congue. Nullam gravida accumsan malesuada. Morbi interdum laoreet nisi ut tincidunt. Donec at scelerisque erat. Maecenas a erat sit amet lacus feugiat maximus quis non ex. Cras quis mi ac lectus posuere volutpat vitae vel odio. Maecenas dui enim, molestie nec eleifend ac, placerat in arcu. Morbi in ipsum non eros ultricies sagittis. Fusce interdum ultricies nisl.
@@ -1019,7 +1023,7 @@ In laoreet enim sed ipsum egestas, quis laoreet libero semper. Mauris quis dui i
 
 Vestibulum vel sodales urna. Donec quis faucibus eros, efficitur venenatis odio. Morbi malesuada sed urna ut lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam et maximus sem. Cras leo dolor, elementum suscipit volutpat nec, blandit et enim. Nam sed lectus augue. Nam ullamcorper, ligula sit amet semper vehicula, ipsum urna congue ligula, in eleifend leo ante a lacus. Donec blandit quam sapien, at pretium felis maximus at. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam facilisis, purus non scelerisque tempor, quam lectus iaculis augue, a semper est nisl nec metus. Morbi et condimentum tortor, in gravida enim. Nunc at mauris quis felis dapibus imperdiet in eget velit. Phasellus maximus quis augue ac rhoncus. Aliquam consequat sagittis venenatis.
 
-</mutableString>
+</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
