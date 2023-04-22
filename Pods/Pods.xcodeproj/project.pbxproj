@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		085E27203C71936B914D77F246694A05 /* SVPinView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = SVPinView.xib; path = "SVPinView/Source/XIB's/SVPinView.xib"; sourceTree = "<group>"; };
-		11EA81E2ABBB1FAAB1B2323ED6104A68 /* SVPinView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVPinView; path = SVPinView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11EA81E2ABBB1FAAB1B2323ED6104A68 /* SVPinView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVPinView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		155863BC96B1C949CFA62D8ECDF5C6A1 /* Pods-Rentify App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rentify App.release.xcconfig"; sourceTree = "<group>"; };
 		1B43DF7928535A1CDFBC8B31C96CE262 /* SVPinView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVPinView.swift; path = SVPinView/Source/Classes/SVPinView.swift; sourceTree = "<group>"; };
 		1B7B6E38C3319388020ABEC9D5805F6C /* SVPinView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVPinView.release.xcconfig; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		830ECEB20868401B215D2F778AB9B499 /* Pods-Rentify App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rentify App.debug.xcconfig"; sourceTree = "<group>"; };
 		9B1913772578740E134C0BA023803C32 /* Pods-Rentify App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rentify App-acknowledgements.plist"; sourceTree = "<group>"; };
 		9CC965A90C469DD4AE83B0FB62F3F74C /* SVPinCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = SVPinCell.xib; path = "SVPinView/Source/XIB's/SVPinCell.xib"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A007927CA24C8C491B372B48F636BFFB /* Pods-Rentify App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rentify App.modulemap"; sourceTree = "<group>"; };
 		A3FD6922838F654C411A7B09EBE1D80A /* SVPinView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SVPinView.modulemap; sourceTree = "<group>"; };
 		A8CDE3B0096AD7DE190B856F05B98D80 /* SVPinField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVPinField.swift; path = SVPinView/Source/Classes/SVPinField.swift; sourceTree = "<group>"; };
@@ -134,7 +134,6 @@
 				3CD5F3440601383904C96E6331EE4F31 /* Resources */,
 				D9EA79DEF854E295E981F50EF71E08DE /* Support Files */,
 			);
-			name = SVPinView;
 			path = SVPinView;
 			sourceTree = "<group>";
 		};
@@ -176,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				6BC4BBC32086C9D9048C48DE84641115 /* Pods-Rentify App */,
-				11EA81E2ABBB1FAAB1B2323ED6104A68 /* SVPinView */,
+				11EA81E2ABBB1FAAB1B2323ED6104A68 /* SVPinView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,7 +236,7 @@
 			);
 			name = SVPinView;
 			productName = SVPinView;
-			productReference = 11EA81E2ABBB1FAAB1B2323ED6104A68 /* SVPinView */;
+			productReference = 11EA81E2ABBB1FAAB1B2323ED6104A68 /* SVPinView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -333,7 +332,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SVPinView/SVPinView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVPinView/SVPinView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,7 +366,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SVPinView/SVPinView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVPinView/SVPinView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
