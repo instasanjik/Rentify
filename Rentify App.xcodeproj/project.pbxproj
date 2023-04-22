@@ -14,6 +14,26 @@
 		047FA03A29F3C2F600C5FCBB /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03929F3C2F600C5FCBB /* OTPViewController.swift */; };
 		047FA03C29F3C5B500C5FCBB /* PasswordChangedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03B29F3C5B500C5FCBB /* PasswordChangedViewController.swift */; };
 		047FA03E29F3C68000C5FCBB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03D29F3C68000C5FCBB /* SignUpViewController.swift */; };
+		047FA04129F3C86200C5FCBB /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA04029F3C86200C5FCBB /* MainTabbarViewController.swift */; };
+		047FA06429F3C8B100C5FCBB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA04329F3C8B100C5FCBB /* Logger.swift */; };
+		047FA06729F3C8B100C5FCBB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA04829F3C8B100C5FCBB /* Date.swift */; };
+		047FA06829F3C8B100C5FCBB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA04929F3C8B100C5FCBB /* String.swift */; };
+		047FA06929F3C8B100C5FCBB /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA04A29F3C8B100C5FCBB /* Double.swift */; };
+		047FA06A29F3C8B100C5FCBB /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA04B29F3C8B100C5FCBB /* CircularProgressBarView.swift */; };
+		047FA06B29F3C8B100C5FCBB /* DefaultWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA04C29F3C8B100C5FCBB /* DefaultWhiteButton.swift */; };
+		047FA06C29F3C8B100C5FCBB /* SKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA04D29F3C8B100C5FCBB /* SKCardView.swift */; };
+		047FA06D29F3C8B100C5FCBB /* IndicatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05029F3C8B100C5FCBB /* IndicatorCollectionViewCell.swift */; };
+		047FA06E29F3C8B100C5FCBB /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05129F3C8B100C5FCBB /* CarouselView.swift */; };
+		047FA06F29F3C8B100C5FCBB /* CarouselItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05229F3C8B100C5FCBB /* CarouselItemCollectionViewCell.swift */; };
+		047FA07029F3C8B100C5FCBB /* InfoBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05429F3C8B100C5FCBB /* InfoBlockView.swift */; };
+		047FA07129F3C8B100C5FCBB /* QualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05529F3C8B100C5FCBB /* QualityView.swift */; };
+		047FA07229F3C8B100C5FCBB /* AverageSleepTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05629F3C8B100C5FCBB /* AverageSleepTimeView.swift */; };
+		047FA07329F3C8B100C5FCBB /* WeeklyStatisticCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05729F3C8B100C5FCBB /* WeeklyStatisticCollectionViewCell.swift */; };
+		047FA07429F3C8B100C5FCBB /* WeeklyStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05829F3C8B100C5FCBB /* WeeklyStatisticView.swift */; };
+		047FA07529F3C8B100C5FCBB /* LastSleepInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05929F3C8B100C5FCBB /* LastSleepInfoView.swift */; };
+		047FA07629F3C8B100C5FCBB /* ExpertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA05B29F3C8B100C5FCBB /* ExpertCollectionViewCell.swift */; };
+		047FA07B29F3C8B100C5FCBB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA06229F3C8B100C5FCBB /* UIView.swift */; };
+		047FA07C29F3C8B100C5FCBB /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA06329F3C8B100C5FCBB /* UICollectionView.swift */; };
 		048CCDD229F3AE4300919FB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048CCDD129F3AE4300919FB6 /* Main.storyboard */; };
 		048CCDD829F3B91900919FB6 /* LaunchScreen_GIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 048CCDD729F3B91900919FB6 /* LaunchScreen_GIF.gif */; };
 		0493858829F2BE060032386F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858729F2BE060032386F /* AppDelegate.swift */; };
@@ -33,6 +53,26 @@
 		047FA03929F3C2F600C5FCBB /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		047FA03B29F3C5B500C5FCBB /* PasswordChangedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangedViewController.swift; sourceTree = "<group>"; };
 		047FA03D29F3C68000C5FCBB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		047FA04029F3C86200C5FCBB /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
+		047FA04329F3C8B100C5FCBB /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		047FA04829F3C8B100C5FCBB /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		047FA04929F3C8B100C5FCBB /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		047FA04A29F3C8B100C5FCBB /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		047FA04B29F3C8B100C5FCBB /* CircularProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		047FA04C29F3C8B100C5FCBB /* DefaultWhiteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultWhiteButton.swift; sourceTree = "<group>"; };
+		047FA04D29F3C8B100C5FCBB /* SKCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCardView.swift; sourceTree = "<group>"; };
+		047FA05029F3C8B100C5FCBB /* IndicatorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorCollectionViewCell.swift; sourceTree = "<group>"; };
+		047FA05129F3C8B100C5FCBB /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		047FA05229F3C8B100C5FCBB /* CarouselItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		047FA05429F3C8B100C5FCBB /* InfoBlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoBlockView.swift; sourceTree = "<group>"; };
+		047FA05529F3C8B100C5FCBB /* QualityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QualityView.swift; sourceTree = "<group>"; };
+		047FA05629F3C8B100C5FCBB /* AverageSleepTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AverageSleepTimeView.swift; sourceTree = "<group>"; };
+		047FA05729F3C8B100C5FCBB /* WeeklyStatisticCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyStatisticCollectionViewCell.swift; sourceTree = "<group>"; };
+		047FA05829F3C8B100C5FCBB /* WeeklyStatisticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyStatisticView.swift; sourceTree = "<group>"; };
+		047FA05929F3C8B100C5FCBB /* LastSleepInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastSleepInfoView.swift; sourceTree = "<group>"; };
+		047FA05B29F3C8B100C5FCBB /* ExpertCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertCollectionViewCell.swift; sourceTree = "<group>"; };
+		047FA06229F3C8B100C5FCBB /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		047FA06329F3C8B100C5FCBB /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		048CCDD129F3AE4300919FB6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		048CCDD729F3B91900919FB6 /* LaunchScreen_GIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LaunchScreen_GIF.gif; sourceTree = "<group>"; };
 		0493858429F2BE060032386F /* Rentify App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rentify App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,13 +153,90 @@
 			isa = PBXGroup;
 			children = (
 				047FA03329F3BE0600C5FCBB /* SKTextField.swift */,
+				047FA04B29F3C8B100C5FCBB /* CircularProgressBarView.swift */,
+				047FA04C29F3C8B100C5FCBB /* DefaultWhiteButton.swift */,
+				047FA04D29F3C8B100C5FCBB /* SKCardView.swift */,
+				047FA04229F3C8B100C5FCBB /* Extensions */,
+				047FA04E29F3C8B100C5FCBB /* Views */,
 			);
 			path = "Custom Contorls";
+			sourceTree = "<group>";
+		};
+		047FA04229F3C8B100C5FCBB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				047FA06129F3C8B100C5FCBB /* UIKit */,
+				047FA04329F3C8B100C5FCBB /* Logger.swift */,
+				047FA04729F3C8B100C5FCBB /* Foundation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		047FA04729F3C8B100C5FCBB /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				047FA04829F3C8B100C5FCBB /* Date.swift */,
+				047FA04929F3C8B100C5FCBB /* String.swift */,
+				047FA04A29F3C8B100C5FCBB /* Double.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		047FA04E29F3C8B100C5FCBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				047FA04F29F3C8B100C5FCBB /* CarouselViews */,
+				047FA05329F3C8B100C5FCBB /* HomePageViews */,
+				047FA05A29F3C8B100C5FCBB /* InfoPageViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		047FA04F29F3C8B100C5FCBB /* CarouselViews */ = {
+			isa = PBXGroup;
+			children = (
+				047FA05029F3C8B100C5FCBB /* IndicatorCollectionViewCell.swift */,
+				047FA05129F3C8B100C5FCBB /* CarouselView.swift */,
+				047FA05229F3C8B100C5FCBB /* CarouselItemCollectionViewCell.swift */,
+			);
+			path = CarouselViews;
+			sourceTree = "<group>";
+		};
+		047FA05329F3C8B100C5FCBB /* HomePageViews */ = {
+			isa = PBXGroup;
+			children = (
+				047FA05429F3C8B100C5FCBB /* InfoBlockView.swift */,
+				047FA05529F3C8B100C5FCBB /* QualityView.swift */,
+				047FA05629F3C8B100C5FCBB /* AverageSleepTimeView.swift */,
+				047FA05729F3C8B100C5FCBB /* WeeklyStatisticCollectionViewCell.swift */,
+				047FA05829F3C8B100C5FCBB /* WeeklyStatisticView.swift */,
+				047FA05929F3C8B100C5FCBB /* LastSleepInfoView.swift */,
+			);
+			path = HomePageViews;
+			sourceTree = "<group>";
+		};
+		047FA05A29F3C8B100C5FCBB /* InfoPageViews */ = {
+			isa = PBXGroup;
+			children = (
+				047FA05B29F3C8B100C5FCBB /* ExpertCollectionViewCell.swift */,
+			);
+			path = InfoPageViews;
+			sourceTree = "<group>";
+		};
+		047FA06129F3C8B100C5FCBB /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				047FA06229F3C8B100C5FCBB /* UIView.swift */,
+				047FA06329F3C8B100C5FCBB /* UICollectionView.swift */,
+			);
+			name = UIKit;
+			path = ../UIKit;
 			sourceTree = "<group>";
 		};
 		048CCDD329F3AF1B00919FB6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				047FA04029F3C86200C5FCBB /* MainTabbarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,15 +432,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047FA06929F3C8B100C5FCBB /* Double.swift in Sources */,
+				047FA06E29F3C8B100C5FCBB /* CarouselView.swift in Sources */,
+				047FA06729F3C8B100C5FCBB /* Date.swift in Sources */,
+				047FA07429F3C8B100C5FCBB /* WeeklyStatisticView.swift in Sources */,
 				047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */,
+				047FA06A29F3C8B100C5FCBB /* CircularProgressBarView.swift in Sources */,
+				047FA07329F3C8B100C5FCBB /* WeeklyStatisticCollectionViewCell.swift in Sources */,
+				047FA07229F3C8B100C5FCBB /* AverageSleepTimeView.swift in Sources */,
+				047FA07B29F3C8B100C5FCBB /* UIView.swift in Sources */,
+				047FA04129F3C86200C5FCBB /* MainTabbarViewController.swift in Sources */,
+				047FA07029F3C8B100C5FCBB /* InfoBlockView.swift in Sources */,
+				047FA07529F3C8B100C5FCBB /* LastSleepInfoView.swift in Sources */,
+				047FA06F29F3C8B100C5FCBB /* CarouselItemCollectionViewCell.swift in Sources */,
 				0493858C29F2BE060032386F /* OpeningScreenViewController.swift in Sources */,
 				047FA03829F3C1B000C5FCBB /* PasswordRecoveryViewController.swift in Sources */,
 				0493858829F2BE060032386F /* AppDelegate.swift in Sources */,
 				047FA03E29F3C68000C5FCBB /* SignUpViewController.swift in Sources */,
 				047FA03A29F3C2F600C5FCBB /* OTPViewController.swift in Sources */,
+				047FA06429F3C8B100C5FCBB /* Logger.swift in Sources */,
 				047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */,
+				047FA06C29F3C8B100C5FCBB /* SKCardView.swift in Sources */,
+				047FA06D29F3C8B100C5FCBB /* IndicatorCollectionViewCell.swift in Sources */,
 				0493858A29F2BE060032386F /* SceneDelegate.swift in Sources */,
+				047FA07629F3C8B100C5FCBB /* ExpertCollectionViewCell.swift in Sources */,
+				047FA06B29F3C8B100C5FCBB /* DefaultWhiteButton.swift in Sources */,
 				047FA03C29F3C5B500C5FCBB /* PasswordChangedViewController.swift in Sources */,
+				047FA07C29F3C8B100C5FCBB /* UICollectionView.swift in Sources */,
+				047FA07129F3C8B100C5FCBB /* QualityView.swift in Sources */,
+				047FA06829F3C8B100C5FCBB /* String.swift in Sources */,
 				047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
