@@ -38,9 +38,13 @@ extension HousesViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 265
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath) as! FavoriteTableViewCell
-        if indexPath.row == 1 {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HouseTableViewCell", for: indexPath) as! HouseTableViewCell
+        if indexPath.row == 0 {
             cell.houseImageView.image = UIImage(named: "Houses_With_Left")
         } else {
             cell.houseImageView.image = UIImage(named: "Houses_With_Left1")

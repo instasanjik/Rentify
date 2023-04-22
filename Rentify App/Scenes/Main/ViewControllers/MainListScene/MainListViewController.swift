@@ -9,8 +9,12 @@ import UIKit
 
 class MainListViewController: UIViewController {
 
+    @IBOutlet weak var listTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        listTableView.dataSource = self
+        listTableView.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -31,11 +35,21 @@ class MainListViewController: UIViewController {
 extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 309
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath) as! AdTableViewCell
+        if indexPath.row == 0 {
+            cell.houseImageView.image = UIImage(named: "House-1")
+        } else {
+            cell.houseImageView.image = UIImage(named: "House-1")
+        }
+        return cell
     }
     
     
