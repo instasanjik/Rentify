@@ -1,5 +1,5 @@
 //
-//  MainListViewController.swift
+//  HousesViewController.swift
 //  Rentify App
 //
 //  Created by Sanzhar Koshkarbayev on 22.04.2023.
@@ -7,8 +7,10 @@
 
 import UIKit
 
-class MainListViewController: UIViewController {
+class HousesViewController: UIViewController {
 
+    @IBOutlet weak var housesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,14 +30,20 @@ class MainListViewController: UIViewController {
 
 }
 
-extension MainListViewController: UITableViewDelegate, UITableViewDataSource {
+extension HousesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath) as! FavoriteTableViewCell
+        if indexPath.row == 1 {
+            cell.houseImageView.image = UIImage(named: "Houses_With_Left")
+        } else {
+            cell.houseImageView.image = UIImage(named: "Houses_With_Left1")
+        }
+        return cell
     }
     
     

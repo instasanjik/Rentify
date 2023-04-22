@@ -597,6 +597,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rented promises" id="CFT-Jq-RN0"/>
+                    <connections>
+                        <outlet property="housesTableView" destination="sIz-TE-Dbj" id="RG3-fE-fns"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMt-6s-J4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -827,7 +830,7 @@
                                 <rect key="frame" x="24" y="103" width="345" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="321" id="Vcg-ZZ-u6E">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavoriteTableViewCell" rowHeight="321" id="Vcg-ZZ-u6E" customClass="FavoriteTableViewCell" customModule="Rentify_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="345" height="321"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vcg-ZZ-u6E" id="AuQ-9W-7cB">
@@ -926,6 +929,9 @@
                                                 <constraint firstItem="Xq8-fr-w62" firstAttribute="bottom" secondItem="e5S-4v-FgJ" secondAttribute="bottom" id="zlC-VO-F4a"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="houseImageView" destination="PVp-Mj-jKX" id="y7z-zT-tNb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -940,6 +946,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="OoV-Zs-333"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="Dh9-DM-3AN" id="2b3-bI-vem"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01c-ua-9O0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
