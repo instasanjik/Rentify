@@ -27,6 +27,10 @@
 		047FA08129F3C9B400C5FCBB /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA07E29F3C9B400C5FCBB /* Screen.swift */; };
 		047FA08229F3C9B400C5FCBB /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA07F29F3C9B400C5FCBB /* ColorPalette.swift */; };
 		047FA08329F3C9B400C5FCBB /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA08029F3C9B400C5FCBB /* URLs.swift */; };
+		047FA08629F3CA2300C5FCBB /* FavoritesNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA08529F3CA2300C5FCBB /* FavoritesNavigationViewController.swift */; };
+		047FA08829F3CA5B00C5FCBB /* HousesNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA08729F3CA5B00C5FCBB /* HousesNavigationViewController.swift */; };
+		047FA08A29F3CA7000C5FCBB /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA08929F3CA7000C5FCBB /* MainNavigationViewController.swift */; };
+		047FA08C29F3CA8B00C5FCBB /* ProfileNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA08B29F3CA8B00C5FCBB /* ProfileNavigationViewController.swift */; };
 		048CCDD229F3AE4300919FB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048CCDD129F3AE4300919FB6 /* Main.storyboard */; };
 		048CCDD829F3B91900919FB6 /* LaunchScreen_GIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = 048CCDD729F3B91900919FB6 /* LaunchScreen_GIF.gif */; };
 		0493858829F2BE060032386F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493858729F2BE060032386F /* AppDelegate.swift */; };
@@ -59,6 +63,10 @@
 		047FA07E29F3C9B400C5FCBB /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		047FA07F29F3C9B400C5FCBB /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		047FA08029F3C9B400C5FCBB /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		047FA08529F3CA2300C5FCBB /* FavoritesNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesNavigationViewController.swift; sourceTree = "<group>"; };
+		047FA08729F3CA5B00C5FCBB /* HousesNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesNavigationViewController.swift; sourceTree = "<group>"; };
+		047FA08929F3CA7000C5FCBB /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
+		047FA08B29F3CA8B00C5FCBB /* ProfileNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationViewController.swift; sourceTree = "<group>"; };
 		048CCDD129F3AE4300919FB6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		048CCDD729F3B91900919FB6 /* LaunchScreen_GIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LaunchScreen_GIF.gif; sourceTree = "<group>"; };
 		0493858429F2BE060032386F /* Rentify App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rentify App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				048CCDD129F3AE4300919FB6 /* Main.storyboard */,
+				047FA04029F3C86200C5FCBB /* MainTabbarViewController.swift */,
+				047FA08429F3CA0100C5FCBB /* NavigationControllers */,
 				048CCDD329F3AF1B00919FB6 /* ViewControllers */,
 			);
 			path = Main;
@@ -187,10 +197,20 @@
 			path = Static;
 			sourceTree = "<group>";
 		};
+		047FA08429F3CA0100C5FCBB /* NavigationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				047FA08529F3CA2300C5FCBB /* FavoritesNavigationViewController.swift */,
+				047FA08729F3CA5B00C5FCBB /* HousesNavigationViewController.swift */,
+				047FA08929F3CA7000C5FCBB /* MainNavigationViewController.swift */,
+				047FA08B29F3CA8B00C5FCBB /* ProfileNavigationViewController.swift */,
+			);
+			path = NavigationControllers;
+			sourceTree = "<group>";
+		};
 		048CCDD329F3AF1B00919FB6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				047FA04029F3C86200C5FCBB /* MainTabbarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -396,8 +416,11 @@
 				047FA04129F3C86200C5FCBB /* MainTabbarViewController.swift in Sources */,
 				0493858C29F2BE060032386F /* OpeningScreenViewController.swift in Sources */,
 				047FA03829F3C1B000C5FCBB /* PasswordRecoveryViewController.swift in Sources */,
+				047FA08829F3CA5B00C5FCBB /* HousesNavigationViewController.swift in Sources */,
 				0493858829F2BE060032386F /* AppDelegate.swift in Sources */,
+				047FA08629F3CA2300C5FCBB /* FavoritesNavigationViewController.swift in Sources */,
 				047FA03E29F3C68000C5FCBB /* SignUpViewController.swift in Sources */,
+				047FA08A29F3CA7000C5FCBB /* MainNavigationViewController.swift in Sources */,
 				047FA03A29F3C2F600C5FCBB /* OTPViewController.swift in Sources */,
 				047FA06429F3C8B100C5FCBB /* Logger.swift in Sources */,
 				047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */,
@@ -408,6 +431,7 @@
 				047FA03C29F3C5B500C5FCBB /* PasswordChangedViewController.swift in Sources */,
 				047FA08229F3C9B400C5FCBB /* ColorPalette.swift in Sources */,
 				047FA07C29F3C8B100C5FCBB /* UICollectionView.swift in Sources */,
+				047FA08C29F3CA8B00C5FCBB /* ProfileNavigationViewController.swift in Sources */,
 				047FA06829F3C8B100C5FCBB /* String.swift in Sources */,
 				047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */,
 			);
