@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  OpeningScreenViewController.swift
 //  Rentify App
 //
 //  Created by Sanzhar Koshkarbayev on 21.04.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OpeningScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
