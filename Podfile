@@ -9,4 +9,5 @@ target 'Rentify App' do
   pod 'SVPinView', '~> 1.0'
   pod 'SwiftyGif'
   pod 'SVProgressHUD'
+  pod 'SnapKit'
 end

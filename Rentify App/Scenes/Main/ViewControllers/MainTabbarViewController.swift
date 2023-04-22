@@ -11,7 +11,6 @@ class MainTabbarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewControllers()
         updateTabbarUI()
         selectedIndex = 2
     }
@@ -49,15 +48,6 @@ extension MainTabbarViewController {
         tabBar.itemWidth = width / 5.5
         tabBar.itemPositioning = .centered
         tabBar.unselectedItemTintColor = ColorPalette.systemGray
-    }
-    
-    func configureViewControllers() {
-        viewControllers = [
-            prepareViewController(SleepControlViewController(), imageName: "moon"),
-            prepareViewController(HomeViewController(), imageName: "house"),
-            prepareViewController(InfoViewController(), imageName: "book"),
-            prepareViewController(ProfileViewController(), imageName: "user")
-        ]
     }
     
     private func prepareViewController(_ viewController: UIViewController, title: String? = nil, imageName: String) -> UIViewController {
