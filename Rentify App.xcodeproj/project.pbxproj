@@ -47,6 +47,9 @@
 		0493858F29F2BE060032386F /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0493858D29F2BE060032386F /* Authorization.storyboard */; };
 		0493859129F2BE070032386F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0493859029F2BE070032386F /* Assets.xcassets */; };
 		0493859429F2BE070032386F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0493859229F2BE070032386F /* LaunchScreen.storyboard */; };
+		04A7F85629F3E41400B7EDC8 /* ProfileBlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7F85529F3E41300B7EDC8 /* ProfileBlockTableViewCell.swift */; };
+		04A7F85929F416F400B7EDC8 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7F85829F416F400B7EDC8 /* HeaderTableViewCell.swift */; };
+		04A7F85B29F416FF00B7EDC8 /* BodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7F85A29F416FF00B7EDC8 /* BodyTableViewCell.swift */; };
 		62DDDE3A6A96FA9C05EEA8A8 /* Pods_Rentify_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8D68F3870B396A8E6A1177 /* Pods_Rentify_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +96,9 @@
 		0493859029F2BE070032386F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0493859329F2BE070032386F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0493859529F2BE070032386F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A7F85529F3E41300B7EDC8 /* ProfileBlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBlockTableViewCell.swift; sourceTree = "<group>"; };
+		04A7F85829F416F400B7EDC8 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		04A7F85A29F416FF00B7EDC8 /* BodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTableViewCell.swift; sourceTree = "<group>"; };
 		1F8D68F3870B396A8E6A1177 /* Pods_Rentify_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rentify_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D55D672E7D11E948353CBF9 /* Pods-Rentify App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rentify App.debug.xcconfig"; path = "Target Support Files/Pods-Rentify App/Pods-Rentify App.debug.xcconfig"; sourceTree = "<group>"; };
 		49C7FF34EA1637050E1E93BE /* Pods-Rentify App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rentify App.release.xcconfig"; path = "Target Support Files/Pods-Rentify App/Pods-Rentify App.release.xcconfig"; sourceTree = "<group>"; };
@@ -270,8 +276,9 @@
 		047FA0A029F3D49200C5FCBB /* AdditionalViews */ = {
 			isa = PBXGroup;
 			children = (
-				048DC70B29F3D55F006BB476 /* AdTableViewCell.swift */,
-				047FA0A129F3D4B200C5FCBB /* TypeCollectionViewCell.swift */,
+				04A7F85829F416F400B7EDC8 /* HeaderTableViewCell.swift */,
+				04A7F85A29F416FF00B7EDC8 /* BodyTableViewCell.swift */,
+				04A7F85729F416D400B7EDC8 /* Details */,
 			);
 			path = AdditionalViews;
 			sourceTree = "<group>";
@@ -282,6 +289,7 @@
 				047FA09529F3D1A700C5FCBB /* FavoritesScene */,
 				047FA09929F3D39500C5FCBB /* HousesScene */,
 				047FA09D29F3D45800C5FCBB /* MainListScene */,
+				04A7F85229F3E3CE00B7EDC8 /* ProfileScene */,
 				047FA09329F3D0F000C5FCBB /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
@@ -343,6 +351,23 @@
 				043717AA29F3ADF5008643E4 /* Scenes */,
 			);
 			path = "Rentify App";
+			sourceTree = "<group>";
+		};
+		04A7F85229F3E3CE00B7EDC8 /* ProfileScene */ = {
+			isa = PBXGroup;
+			children = (
+				04A7F85529F3E41300B7EDC8 /* ProfileBlockTableViewCell.swift */,
+			);
+			path = ProfileScene;
+			sourceTree = "<group>";
+		};
+		04A7F85729F416D400B7EDC8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				048DC70B29F3D55F006BB476 /* AdTableViewCell.swift */,
+				047FA0A129F3D4B200C5FCBB /* TypeCollectionViewCell.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		2857005C74A9DBC0D9016E3C /* Frameworks */ = {
@@ -480,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047FA09029F3D0AA00C5FCBB /* HousesViewController.swift in Sources */,
+				04A7F85B29F416FF00B7EDC8 /* BodyTableViewCell.swift in Sources */,
 				047FA08129F3C9B400C5FCBB /* Screen.swift in Sources */,
 				047FA06929F3C8B100C5FCBB /* Double.swift in Sources */,
 				047FA09229F3D0BC00C5FCBB /* MainListViewController.swift in Sources */,
@@ -487,6 +513,7 @@
 				047FA06729F3C8B100C5FCBB /* Date.swift in Sources */,
 				047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */,
 				047FA06A29F3C8B100C5FCBB /* CircularProgressBarView.swift in Sources */,
+				04A7F85929F416F400B7EDC8 /* HeaderTableViewCell.swift in Sources */,
 				047FA07B29F3C8B100C5FCBB /* UIView.swift in Sources */,
 				047FA0A229F3D4B200C5FCBB /* TypeCollectionViewCell.swift in Sources */,
 				047FA04129F3C86200C5FCBB /* MainTabbarViewController.swift in Sources */,
@@ -508,6 +535,7 @@
 				047FA06B29F3C8B100C5FCBB /* DefaultWhiteButton.swift in Sources */,
 				047FA09829F3D20100C5FCBB /* FavoriteTableViewCell.swift in Sources */,
 				047FA03C29F3C5B500C5FCBB /* PasswordChangedViewController.swift in Sources */,
+				04A7F85629F3E41400B7EDC8 /* ProfileBlockTableViewCell.swift in Sources */,
 				047FA08229F3C9B400C5FCBB /* ColorPalette.swift in Sources */,
 				047FA07C29F3C8B100C5FCBB /* UICollectionView.swift in Sources */,
 				047FA08C29F3CA8B00C5FCBB /* ProfileNavigationViewController.swift in Sources */,

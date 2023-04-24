@@ -28,5 +28,6 @@ class TypeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView.layer.borderColor = UIColor.systemGray4.cgColor
     }
 }
