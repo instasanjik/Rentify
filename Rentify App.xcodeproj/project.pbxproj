@@ -50,6 +50,14 @@
 		04A7F85629F3E41400B7EDC8 /* ProfileBlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7F85529F3E41300B7EDC8 /* ProfileBlockTableViewCell.swift */; };
 		04A7F85929F416F400B7EDC8 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7F85829F416F400B7EDC8 /* HeaderTableViewCell.swift */; };
 		04A7F85B29F416FF00B7EDC8 /* BodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7F85A29F416FF00B7EDC8 /* BodyTableViewCell.swift */; };
+		04E2546429F79F4F00AD84EC /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2546329F79F4F00AD84EC /* HouseViewController.swift */; };
+		04E2546629F7A09100AD84EC /* HouseHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2546529F7A09100AD84EC /* HouseHeaderTableViewCell.swift */; };
+		04E2546829F7A0A000AD84EC /* HousePriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2546729F7A0A000AD84EC /* HousePriceTableViewCell.swift */; };
+		04E2546A29F7A0B300AD84EC /* HouseOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2546929F7A0B300AD84EC /* HouseOverviewTableViewCell.swift */; };
+		04E2546C29F7A0C700AD84EC /* HouseCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2546B29F7A0C700AD84EC /* HouseCalendarTableViewCell.swift */; };
+		04E2546E29F7A0DF00AD84EC /* HouseFacilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2546D29F7A0DF00AD84EC /* HouseFacilitiesTableViewCell.swift */; };
+		04E2547029F7A0F800AD84EC /* HouseGalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2546F29F7A0F800AD84EC /* HouseGalleryTableViewCell.swift */; };
+		04E2547329F7A11300AD84EC /* HouseLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2547229F7A11300AD84EC /* HouseLocationTableViewCell.swift */; };
 		62DDDE3A6A96FA9C05EEA8A8 /* Pods_Rentify_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8D68F3870B396A8E6A1177 /* Pods_Rentify_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +107,14 @@
 		04A7F85529F3E41300B7EDC8 /* ProfileBlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBlockTableViewCell.swift; sourceTree = "<group>"; };
 		04A7F85829F416F400B7EDC8 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		04A7F85A29F416FF00B7EDC8 /* BodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTableViewCell.swift; sourceTree = "<group>"; };
+		04E2546329F79F4F00AD84EC /* HouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
+		04E2546529F7A09100AD84EC /* HouseHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		04E2546729F7A0A000AD84EC /* HousePriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousePriceTableViewCell.swift; sourceTree = "<group>"; };
+		04E2546929F7A0B300AD84EC /* HouseOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		04E2546B29F7A0C700AD84EC /* HouseCalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCalendarTableViewCell.swift; sourceTree = "<group>"; };
+		04E2546D29F7A0DF00AD84EC /* HouseFacilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseFacilitiesTableViewCell.swift; sourceTree = "<group>"; };
+		04E2546F29F7A0F800AD84EC /* HouseGalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseGalleryTableViewCell.swift; sourceTree = "<group>"; };
+		04E2547229F7A11300AD84EC /* HouseLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseLocationTableViewCell.swift; sourceTree = "<group>"; };
 		1F8D68F3870B396A8E6A1177 /* Pods_Rentify_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rentify_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D55D672E7D11E948353CBF9 /* Pods-Rentify App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rentify App.debug.xcconfig"; path = "Target Support Files/Pods-Rentify App/Pods-Rentify App.debug.xcconfig"; sourceTree = "<group>"; };
 		49C7FF34EA1637050E1E93BE /* Pods-Rentify App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rentify App.release.xcconfig"; path = "Target Support Files/Pods-Rentify App/Pods-Rentify App.release.xcconfig"; sourceTree = "<group>"; };
@@ -374,8 +390,24 @@
 		04E2546129F79EED00AD84EC /* HouseScene */ = {
 			isa = PBXGroup;
 			children = (
+				04E2546229F79F2800AD84EC /* TableViewCells */,
+				04E2546329F79F4F00AD84EC /* HouseViewController.swift */,
 			);
 			path = HouseScene;
+			sourceTree = "<group>";
+		};
+		04E2546229F79F2800AD84EC /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				04E2546529F7A09100AD84EC /* HouseHeaderTableViewCell.swift */,
+				04E2546729F7A0A000AD84EC /* HousePriceTableViewCell.swift */,
+				04E2546929F7A0B300AD84EC /* HouseOverviewTableViewCell.swift */,
+				04E2546B29F7A0C700AD84EC /* HouseCalendarTableViewCell.swift */,
+				04E2546D29F7A0DF00AD84EC /* HouseFacilitiesTableViewCell.swift */,
+				04E2546F29F7A0F800AD84EC /* HouseGalleryTableViewCell.swift */,
+				04E2547229F7A11300AD84EC /* HouseLocationTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		2857005C74A9DBC0D9016E3C /* Frameworks */ = {
@@ -513,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047FA09029F3D0AA00C5FCBB /* HousesViewController.swift in Sources */,
+				04E2546429F79F4F00AD84EC /* HouseViewController.swift in Sources */,
 				04A7F85B29F416FF00B7EDC8 /* BodyTableViewCell.swift in Sources */,
 				047FA08129F3C9B400C5FCBB /* Screen.swift in Sources */,
 				047FA06929F3C8B100C5FCBB /* Double.swift in Sources */,
@@ -520,8 +553,10 @@
 				047FA08E29F3D09A00C5FCBB /* FavoritesViewController.swift in Sources */,
 				047FA06729F3C8B100C5FCBB /* Date.swift in Sources */,
 				047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */,
+				04E2546629F7A09100AD84EC /* HouseHeaderTableViewCell.swift in Sources */,
 				047FA06A29F3C8B100C5FCBB /* CircularProgressBarView.swift in Sources */,
 				04A7F85929F416F400B7EDC8 /* HeaderTableViewCell.swift in Sources */,
+				04E2546829F7A0A000AD84EC /* HousePriceTableViewCell.swift in Sources */,
 				047FA07B29F3C8B100C5FCBB /* UIView.swift in Sources */,
 				047FA0A229F3D4B200C5FCBB /* TypeCollectionViewCell.swift in Sources */,
 				047FA04129F3C86200C5FCBB /* MainTabbarViewController.swift in Sources */,
@@ -531,8 +566,10 @@
 				047FA08829F3CA5B00C5FCBB /* HousesNavigationViewController.swift in Sources */,
 				0493858829F2BE060032386F /* AppDelegate.swift in Sources */,
 				047FA08629F3CA2300C5FCBB /* FavoritesNavigationViewController.swift in Sources */,
+				04E2546A29F7A0B300AD84EC /* HouseOverviewTableViewCell.swift in Sources */,
 				047FA03E29F3C68000C5FCBB /* SignUpViewController.swift in Sources */,
 				047FA08A29F3CA7000C5FCBB /* MainNavigationViewController.swift in Sources */,
+				04E2546C29F7A0C700AD84EC /* HouseCalendarTableViewCell.swift in Sources */,
 				047FA03A29F3C2F600C5FCBB /* OTPViewController.swift in Sources */,
 				047FA06429F3C8B100C5FCBB /* Logger.swift in Sources */,
 				047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */,
@@ -544,9 +581,12 @@
 				047FA09829F3D20100C5FCBB /* FavoriteTableViewCell.swift in Sources */,
 				047FA03C29F3C5B500C5FCBB /* PasswordChangedViewController.swift in Sources */,
 				04A7F85629F3E41400B7EDC8 /* ProfileBlockTableViewCell.swift in Sources */,
+				04E2546E29F7A0DF00AD84EC /* HouseFacilitiesTableViewCell.swift in Sources */,
 				047FA08229F3C9B400C5FCBB /* ColorPalette.swift in Sources */,
 				047FA07C29F3C8B100C5FCBB /* UICollectionView.swift in Sources */,
 				047FA08C29F3CA8B00C5FCBB /* ProfileNavigationViewController.swift in Sources */,
+				04E2547029F7A0F800AD84EC /* HouseGalleryTableViewCell.swift in Sources */,
+				04E2547329F7A11300AD84EC /* HouseLocationTableViewCell.swift in Sources */,
 				047FA06829F3C8B100C5FCBB /* String.swift in Sources */,
 				047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */,
 				048DC70C29F3D55F006BB476 /* AdTableViewCell.swift in Sources */,
