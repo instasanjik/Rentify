@@ -286,6 +286,7 @@
 		048CCDD329F3AF1B00919FB6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				04E2546129F79EED00AD84EC /* HouseScene */,
 				047FA09529F3D1A700C5FCBB /* FavoritesScene */,
 				047FA09929F3D39500C5FCBB /* HousesScene */,
 				047FA09D29F3D45800C5FCBB /* MainListScene */,
@@ -368,6 +369,13 @@
 				047FA0A129F3D4B200C5FCBB /* TypeCollectionViewCell.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		04E2546129F79EED00AD84EC /* HouseScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HouseScene;
 			sourceTree = "<group>";
 		};
 		2857005C74A9DBC0D9016E3C /* Frameworks */ = {
