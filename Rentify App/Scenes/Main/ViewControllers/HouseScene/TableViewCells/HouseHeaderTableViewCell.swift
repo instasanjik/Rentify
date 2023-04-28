@@ -9,6 +9,8 @@ import UIKit
 
 class HouseHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var adPreviewImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

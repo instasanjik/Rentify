@@ -9,6 +9,12 @@ import UIKit
 
 class HousePriceTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
