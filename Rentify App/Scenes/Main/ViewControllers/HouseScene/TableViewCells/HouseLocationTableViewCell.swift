@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HouseLocationTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var addressLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setupData(address: String, location: CLLocation) {
+        addressLabel.text = address
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

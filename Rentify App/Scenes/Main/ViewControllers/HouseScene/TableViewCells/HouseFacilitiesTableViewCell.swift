@@ -9,9 +9,17 @@ import UIKit
 
 class HouseFacilitiesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var facilitiesCollectionView: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        facilitiesCollectionView.delegate = self
+        facilitiesCollectionView.dataSource = self
+    }
+    
+    func setupData(facilities: [String]) {
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -20,4 +28,17 @@ class HouseFacilitiesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension HouseFacilitiesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
+    
 }

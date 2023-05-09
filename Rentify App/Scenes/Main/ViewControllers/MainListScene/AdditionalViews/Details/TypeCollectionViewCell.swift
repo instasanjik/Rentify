@@ -12,16 +12,18 @@ class TypeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    var imageName = ""
+    
     override var isSelected: Bool {
         didSet {
             if isSelected {
                 bgView.backgroundColor = .black
                 nameLabel.textColor = .white
-                iconImageView.tintColor = .white
+                iconImageView.image = UIImage(named: imageName + "_ON")
             } else {
                 bgView.backgroundColor = .white
                 nameLabel.textColor = .black
-                iconImageView.tintColor = .black
+                iconImageView.image = UIImage(named: imageName)
             }
         }
     }

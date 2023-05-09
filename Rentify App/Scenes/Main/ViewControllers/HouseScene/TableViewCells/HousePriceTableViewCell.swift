@@ -19,6 +19,13 @@ class HousePriceTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func setData(id: String, price: String, reviews: String, address: String) {
+        idLabel.text = "ID: \(id)"
+        priceLabel.text = "$\(price)"
+        ratingLabel.text = reviews
+        addressLabel.text = address
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
