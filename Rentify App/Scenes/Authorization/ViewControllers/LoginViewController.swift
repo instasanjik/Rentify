@@ -18,15 +18,29 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
     @IBAction func loginTapped(_ sender: UIButton) {
         SVProgressHUD.show()
-//        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-            SVProgressHUD.dismiss()
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "MainTabbarController")
-            vc.modalPresentationStyle = .fullScreen
-            vc.modalTransitionStyle = .crossDissolve
-            self.present(vc, animated: true)
-//        }
+        Server.sharedInstance.loginUser(login: self.nameTextField.text ?? "", password: self.passwordTextField.text ?? "") { isSuccess in
+            if isSuccess {
+                SVProgressHUD.dismiss()
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "MainTabbarController")
+                vc.modalPresentationStyle = .fullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                self.present(vc, animated: true)
+            } else {
+                ProgressHud.showError(withText: "Invalid login or password")
+            }
+        }
     }
+    
+    
+}
+
+extension LoginViewController {
+    
+    
+    
+    
 }

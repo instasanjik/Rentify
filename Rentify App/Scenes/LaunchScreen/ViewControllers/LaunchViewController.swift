@@ -12,9 +12,15 @@ class LaunchViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    var isUserLogged = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let refreshToken = CacheManager.shared.getString(forKey: "refreshToken") {
+            isUserLogged = true
+            Server.sharedInstance.refreshToken = refreshToken
+        }
+            
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,10 +39,26 @@ class LaunchViewController: UIViewController {
 
 extension LaunchViewController: SwiftyGifDelegate {
     func gifDidStop(sender: UIImageView) {
+        if isUserLogged {
+            openTabbar()
+        } else {
+            openAuthorization()
+        }
+    }
+    
+    func openAuthorization() {
         let storyboard = UIStoryboard(name: "Authorization", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "OpeningScreenViewController")
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+    }
+    
+    func openTabbar() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MainTabbarController")
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .coverVertical
+        self.present(vc, animated: true)
     }
 }
