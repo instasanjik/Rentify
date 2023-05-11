@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class User {
     
@@ -45,6 +46,22 @@ class Server {
     }
     
     func sendReport(reportText text: String) {
-        
+        let parameters = [
+            "text" : text
+        ]
+        AF.request(URLs.reportProblemAPI, method: .post, parameters: parameters).responseData { response in
+            var resultString = ""
+            
+            if let data = response.data {
+                resultString = String(data: data, encoding: .utf8)!
+                print(resultString)
+            }
+            
+            if response.response?.statusCode == 200 {
+                ProgressHud.showSuccess(withText: "Thanks you for your feedback!")
+            } else {
+                Logger.log(.error, "\(response.response?.statusCode)")
+            }
+        }
     }
 }

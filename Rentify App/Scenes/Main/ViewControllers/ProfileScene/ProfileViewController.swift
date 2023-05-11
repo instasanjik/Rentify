@@ -39,17 +39,25 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 4 {
+        if indexPath.row == 3 {
+            
+        } else if indexPath.row == 4 {
             let alert = UIAlertController(title: "Report a problem", message: "Tell us more about your own problem that you are facing, we will solve it in the near future", preferredStyle: .alert)
 
             alert.addTextField { (textField) in
-                textField.text = "I ran into a problem at the moment of "
+                textField.placeholder = "I ran into a problem on .."
             }
 
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                 let textField = alert?.textFields![0]
+                Server.sharedInstance.sendReport(reportText: textField!.text!)
                 print("Text field: \(textField!.text)")
             }))
+            
+            let action2 = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                print("Cancel is pressed......")
+            }
+            alert.addAction(action2)
 
             self.present(alert, animated: true, completion: nil)
         } else if indexPath.row == 5 {
