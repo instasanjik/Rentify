@@ -47,7 +47,12 @@ class Server {
         let parameters = [
             "text" : text
         ]
-        AF.request(URLs.reportProblemAPI, method: .post, parameters: parameters).responseData { response in
+        print(parameters)
+        AF.request(URLs.reportProblemAPI,
+                   method: .post,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default
+        ).responseData { response in
             var resultString = ""
             
             if let data = response.data {
