@@ -13,10 +13,13 @@ class OTPViewController: UIViewController {
     
     @IBOutlet weak var OTPView: SVPinView!
     @IBOutlet weak var sendCodeAgainButton: UIButton!
+    @IBOutlet weak var textLabel: UILabel!
+    var email: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startTimer()
+        textLabel.text! += email
         OTPView.didFinishCallback = { [weak self] pin in
             DispatchQueue.main.async {
                 SVProgressHUD.show()
@@ -27,27 +30,21 @@ class OTPViewController: UIViewController {
                 }
             }
         }
-        // Do any additional setup after loading the view.
     }
     
-    var timeLeft = 60 // Time limit in seconds
-    var timer: Timer? // Timer object for updating button title
+    var timeLeft = 60
+    var timer: Timer?
 
     func startTimer() {
-        // Disable button while timer is running
         sendCodeAgainButton.isEnabled = false
         
-        // Set up timer to update button title every second
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] _ in
             guard let self = self else { return }
             
-            // Update time left
             self.timeLeft -= 1
             
-            // Update button title
             self.sendCodeAgainButton.setTitle("Send code again in \(self.timeLeft) seconds", for: .normal)
             
-            // If time is up, invalidate timer and enable button
             if self.timeLeft == 0 {
                 self.timer?.invalidate()
                 self.timer = nil
