@@ -9,9 +9,11 @@ import Foundation
 import Alamofire
 
 class User {
+    static let shared = User()
+    
     var email: String? = nil
-    let avatarLink: String? = ""
-    let userName: String? = nil
+    var avatarLink: String? = ""
+    var userName: String? = nil
 }
 
 class Server {

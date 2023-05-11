@@ -12,4 +12,5 @@ target 'Rentify App' do
   pod 'SnapKit'
   pod 'Alamofire'
   pod 'SkeletonView'
+  pod 'Kingfisher', '~> 7.0'
 end
