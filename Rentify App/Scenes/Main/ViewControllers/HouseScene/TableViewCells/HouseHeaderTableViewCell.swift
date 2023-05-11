@@ -14,6 +14,7 @@ class HouseHeaderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        adPreviewImageView.image = UIImage(named: "House-1")
     }
     
     func setupData(imageLink: String) {

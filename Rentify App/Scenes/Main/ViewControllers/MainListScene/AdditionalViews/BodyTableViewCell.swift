@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol BodyTableViewCellDelegate: AnyObject {
+    func didSelectItemAt()
+}
+
 class BodyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var listTableView: UITableView!
+    var delegate: BodyTableViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,7 +50,12 @@ extension BodyTableViewCell: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.houseImageView.image = UIImage(named: "House-1")
         }
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelectItemAt()
     }
     
     

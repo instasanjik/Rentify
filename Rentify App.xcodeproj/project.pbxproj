@@ -307,7 +307,6 @@
 				047FA09929F3D39500C5FCBB /* HousesScene */,
 				047FA09D29F3D45800C5FCBB /* MainListScene */,
 				04A7F85229F3E3CE00B7EDC8 /* ProfileScene */,
-				047FA09329F3D0F000C5FCBB /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -373,6 +372,7 @@
 		04A7F85229F3E3CE00B7EDC8 /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				047FA09329F3D0F000C5FCBB /* ProfileViewController.swift */,
 				04A7F85529F3E41300B7EDC8 /* ProfileBlockTableViewCell.swift */,
 			);
 			path = ProfileScene;

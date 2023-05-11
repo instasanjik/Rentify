@@ -9,6 +9,7 @@ import UIKit
 
 class HousePriceTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var idView: UIView!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
@@ -18,6 +19,9 @@ class HousePriceTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        idView.clipsToBounds = true
+        idView.layer.borderWidth = 1
+        idView.layer.borderColor = UIColor.tintColor.cgColor
     }
     
     func setData(id: String, price: String, reviews: String, address: String) {

@@ -16,8 +16,9 @@ class HeaderTableViewCell: UITableViewCell {
         typesCollectionView.delegate = self
         typesCollectionView.dataSource = self
         typesCollectionView.showsHorizontalScrollIndicator = false
-        // Initialization code
+        typesCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .bottom)
     }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -36,8 +37,9 @@ extension HeaderTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeCollectionViewCell", for: indexPath) as! TypeCollectionViewCell
         if indexPath.row == 0 {
-            cell.iconImageView.image = UIImage(named: "Buildings_Icon_ON")
+            cell.iconImageView.image = UIImage(named: "Buildings_Icon")
             cell.imageName = "Buildings_Icon"
+            cell.isSelected = true
             cell.nameLabel.text = "All ads"
         } else if indexPath.row == 1 {
             cell.iconImageView.image = UIImage(named: "House_Icon")

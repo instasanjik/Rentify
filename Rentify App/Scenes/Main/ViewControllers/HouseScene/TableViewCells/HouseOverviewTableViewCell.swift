@@ -18,7 +18,9 @@ class Landlord {
 }
 
 class HouseOverviewTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var callButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,5 +35,17 @@ class HouseOverviewTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func callButtonTapped(_ sender: Any) {
+        if let url = URL(string: "tel://77479881965") {
+             UIApplication.shared.open(url)
+        }
+    }
+    
+    @IBAction func mailButtonTapped(_ sender: Any) {
+        let email = "koshkarbayev.07@gmail.com"
+        if let url = URL(string: "mailto:\(email)") {
+            UIApplication.shared.open(url)  
+        }
+    }
 }

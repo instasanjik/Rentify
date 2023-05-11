@@ -20,13 +20,13 @@ class LoginViewController: UIViewController {
     }
     @IBAction func loginTapped(_ sender: UIButton) {
         SVProgressHUD.show()
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+//        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
             SVProgressHUD.dismiss()
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "MainTabbarController")
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true)
-        }
+//        }
     }
 }

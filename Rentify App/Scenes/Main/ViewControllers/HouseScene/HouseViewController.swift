@@ -8,13 +8,19 @@
 import UIKit
 
 class HouseViewController: UIViewController {
-
-    @IBOutlet weak var mainTableView: UITableView!
+    
+    @IBOutlet weak var contentTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainTableView.delegate = self
-        mainTableView.dataSource = self
+        print(isViewLoaded)
+        print(contentTableView)
+    }
+    
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(contentTableView)
     }
     
     
@@ -47,6 +53,27 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 307
+        case 1:
+            return 124
+        case 2:
+            return 170
+        case 3:
+            return 257
+        case 4:
+            return 214
+        case 5:
+            return 116+22
+        case 6:
+            return 264+100
+        default:
+            return 1000
+        }
     }
     
     

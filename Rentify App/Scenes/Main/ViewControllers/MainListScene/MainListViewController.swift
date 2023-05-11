@@ -32,7 +32,8 @@ extension MainListViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell", for: indexPath)
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BodyTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BodyTableViewCell", for: indexPath) as! BodyTableViewCell
+            cell.delegate = self
             return cell
         }
     }
@@ -47,4 +48,11 @@ extension MainListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     
+}
+
+extension MainListViewController: BodyTableViewCellDelegate {
+    func didSelectItemAt() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HouseViewController")
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }
