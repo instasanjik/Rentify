@@ -1743,6 +1743,11 @@
                                             <constraint firstAttribute="width" constant="128" id="7lm-2v-ZW9"/>
                                             <constraint firstAttribute="height" constant="128" id="Q0V-31-tab"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.conrnerRadius">
+                                                <integer key="value" value="64"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@instasanjik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24c-AC-8Le">
                                         <rect key="frame" x="15" y="140" width="98" height="20.333333333333343"/>

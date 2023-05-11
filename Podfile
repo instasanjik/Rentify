@@ -11,4 +11,5 @@ target 'Rentify App' do
   pod 'SVProgressHUD'
   pod 'SnapKit'
   pod 'Alamofire'
+  pod 'SkeletonView'
 end
