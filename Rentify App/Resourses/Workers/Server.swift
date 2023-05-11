@@ -9,11 +9,9 @@ import Foundation
 import Alamofire
 
 class User {
-    
     var email: String? = nil
     let avatarLink: String? = ""
     let userName: String? = nil
-    
 }
 
 class Server {

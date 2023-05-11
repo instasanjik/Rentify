@@ -1735,17 +1735,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="kQI-a8-XSy">
-                                <rect key="frame" x="107.66666666666667" y="115.00000000000001" width="177.66666666666663" height="160.33333333333337"/>
+                                <rect key="frame" x="132.66666666666666" y="115.00000000000001" width="127.99999999999997" height="160.33333333333337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ql2-io-jEH">
-                                        <rect key="frame" x="24.999999999999986" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="7lm-2v-ZW9"/>
                                             <constraint firstAttribute="height" constant="128" id="Q0V-31-tab"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sanzhar Koshkarbayev" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24c-AC-8Le">
-                                        <rect key="frame" x="0.0" y="140" width="177.66666666666666" height="20.333333333333343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@instasanjik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24c-AC-8Le">
+                                        <rect key="frame" x="15" y="140" width="98" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

@@ -11,7 +11,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var talbeView: UITableView!
     
-    let PROFILE_BLOCKS = ["Settings", "My awards", "Notifications", "Write a letter to the developers", "Report About the problem", "Leave"]
+    let PROFILE_BLOCKS = ["Profile settings", "My awards", "Notifications", "Write a letter to the developers", "Report About the problem", "Leave"]
     let ICON_NAMES = ["gear", "star", "bell", "mail", "exclamationmark.2", "rectangle.portrait.and.arrow.right"]
     
     override func viewDidLoad() {
@@ -39,43 +39,15 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 3 {
-            
-        } else if indexPath.row == 4 {
-            let alert = UIAlertController(title: "Report a problem", message: "Tell us more about your own problem that you are facing, we will solve it in the near future", preferredStyle: .alert)
-
-            alert.addTextField { (textField) in
-                textField.placeholder = "I ran into a problem on .."
-            }
-
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-                let textField = alert?.textFields![0]
-                Server.sharedInstance.sendReport(reportText: textField!.text!)
-                print("Text field: \(textField!.text)")
-            }))
-            
-            let action2 = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-                print("Cancel is pressed......")
-            }
-            alert.addAction(action2)
-
-            self.present(alert, animated: true, completion: nil)
-        } else if indexPath.row == 5 {
-            let alertController = UIAlertController(title: "Leave", message: "Are you sure want to leave the application?", preferredStyle: .actionSheet)
-            
-            let action1 = UIAlertAction(title: "Yes", style: .default) { (action) in
-                CacheManager.shared.removeString(forKey: "refreshToken")
-                self.showAuthorization()
-            }
-            alertController.addAction(action1)
-            
-            let action2 = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-                print("Cancel is pressed......")
-            }
-            alertController.addAction(action2)
-            self.present(alertController, animated: true, completion: nil)
+        switch indexPath.row {
+        case 0: openSettingsScene()
+        case 1: openAwardsScene()
+        case 2: openNotificationScene()
+        case 3: sentLetterToDevs()
+        case 4: spawnReportAProblemModal()
+        case 5: openLeaveConfirmationSceen()
+        default: return
         }
-        return
     }
     
     
@@ -86,4 +58,61 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
+    
+    func sentLetterToDevs() {
+        let email = "koshkarbayev.07@gmail.com"
+        if let url = URL(string: "mailto:\(email)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func openSettingsScene() {
+        Logger.log(.action, "Settings tapped")
+    }
+    
+    func openAwardsScene() {
+        Logger.log(.action, "Awards tapped")
+    }
+    
+    func openNotificationScene() {
+        Logger.log(.action, "Notifications tapped")
+    }
+    
+    func spawnReportAProblemModal() {
+        let alert = UIAlertController(title: "Report a problem", message: "Tell us more about your own problem that you are facing, we will solve it in the near future", preferredStyle: .alert)
+
+        alert.addTextField { (textField) in
+            textField.placeholder = "I ran into a problem on .."
+        }
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            Server.sharedInstance.sendReport(reportText: textField!.text!)
+            print("Text field: \(textField!.text)")
+        }))
+        
+        let action2 = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            print("Cancel is pressed......")
+        }
+        alert.addAction(action2)
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func openLeaveConfirmationSceen() {
+        let alertController = UIAlertController(title: "Leave", message: "Are you sure want to leave the application?", preferredStyle: .actionSheet)
+        
+        let action1 = UIAlertAction(title: "Yes", style: .destructive) { (action) in
+            CacheManager.shared.removeString(forKey: "refreshToken")
+            self.showAuthorization()
+        }
+        alertController.addAction(action1)
+        
+        let action2 = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            print("Cancel is pressed......")
+        }
+        alertController.addAction(action2)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
