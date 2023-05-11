@@ -37,21 +37,17 @@ extension HeaderTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TypeCollectionViewCell", for: indexPath) as! TypeCollectionViewCell
         if indexPath.row == 0 {
-            cell.iconImageView.image = UIImage(named: "Buildings_Icon")
-            cell.imageName = "Buildings_Icon"
+            cell.imageName = "All_Icon"
             cell.isSelected = true
             cell.nameLabel.text = "All ads"
         } else if indexPath.row == 1 {
-            cell.iconImageView.image = UIImage(named: "House_Icon")
             cell.imageName = "House_Icon"
             cell.nameLabel.text = "Houses"
         } else if indexPath.row == 2 {
-            cell.iconImageView.image = UIImage(named: "Buildings_Icon")
             cell.imageName = "Buildings_Icon"
             cell.nameLabel.text = "Apartments"
         } else {
-            cell.iconImageView.image = UIImage(named: "Buildings_Icon")
-            cell.imageName = "Buildings_Icon"
+            cell.imageName = "Room_Icon"
             cell.nameLabel.text = "Rooms"
         }
         return cell
