@@ -10,4 +10,5 @@ target 'Rentify App' do
   pod 'SwiftyGif'
   pod 'SVProgressHUD'
   pod 'SnapKit'
+  pod 'Alamofire'
 end
