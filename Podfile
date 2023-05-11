@@ -13,4 +13,5 @@ target 'Rentify App' do
   pod 'Alamofire'
   pod 'SkeletonView'
   pod 'Kingfisher', '~> 7.0'
+  pod 'IQKeyboardManagerSwift'
 end
