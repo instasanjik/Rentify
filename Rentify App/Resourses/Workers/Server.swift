@@ -7,12 +7,13 @@
 
 import Foundation
 import Alamofire
+import Kingfisher
 
 class User {
     static let shared = User()
     
     var email: String? = nil
-    var avatarLink: String? = ""
+    var avatarLink: String? = nil
     var userName: String? = nil
 }
 
@@ -68,5 +69,53 @@ class Server {
                 Logger.log(.error, "\(response.response?.statusCode)")
             }
         }
+    }
+    
+    func getProfilePageData(handler: @escaping (UIImage?, String) -> Void) {
+        getUserData {
+            guard let url = URL.init(string: User.shared.avatarLink ?? "") else {
+                return handler(nil, User.shared.userName ?? "@undefined")
+            }
+            let resource = ImageResource(downloadURL: url)
+            
+            KingfisherManager.shared.retrieveImage(with: url) { result in
+                switch result {
+                    case .success(let value):
+                        print("Image: \(value.image). Got from: \(value.cacheType)")
+                        handler(value.image, "@\(User.shared.userName ?? "@undefined")")
+                    case .failure:
+                        handler(nil, "@\(User.shared.userName ?? "@undefined")")
+                }
+            }
+        }
+    }
+    
+    func getUserData(handler: @escaping () -> Void) {
+        let parameters = [
+            "access_token" : Server.sharedInstance.accessToken
+        ]
+        
+//        AF.request(URLs.getUserData,
+//                   method: .get,
+//                   parameters: parameters,
+//                   encoding: JSONEncoding.default
+//        ).responseData { response in
+//            var resultString = ""
+//
+//            if let data = response.data {
+//                resultString = String(data: data, encoding: .utf8)!
+//                print(resultString)
+//            }
+//
+//            if response.response?.statusCode == 200 {
+//                ProgressHud.showSuccess(withText: "Thanks you for your feedback!")
+//            } else {
+//                Logger.log(.error, "\(response.response?.statusCode)")
+//            }
+//        }
+        User.shared.userName = "instasanjik"
+        User.shared.avatarLink = "https://sun9-34.userapi.com/impg/oRYpVlutkxYc2ZCIaBc7T039YJN4ho2MNU7Qvw/uvuRJ0T3e18.jpg?size=1620x2160&quality=95&sign=1225a282ccc277050b612f059f2a36d0&type=album"
+        User.shared.email = "koshkarbayev.07@gmail.com"
+        handler()
     }
 }

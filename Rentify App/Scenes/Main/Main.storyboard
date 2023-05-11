@@ -1737,7 +1737,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="kQI-a8-XSy">
                                 <rect key="frame" x="132.66666666666666" y="115.00000000000001" width="127.99999999999997" height="160.33333333333337"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ql2-io-jEH">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ql2-io-jEH">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="7lm-2v-ZW9"/>
@@ -1749,8 +1749,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@instasanjik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24c-AC-8Le">
-                                        <rect key="frame" x="15" y="140" width="98" height="20.333333333333343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24c-AC-8Le">
+                                        <rect key="frame" x="61.666666666666686" y="140" width="4.3333333333333286" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1825,7 +1825,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="My profile" id="NA0-MF-nhr"/>
                     <connections>
+                        <outlet property="imageView" destination="ql2-io-jEH" id="siF-m5-Ooe"/>
                         <outlet property="talbeView" destination="bo1-0b-hci" id="H0v-68-GJM"/>
+                        <outlet property="usernameLabel" destination="24c-AC-8Le" id="WIs-EX-4Ac"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fb2-sT-hg4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1835,7 +1837,6 @@
     </scenes>
     <resources>
         <image name="Area" width="48" height="48"/>
-        <image name="Avatar" width="512" height="512"/>
         <image name="Awards" width="96" height="96"/>
         <image name="Bathtub" width="56" height="56"/>
         <image name="Bed" width="56" height="56"/>
@@ -1858,6 +1859,7 @@
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
         <image name="location" catalog="system" width="128" height="121"/>
         <image name="slider.vertical.3" catalog="system" width="128" height="110"/>
+        <image name="user_placeholder" width="340" height="340"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

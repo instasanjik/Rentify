@@ -10,6 +10,9 @@ import SkeletonView
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
     @IBOutlet weak var talbeView: UITableView!
     
     let PROFILE_BLOCKS = ["Profile settings", "My awards", "Notifications", "Write a letter to the developers", "Report About the problem", "Leave"]
@@ -17,6 +20,13 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imageView.layer.cornerRadius = 64
+        self.imageView.clipsToBounds = true
+        
+        Server.sharedInstance.getProfilePageData { image, username in
+            self.imageView.image = image
+            self.usernameLabel.text = username
+        }
         talbeView.dataSource = self
         talbeView.delegate = self
     }
