@@ -41,7 +41,7 @@ extension MainListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 287+24
+            return 287 + 24 + 12
         default:
             return 10 * 309 + 100
         }
