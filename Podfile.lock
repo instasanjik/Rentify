@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.6.2)
+  - Cosmos (23.0.0)
   - IQKeyboardManagerSwift (6.5.10)
   - Kingfisher (7.3.2)
   - SkeletonView (1.30.2)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Cosmos (~> 23.0)
   - IQKeyboardManagerSwift
   - Kingfisher (~> 7.0)
   - SkeletonView
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cosmos
     - IQKeyboardManagerSwift
     - Kingfisher
     - SkeletonView
@@ -31,6 +34,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   SkeletonView: 2a4536db5ded1b422459a73e05e08b20c6b3a69b
@@ -39,6 +43,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
 
-PODFILE CHECKSUM: c9df0773c45d06c0f53a4e93255736ad2cf4eed9
+PODFILE CHECKSUM: dc4b8ad140605b14fdb72f48951926843ff79866
 
 COCOAPODS: 1.12.1
