@@ -44,11 +44,7 @@ extension HousesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HouseTableViewCell", for: indexPath) as! HouseTableViewCell
-        if indexPath.row == 0 {
-            cell.houseImageView.image = UIImage(named: "Houses_With_Left")
-        } else {
-            cell.houseImageView.image = UIImage(named: "Houses_With_Left1")
-        }
+        
         return cell
     }
     

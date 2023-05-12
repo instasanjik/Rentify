@@ -8,11 +8,15 @@
 import UIKit
 
 class FavoriteTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var houseImageView: UIImageView!
+    
+    @IBOutlet weak var previewView: SKCurveView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        previewView.setupView(additionalViewBackgroundColor: .black,
+                              additionalViewFont: .systemFont(ofSize: 14, weight: .medium),
+                              additionalViewText: "$1000",
+                              imageForShowing: UIImage(named: "House-2"))
         // Initialization code
     }
 

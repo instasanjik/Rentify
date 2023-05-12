@@ -9,10 +9,13 @@ import UIKit
 
 class HouseTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var houseImageView: UIImageView!
+    @IBOutlet weak var previewView: SKCurveView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        previewView.setupView(additionalViewBackgroundColor: .tintColor,
+                              additionalViewText: "1 day",
+                              imageForShowing: UIImage(named: "House-1"))
         // Initialization code
     }
 

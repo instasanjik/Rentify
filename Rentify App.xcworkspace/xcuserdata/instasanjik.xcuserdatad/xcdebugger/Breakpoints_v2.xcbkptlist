@@ -55,22 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4B729F26-F647-4C4D-A12D-4DA3BE185C5F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Rentify App/Scenes/Main/ViewControllers/FavoritesScene/FavoritesViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9A3C11F9-A6DE-4BC8-BCBC-1664CEADEDD0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -225,6 +209,22 @@
             startingLineNumber = "59"
             endingLineNumber = "59"
             landmarkName = "sendReport(reportText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFF51AEB-9F6D-4E17-993D-C3AE9B1C404B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rentify App/Resourses/Custom Contorls/SKUsernameTextField.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "updateCheckmark(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

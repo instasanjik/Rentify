@@ -27,18 +27,11 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 321
+        return 321+16
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath) as! FavoriteTableViewCell
-        if indexPath.row == 0 {
-            cell.houseImageView.image = UIImage(named: "Favorites_With_Price2")
-        } else if indexPath.row == 1 {
-            cell.houseImageView.image = UIImage(named: "Favorites_With_Price1")
-        } else {
-            cell.houseImageView.image = UIImage(named: "Favorites_With_Price")
-        }
         return cell
     }
     
