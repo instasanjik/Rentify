@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0456B7A32A0DA8550071120C /* SKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456B7A22A0DA8550071120C /* SKButton.swift */; };
+		0456B7A52A0DB1CD0071120C /* SKUsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456B7A42A0DB1CD0071120C /* SKUsernameTextField.swift */; };
 		047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */; };
 		047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03329F3BE0600C5FCBB /* SKTextField.swift */; };
 		047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03529F3BED200C5FCBB /* LoginViewController.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		0456B7A22A0DA8550071120C /* SKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
+		0456B7A42A0DB1CD0071120C /* SKUsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKUsernameTextField.swift; sourceTree = "<group>"; };
 		047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		047FA03329F3BE0600C5FCBB /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		047FA03529F3BED200C5FCBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				047FA04D29F3C8B100C5FCBB /* SKCardView.swift */,
 				047FA04229F3C8B100C5FCBB /* Extensions */,
 				0456B7A22A0DA8550071120C /* SKButton.swift */,
+				0456B7A42A0DB1CD0071120C /* SKUsernameTextField.swift */,
 			);
 			path = "Custom Contorls";
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				04E2547029F7A0F800AD84EC /* HouseGalleryTableViewCell.swift in Sources */,
 				04E2547329F7A11300AD84EC /* HouseLocationTableViewCell.swift in Sources */,
 				047FA06829F3C8B100C5FCBB /* String.swift in Sources */,
+				0456B7A52A0DB1CD0071120C /* SKUsernameTextField.swift in Sources */,
 				047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */,
 				048DC70C29F3D55F006BB476 /* AdTableViewCell.swift in Sources */,
 			);

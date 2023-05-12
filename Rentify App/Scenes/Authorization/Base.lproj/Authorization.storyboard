@@ -126,7 +126,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your new username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QZh-qw-zWL" customClass="SKTextField" customModule="Rentify_App" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your new username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QZh-qw-zWL" customClass="SKUsernameTextField" customModule="Rentify_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="27.333333333333314" width="345" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -142,7 +142,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Youtremail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDq-Jq-9vJ" customClass="SKTextField" customModule="Rentify_App" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDq-Jq-9vJ" customClass="SKTextField" customModule="Rentify_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="27.333333333333371" width="345" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -275,6 +275,9 @@
                     <navigationItem key="navigationItem" title="Sign Up" id="cBx-h4-Sux"/>
                     <connections>
                         <outlet property="checkboxButton" destination="9LB-EK-FeL" id="bnU-kc-Zej"/>
+                        <outlet property="emailTF" destination="wDq-Jq-9vJ" id="pq3-hc-Xk5"/>
+                        <outlet property="passwordTF" destination="MRn-kC-8DH" id="ZJ6-fT-fsb"/>
+                        <outlet property="usernameTF" destination="QZh-qw-zWL" id="Hac-wj-sUU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBS-yp-ruS" sceneMemberID="firstResponder"/>

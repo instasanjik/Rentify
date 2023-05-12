@@ -10,12 +10,12 @@ import SVProgressHUD
 
 class ProgressHud {
     
-    static func showSuccess(withText text: String?, delayTime: Float = 0.2) {
+    static func showSuccess(withText text: String?, delayTime: Float = 2) {
         SVProgressHUD.showSuccess(withStatus: text)
         SVProgressHUD.dismiss(withDelay: TimeInterval(delayTime))
     }
     
-    static func showError(withText text: String?, delayTime: Float = 0.2) {
+    static func showError(withText text: String?, delayTime: Float = 2) {
         SVProgressHUD.showError(withStatus: text)
         SVProgressHUD.dismiss(withDelay: TimeInterval(delayTime))
     }
