@@ -79,14 +79,17 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func openSettingsScene() {
         Logger.log(.action, "Settings tapped")
+        present(ProgressHud.showComingSoonAlert(), animated: true, completion: nil)
     }
     
     func openAwardsScene() {
         Logger.log(.action, "Awards tapped")
+        present(ProgressHud.showComingSoonAlert(), animated: true, completion: nil)
     }
     
     func openNotificationScene() {
         Logger.log(.action, "Notifications tapped")
+        present(ProgressHud.showComingSoonAlert(), animated: true, completion: nil)
     }
     
     func spawnReportAProblemModal() {

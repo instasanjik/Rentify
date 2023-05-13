@@ -20,4 +20,17 @@ class ProgressHud {
         SVProgressHUD.dismiss(withDelay: TimeInterval(delayTime))
     }
     
+    static func showComingSoonAlert() -> UIAlertController {
+        let refreshAlert = UIAlertController(title: "In developing", message: "This page is under development, we will add it later", preferredStyle: .alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "OK😊", style: .default, handler: { (action: UIAlertAction!) in
+              print("Handle Ok logic here")
+        }))
+
+        refreshAlert.addAction(UIAlertAction(title: "OK😣", style: .cancel, handler: { (action: UIAlertAction!) in
+              print("Handle Cancel Logic here")
+        }))
+        return refreshAlert
+    }
+    
 }

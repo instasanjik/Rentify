@@ -2,16 +2,7 @@
   "images" : [
     {
       "filename" : "telegram-cloud-photo-size-2-4089845843152185365-c 1.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "universal"
     }
   ],
   "info" : {

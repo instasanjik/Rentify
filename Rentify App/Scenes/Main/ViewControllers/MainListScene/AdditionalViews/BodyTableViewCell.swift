@@ -45,11 +45,7 @@ extension BodyTableViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath) as! AdTableViewCell
-        if indexPath.row == 0 {
-            cell.houseImageView.image = UIImage(named: "House-1")
-        } else {
-            cell.houseImageView.image = UIImage(named: "House-1")
-        }
+        cell.houseImageView.image = UIImage(named: "House-\(Int.random(in: 1...9))")
         cell.selectionStyle = .none
         return cell
     }
