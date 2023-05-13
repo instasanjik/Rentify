@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol HeaderTableViewCellDelegate: AnyObject {
+    func typeRefreshed(to type: SpaceType?, all: Bool)
+}
+
 class HeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var typesCollectionView: UICollectionView!
+    
+    var delegate: HeaderTableViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,4 +72,21 @@ extension HeaderTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         }
         return CGSize(width: text.width(withConstrainedHeight: 20, font: UIFont.systemFont(ofSize: 15)) + 24 + 32 + 8, height: 40)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var spaceType: SpaceType? = .house
+        switch indexPath.row {
+        case 0: spaceType = .house
+        case 1: spaceType = .house
+        case 2: spaceType = .aparts
+        case 3: spaceType = .room
+        default:
+            spaceType = nil
+            delegate?.typeRefreshed(to: spaceType, all: true)
+            return
+        }
+        
+        delegate?.typeRefreshed(to: spaceType!, all: false)
+    }
+    
 }

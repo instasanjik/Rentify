@@ -8,29 +8,31 @@
 import Foundation
 import UIKit
 
+
+enum SpaceType {
+    case house
+    case aparts
+    case dacha
+    case room
+    
+    func getCriterias() -> [String] {
+        switch self {
+        case .house:
+            return ["Budget", "The area of the adjacent plot", "Size", "Facilities", "With photo", "Number of floors", "Number of bedrooms", "Number of rooms", "Number of restroom", "Accessibility"]
+        case .aparts:
+            return ["Budget", "Size", "Facilities", "With photo", "Floor between", "Number of bedrooms", "Number of rooms", "Number of restroom", "Accessibility"]
+        case .dacha:
+            return ["Budget", "Size", "The area of the adjacent plot", "Garden", "Facilities", "With photo", "Number of floors", "Number of bedrooms", "Number of rooms", "Number of restroom", "Accessibility"]
+        case .room:
+            return ["Budget", "Size", "Facilities", "With photo",  "Accessibility"]
+        }
+    }
+}
+
+
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var tableViewHeigth: NSLayoutConstraint!
-    
-    enum SpaceType {
-        case house
-        case aparts
-        case dacha
-        case room
-        
-        func getCriterias() -> [String] {
-            switch self {
-            case .house:
-                return ["Budget", "The area of the adjacent plot", "Size", "Facilities", "With photo", "Number of floors", "Number of bedrooms", "Number of rooms", "Number of restroom", "Accessibility"]
-            case .aparts:
-                return ["Budget", "Size", "Facilities", "With photo", "Floor between", "Number of bedrooms", "Number of rooms", "Number of restroom", "Accessibility"]
-            case .dacha:
-                return ["Budget", "Size", "The area of the adjacent plot", "Garden", "Facilities", "With photo", "Number of floors", "Number of bedrooms", "Number of rooms", "Number of restroom", "Accessibility"]
-            case .room:
-                return ["Budget", "Size", "Facilities", "With photo",  "Accessibility"]
-            }
-        }
-    }
     
     var type: SpaceType = .house {
         didSet {

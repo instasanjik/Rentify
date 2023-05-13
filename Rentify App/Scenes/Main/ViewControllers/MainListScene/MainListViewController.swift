@@ -29,7 +29,8 @@ extension MainListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell", for: indexPath) as! HeaderTableViewCell
+            cell.delegate = self
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BodyTableViewCell", for: indexPath) as! BodyTableViewCell
@@ -55,4 +56,15 @@ extension MainListViewController: BodyTableViewCellDelegate {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "HouseViewController")
         self.navigationController?.pushViewController(vc!, animated: true)
     }
+}
+
+extension MainListViewController: HeaderTableViewCellDelegate {
+    
+    func typeRefreshed(to type: SpaceType?, all: Bool) {
+        if let cell = mainTalbeView.cellForRow(at: IndexPath(row: 1, section: 0)) as? BodyTableViewCell {
+            cell.listTableView.reloadData()
+        }
+    }
+    
+    
 }

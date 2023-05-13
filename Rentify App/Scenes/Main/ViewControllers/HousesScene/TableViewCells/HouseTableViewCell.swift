@@ -15,7 +15,7 @@ class HouseTableViewCell: UITableViewCell {
         super.awakeFromNib()
         previewView.setupView(additionalViewBackgroundColor: .tintColor,
                               additionalViewText: "1 day",
-                              imageForShowing: UIImage(named: "House-\(Int.random(in: 1...9))"))
+                              imageForShowing: UIImage(named: "House-\(Int.random(in: 1...22))"))
         // Initialization code
     }
 
