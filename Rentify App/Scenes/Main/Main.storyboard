@@ -349,7 +349,7 @@
         <!--Search-->
         <scene sceneID="Z8N-W8-70w">
             <objects>
-                <viewController title="Search" id="BVf-WX-LCT" sceneMemberID="viewController">
+                <viewController title="Search" id="BVf-WX-LCT" customClass="SearchViewController" customModule="Rentify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pjr-Kx-Ome">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,6 +371,9 @@
                                             <segment title="Dacha"/>
                                             <segment title="Room"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="spaceTypeChanged:" destination="BVf-WX-LCT" eventType="valueChanged" id="ROs-LX-Amx"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
@@ -393,7 +396,7 @@
                                             <constraint firstAttribute="height" constant="380" id="SrE-6m-fas"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="MjM-Fc-hFD">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CriteriaTableViewCellString" rowHeight="44" id="MjM-Fc-hFD" customClass="CriteriaTableViewCellString" customModule="Rentify_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="369" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MjM-Fc-hFD" id="VO5-Mc-hOv">
@@ -404,15 +407,15 @@
                                                             <rect key="frame" x="19" y="11.666666666666666" width="326" height="20.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqr-jD-j4T">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="226" height="20.666666666666668"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="20.666666666666668"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$200-1,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONF-Rq-HjO">
-                                                                    <rect key="frame" x="226" y="0.0" width="100" height="20.666666666666668"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No preferences" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONF-Rq-HjO">
+                                                                    <rect key="frame" x="176" y="0.0" width="150" height="20.666666666666668"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="mkX-2i-eF1"/>
+                                                                        <constraint firstAttribute="width" constant="150" id="mkX-2i-eF1"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" systemColor="systemGray2Color"/>
@@ -434,8 +437,12 @@
                                                         <constraint firstAttribute="trailing" secondItem="Cyg-Ap-rsZ" secondAttribute="trailing" constant="24" id="djB-iS-Pxe"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="nameLabel" destination="zqr-jD-j4T" id="eQN-6a-8N4"/>
+                                                    <outlet property="valueLabel" destination="ONF-Rq-HjO" id="oSX-7h-IAy"/>
+                                                </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="uba-KK-NUh">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CriteriaTableViewCellBool" rowHeight="44" id="uba-KK-NUh" customClass="CriteriaTableViewCellBool" customModule="Rentify_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="94" width="369" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uba-KK-NUh" id="Bvc-Ez-7v4">
@@ -472,8 +479,16 @@
                                                         <constraint firstItem="1cL-TY-mwa" firstAttribute="centerY" secondItem="Bvc-Ez-7v4" secondAttribute="centerY" id="McN-ER-p2J"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="boolSwitch" destination="LjK-me-O9i" id="azw-Hr-qTN"/>
+                                                    <outlet property="nameLabel" destination="YW5-B7-t0m" id="NDC-5H-dIV"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BVf-WX-LCT" id="iGZ-Qp-MAD"/>
+                                            <outlet property="delegate" destination="BVf-WX-LCT" id="pbD-Mt-ril"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -538,6 +553,10 @@
                     <navigationItem key="navigationItem" title="Search" id="d57-re-71f">
                         <barButtonItem key="backBarButtonItem" title="Main" id="35C-ut-VXz"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="9ab-4t-Aeh" id="ipI-uJ-S2t"/>
+                        <outlet property="tableViewHeigth" destination="SrE-6m-fas" id="oed-KD-lwv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPz-XK-fx1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

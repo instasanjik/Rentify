@@ -228,5 +228,129 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FCB0BA30-662B-4047-AA8F-8C530600642E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rentify App/Scenes/Main/ViewControllers/MainListScene/SearchViewController/CriteriaTableViewCellString.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "CriteriaTableViewCellString"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "FCB0BA30-662B-4047-AA8F-8C530600642E - 78ea5156492c8116"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rentify_App.CriteriaTableViewCellString.nameLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Rentify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/instasanjik/Desktop/ios/Rentify%20App/Rentify%20App/Scenes/Main/ViewControllers/MainListScene/SearchViewController/CriteriaTableViewCellString.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "FCB0BA30-662B-4047-AA8F-8C530600642E - 487166b3bc412522"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rentify_App.CriteriaTableViewCellString.nameLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Rentify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/instasanjik/Desktop/ios/Rentify%20App/Rentify%20App/Scenes/Main/ViewControllers/MainListScene/SearchViewController/CriteriaTableViewCellString.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "FCB0BA30-662B-4047-AA8F-8C530600642E - 387c4ba24ad2813"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rentify_App.CriteriaTableViewCellString.nameLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Rentify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/instasanjik/Desktop/ios/Rentify%20App/Rentify%20App/Scenes/Main/ViewControllers/MainListScene/SearchViewController/CriteriaTableViewCellString.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "FCB0BA30-662B-4047-AA8F-8C530600642E - 5de3605aaa3da6b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rentify_App.CriteriaTableViewCellString.nameLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Rentify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/instasanjik/Desktop/ios/Rentify%20App/Rentify%20App/Scenes/Main/ViewControllers/MainListScene/SearchViewController/CriteriaTableViewCellString.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "FCB0BA30-662B-4047-AA8F-8C530600642E - 74aedf4d5f7edc58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rentify_App.CriteriaTableViewCellString.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Rentify_App.CriteriaTableViewCellString"
+                  moduleName = "Rentify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/instasanjik/Desktop/ios/Rentify%20App/Rentify%20App/Scenes/Main/ViewControllers/MainListScene/SearchViewController/CriteriaTableViewCellString.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "FCB0BA30-662B-4047-AA8F-8C530600642E - db066bcaafff8b7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rentify_App.CriteriaTableViewCellString.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Rentify_App.CriteriaTableViewCellString&gt;"
+                  moduleName = "Rentify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/instasanjik/Desktop/ios/Rentify%20App/Rentify%20App/Scenes/Main/ViewControllers/MainListScene/SearchViewController/CriteriaTableViewCellString.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1611887-4D88-469D-8EF1-5D9C0D8A31CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rentify App/Scenes/Main/ViewControllers/MainListScene/SearchViewController/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "criterias"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
