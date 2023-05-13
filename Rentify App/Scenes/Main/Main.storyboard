@@ -1892,6 +1892,11 @@
             <point key="canvasLocation" x="1864.885496183206" y="564.78873239436621"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="xah-tX-SiC">
+            <size key="intrinsicContentSize" width="80" height="16"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Area" width="48" height="48"/>
         <image name="Awards" width="96" height="96"/>
