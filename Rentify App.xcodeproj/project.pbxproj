@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0456B7A32A0DA8550071120C /* SKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456B7A22A0DA8550071120C /* SKButton.swift */; };
 		0456B7A52A0DB1CD0071120C /* SKUsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456B7A42A0DB1CD0071120C /* SKUsernameTextField.swift */; };
+		046E139D2A118EF200E040DD /* FacillitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E139C2A118EF200E040DD /* FacillitiesCollectionViewCell.swift */; };
 		047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */; };
 		047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03329F3BE0600C5FCBB /* SKTextField.swift */; };
 		047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03529F3BED200C5FCBB /* LoginViewController.swift */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		0456B7A22A0DA8550071120C /* SKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
 		0456B7A42A0DB1CD0071120C /* SKUsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKUsernameTextField.swift; sourceTree = "<group>"; };
+		046E139C2A118EF200E040DD /* FacillitiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacillitiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		047FA03329F3BE0600C5FCBB /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		047FA03529F3BED200C5FCBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,21 @@
 				048CCDD329F3AF1B00919FB6 /* ViewControllers */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		046E139B2A118ED400E040DD /* FacilitiesViews */ = {
+			isa = PBXGroup;
+			children = (
+				046E139C2A118EF200E040DD /* FacillitiesCollectionViewCell.swift */,
+			);
+			path = FacilitiesViews;
+			sourceTree = "<group>";
+		};
+		046E139E2A118EFA00E040DD /* GalleryViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GalleryViews;
 			sourceTree = "<group>";
 		};
 		047FA02F29F3B9AA00C5FCBB /* ViewControllers */ = {
@@ -455,13 +472,15 @@
 		04E2546229F79F2800AD84EC /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				04B8F16C2A116901000B788B /* CalendarViews */,
 				04E2546529F7A09100AD84EC /* HouseHeaderTableViewCell.swift */,
 				04E2546729F7A0A000AD84EC /* HousePriceTableViewCell.swift */,
 				04E2546929F7A0B300AD84EC /* HouseOverviewTableViewCell.swift */,
 				04E2546B29F7A0C700AD84EC /* HouseCalendarTableViewCell.swift */,
+				04B8F16C2A116901000B788B /* CalendarViews */,
 				04E2546D29F7A0DF00AD84EC /* HouseFacilitiesTableViewCell.swift */,
+				046E139B2A118ED400E040DD /* FacilitiesViews */,
 				04E2546F29F7A0F800AD84EC /* HouseGalleryTableViewCell.swift */,
+				046E139E2A118EFA00E040DD /* GalleryViews */,
 				04E2547229F7A11300AD84EC /* HouseLocationTableViewCell.swift */,
 			);
 			path = TableViewCells;
@@ -655,6 +674,7 @@
 				04B8F1692A0F7A67000B788B /* CriteriaTableViewCellString.swift in Sources */,
 				04E2547329F7A11300AD84EC /* HouseLocationTableViewCell.swift in Sources */,
 				047FA06829F3C8B100C5FCBB /* String.swift in Sources */,
+				046E139D2A118EF200E040DD /* FacillitiesCollectionViewCell.swift in Sources */,
 				0456B7A52A0DB1CD0071120C /* SKUsernameTextField.swift in Sources */,
 				047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */,
 				048DC70C29F3D55F006BB476 /* AdTableViewCell.swift in Sources */,

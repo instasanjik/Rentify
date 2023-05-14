@@ -11,6 +11,17 @@ class HouseFacilitiesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var facilitiesCollectionView: UICollectionView!
     
+    let FACILITIES: [String] = [
+        "Facilities_metro",
+        "Facilities_parking",
+        "Facilities_ping-pong",
+        "Facilities_repair",
+        "Facilities_schools",
+        "Facilities_shops",
+        "Facilities_weather",
+        "Facilities_wifi"
+    ]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         facilitiesCollectionView.delegate = self
@@ -30,16 +41,18 @@ class HouseFacilitiesTableViewCell: UITableViewCell {
 extension HouseFacilitiesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return FACILITIES.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacillitiesCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacillitiesCollectionViewCell", for: indexPath) as! FacillitiesCollectionViewCell
+        cell.imageView.image = UIImage(named: FACILITIES[indexPath.row])
+        cell.nameLabel.text = FACILITIES[indexPath.row].components(separatedBy: "_")[1].capitalized
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 44, height: 77)
+        return CGSize(width: 48, height: 77)
     }
     
     
