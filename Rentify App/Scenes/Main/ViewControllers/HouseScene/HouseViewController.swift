@@ -12,6 +12,9 @@ class HouseViewController: UIViewController {
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var likeBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var contentTableView: UITableView!
+    @IBOutlet weak var footerView: UIView!
+    @IBOutlet weak var totalPriceLabel: UIStackView!
+    @IBOutlet weak var footerBottomConstraint: NSLayoutConstraint!
     
     var isAdFavorite = false {
         didSet {
@@ -25,18 +28,23 @@ class HouseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
         shareBarButtonItem.image = UIImage(named: "Share_Icon")!.withRenderingMode(.alwaysOriginal)
         isAdFavorite = false
+        footerView.layer.borderColor = UIColor.systemGray3.cgColor
     }
     
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print(contentTableView)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
     }
     
     @IBAction func likeTapped(_ sender: UIBarButtonItem) {
         isAdFavorite.toggle()
+    }
+    
+    @IBAction func bookTapped(_ sender: Any) {
+        
     }
     
 }
@@ -52,6 +60,7 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HouseHeaderTableViewCell", for: indexPath) as! HouseHeaderTableViewCell
             cell.setupData(imageLink: "https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+            return cell
         case 1:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HousePriceTableViewCell", for: indexPath) as! HousePriceTableViewCell
             cell.setupData(id: "102923", price: "1920", reviews: "3.1 (6 reviews)", address: "A.Pushkin st. - Republic Avenue, HC \"Rose\"")

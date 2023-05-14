@@ -8,6 +8,10 @@
 import UIKit
 import JTAppleCalendar
 
+protocol HouseCalendarTableViewCellDelegate: AnyObject {
+    func datesSelected(days: [Date], totalDays: Int)
+}
+
 class HouseCalendarTableViewCell: UITableViewCell {
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
@@ -17,6 +21,7 @@ class HouseCalendarTableViewCell: UITableViewCell {
         super.awakeFromNib()
         calendarView.ibCalendarDelegate = self
         calendarView.ibCalendarDataSource = self
+//        calendarView.cachedConfiguration?.firstDayOfWeek = .monday
         
         calendarView.scrollDirection = .horizontal
         calendarView.scrollingMode = .stopAtEachCalendarFrame
@@ -58,10 +63,12 @@ extension HouseCalendarTableViewCell: JTAppleCalendarViewDataSource, JTAppleCale
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        print(date)
         configureCell(view: cell, cellState: cellState)
     }
 
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        print(date)
         configureCell(view: cell, cellState: cellState)
     }
     
@@ -140,6 +147,20 @@ extension HouseCalendarTableViewCell: JTAppleCalendarViewDataSource, JTAppleCale
             cell.dateLabel.textColor = UIColor.black
         } else {
             cell.dateLabel.textColor = UIColor.systemGray4
+            if cellState.date.dayOfWeek == "St" || cellState.date.dayOfWeek == "Sn" {
+                cell.dateLabel.textColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+            }
+        }
+        
+        if (cellState.date.dayOfWeek == "St" || cellState.date.dayOfWeek == "Sn") && cellState.dateBelongsTo == .thisMonth {
+            cell.dateLabel.textColor = UIColor.red
+        }
+        
+        if cellState.date <= Date() {
+            cell.dateLabel.textColor = UIColor.systemGray4
+            if cellState.date.dayOfWeek == "St" || cellState.date.dayOfWeek == "Sn" {
+                cell.dateLabel.textColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+            }
         }
     }
     
@@ -156,6 +177,13 @@ extension HouseCalendarTableViewCell: JTAppleCalendarViewDataSource, JTAppleCale
             let followingDay = testCalendar.date(byAdding: .day, value: 1, to: cellState.date)!
             calendarView.selectDates(from: followingDay, to: rangeSelectedDates.last!, keepSelectionIfMultiSelectionAllowed: false)
         }
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, shouldSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) -> Bool {
+        if date < Date() {
+            return false
+        }
+        return true
     }
     
     

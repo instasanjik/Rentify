@@ -115,7 +115,7 @@ public struct ConfigurationParameters {
         if let firstDayOfWeek = firstDayOfWeek {
             self.firstDayOfWeek = firstDayOfWeek
         } else {
-            self.firstDayOfWeek = DaysOfWeek(rawValue: calendar.firstWeekday) ?? .sunday
+            self.firstDayOfWeek = DaysOfWeek(rawValue: calendar.firstWeekday) ?? .monday
         }
     }
 }

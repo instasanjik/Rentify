@@ -126,7 +126,7 @@ public enum SelectionType: String {
 /// you can change which day is the first for the week. Sunday is by default.
 public enum DaysOfWeek: Int {
     /// Days of the week.
-    case sunday = 1, monday, tuesday, wednesday, thursday, friday, saturday
+    case monday = 1, tuesday, wednesday, thursday, friday, saturday, sunday
 }
 
 internal enum DelayedTaskType {
