@@ -9,12 +9,24 @@ import UIKit
 
 class HouseViewController: UIViewController {
     
+    @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var likeBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var contentTableView: UITableView!
+    
+    var isAdFavorite = false {
+        didSet {
+            if isAdFavorite {
+                likeBarButtonItem.image = UIImage(named: "Like_Icon_On")!.withRenderingMode(.alwaysOriginal)
+            } else {
+                likeBarButtonItem.image = UIImage(named: "Like_Icon")!.withRenderingMode(.alwaysOriginal)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(isViewLoaded)
-        print(contentTableView)
+        shareBarButtonItem.image = UIImage(named: "Share_Icon")!.withRenderingMode(.alwaysOriginal)
+        isAdFavorite = false
     }
     
     
@@ -23,6 +35,9 @@ class HouseViewController: UIViewController {
         print(contentTableView)
     }
     
+    @IBAction func likeTapped(_ sender: UIBarButtonItem) {
+        isAdFavorite.toggle()
+    }
     
 }
 

@@ -883,23 +883,23 @@
             </objects>
             <point key="canvasLocation" x="3431" y="-294"/>
         </scene>
-        <!--House View Controller-->
+        <!--Apartments-->
         <scene sceneID="WYo-2u-bVv">
             <objects>
                 <viewController restorationIdentifier="HouseViewController" storyboardIdentifier="HouseViewController" id="min-Ml-8ju" customClass="HouseViewController" customModule="Rentify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cwP-Tc-PjY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgy-ih-xFP">
-                                <rect key="frame" x="0.0" y="596" width="393" height="256"/>
+                                <rect key="frame" x="0.0" y="493" width="393" height="256"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="irX-dt-pto"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-Ux-0oO">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HouseHeaderTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HouseHeaderTableViewCell" rowHeight="317" id="vrc-bc-6yK" customClass="HouseHeaderTableViewCell" customModule="Rentify_App" customModuleProvider="target">
@@ -1585,15 +1585,21 @@
                             <constraint firstItem="hWw-Ux-0oO" firstAttribute="leading" secondItem="u0T-Nb-dHF" secondAttribute="leading" id="vht-fU-Y6o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="kVp-Hb-rtE">
+                    <navigationItem key="navigationItem" title="Apartments" leftItemsSupplementBackButton="YES" id="kVp-Hb-rtE">
                         <rightBarButtonItems>
-                            <barButtonItem image="Like_Icon" id="NqB-bx-hD1"/>
-                            <barButtonItem image="Share_Icon" id="Ycq-EN-EM3"/>
+                            <barButtonItem image="Like_Icon" landscapeImage="Like_Icon" largeContentSizeImage="Like_Icon" style="done" id="NqB-bx-hD1">
+                                <connections>
+                                    <action selector="likeTapped:" destination="min-Ml-8ju" id="soN-cC-8aZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="Share_Icon" springLoaded="YES" style="done" id="Ycq-EN-EM3"/>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="contentTableView" destination="hWw-Ux-0oO" id="Up7-YP-FQR"/>
+                        <outlet property="likeBarButtonItem" destination="NqB-bx-hD1" id="VLJ-sv-i3L"/>
+                        <outlet property="shareBarButtonItem" destination="Ycq-EN-EM3" id="SIL-eH-6kE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f12-af-hL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
