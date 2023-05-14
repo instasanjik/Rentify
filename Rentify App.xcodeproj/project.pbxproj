@@ -10,6 +10,7 @@
 		0456B7A32A0DA8550071120C /* SKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456B7A22A0DA8550071120C /* SKButton.swift */; };
 		0456B7A52A0DB1CD0071120C /* SKUsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456B7A42A0DB1CD0071120C /* SKUsernameTextField.swift */; };
 		046E139D2A118EF200E040DD /* FacillitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E139C2A118EF200E040DD /* FacillitiesCollectionViewCell.swift */; };
+		046E13A02A1191A400E040DD /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E139F2A1191A400E040DD /* GalleryCollectionViewCell.swift */; };
 		047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */; };
 		047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03329F3BE0600C5FCBB /* SKTextField.swift */; };
 		047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03529F3BED200C5FCBB /* LoginViewController.swift */; };
@@ -77,6 +78,7 @@
 		0456B7A22A0DA8550071120C /* SKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
 		0456B7A42A0DB1CD0071120C /* SKUsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKUsernameTextField.swift; sourceTree = "<group>"; };
 		046E139C2A118EF200E040DD /* FacillitiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacillitiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		046E139F2A1191A400E040DD /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		047FA03329F3BE0600C5FCBB /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		047FA03529F3BED200C5FCBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		046E139E2A118EFA00E040DD /* GalleryViews */ = {
 			isa = PBXGroup;
 			children = (
+				046E139F2A1191A400E040DD /* GalleryCollectionViewCell.swift */,
 			);
 			path = GalleryViews;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				04E2546A29F7A0B300AD84EC /* HouseOverviewTableViewCell.swift in Sources */,
 				047FA03E29F3C68000C5FCBB /* SignUpViewController.swift in Sources */,
 				047FA08A29F3CA7000C5FCBB /* MainNavigationViewController.swift in Sources */,
+				046E13A02A1191A400E040DD /* GalleryCollectionViewCell.swift in Sources */,
 				04E2546C29F7A0C700AD84EC /* HouseCalendarTableViewCell.swift in Sources */,
 				04B8F1702A116C02000B788B /* DateHeader.swift in Sources */,
 				047FA03A29F3C2F600C5FCBB /* OTPViewController.swift in Sources */,

@@ -43,7 +43,8 @@ extension HouseGalleryTableViewCell: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCollectionViewCell", for: indexPath) as! GalleryCollectionViewCell
+        cell.imageView.image = UIImage(named: "House-\(Int.random(in: 1...22))")
         if indexPath.row == PHOTO_DISPLAY_LIMIT - 1 && isPlusNeeded {
             let view = UIView(frame: cell.bounds)
             view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
@@ -58,7 +59,8 @@ extension HouseGalleryTableViewCell: UICollectionViewDelegate, UICollectionViewD
             view.addSubview(label)
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCollectionViewCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCollectionViewCell", for: indexPath) as! GalleryCollectionViewCell
+            cell.imageView.image = UIImage(named: "House-\(Int.random(in: 1...22))")
             return cell
         }
     }
