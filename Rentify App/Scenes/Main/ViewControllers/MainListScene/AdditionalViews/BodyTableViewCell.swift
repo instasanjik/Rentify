@@ -11,10 +11,33 @@ protocol BodyTableViewCellDelegate: AnyObject {
     func didSelectItemAt()
 }
 
+class Ad {
+    var previewImageLink: String = ""
+    var type: String = ""
+    var price: String = ""
+    var rating: String = ""
+    var address: String = ""
+    var numberOfBedrooms: String = ""
+    var numberOfBathRooms: String = ""
+    var area: String = ""
+    
+    init(previewImageLink: String, type: String, price: String, rating: String, address: String, numberOfBedrooms: String, numberOfBathRooms: String) {
+        self.previewImageLink = previewImageLink
+        self.type = type
+        self.price = price
+        self.rating = rating
+        self.address = address
+        self.numberOfBedrooms = numberOfBedrooms
+        self.numberOfBathRooms = numberOfBathRooms
+    }
+}
+
 class BodyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var listTableView: UITableView!
     var delegate: BodyTableViewCellDelegate?
+    
+    var adsForDisplaying: [Ad] = []
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,13 +45,10 @@ class BodyTableViewCell: UITableViewCell {
         listTableView.delegate = self
         listTableView.showsVerticalScrollIndicator = false
         listTableView.isScrollEnabled = false
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
@@ -36,7 +56,7 @@ class BodyTableViewCell: UITableViewCell {
 extension BodyTableViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return adsForDisplaying.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -45,7 +65,7 @@ extension BodyTableViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath) as! AdTableViewCell
-        cell.houseImageView.image = UIImage(named: "House-\(Int.random(in: 1...22))")
+        cell.setupData(ad: adsForDisplaying[indexPath.row])
         cell.selectionStyle = .none
         return cell
     }

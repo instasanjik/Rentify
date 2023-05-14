@@ -306,8 +306,11 @@
                                                             <connections>
                                                                 <outlet property="addressLabel" destination="xPB-GQ-AmK" id="qfy-RW-VJk"/>
                                                                 <outlet property="houseImageView" destination="MxX-f0-w9o" id="m6p-0q-alK"/>
+                                                                <outlet property="numberOfBathRoomsLabel" destination="V7t-8I-3oW" id="iBK-D0-rbu"/>
+                                                                <outlet property="numberOfBedsLabel" destination="djA-Lr-dXr" id="tSS-Y5-GTW"/>
                                                                 <outlet property="priceLabel" destination="7Vu-vM-uhV" id="kO2-oQ-YeK"/>
                                                                 <outlet property="ratingLabel" destination="xvW-iz-R1g" id="5DA-iP-eEb"/>
+                                                                <outlet property="totalAreaLabel" destination="k51-fd-np0" id="FUe-Yx-1k4"/>
                                                                 <outlet property="typeLabel" destination="4fU-Kk-2m8" id="qHL-60-CnB"/>
                                                             </connections>
                                                         </tableViewCell>
