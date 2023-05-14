@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.6.2)
   - Cosmos (23.0.0)
   - IQKeyboardManagerSwift (6.5.10)
+  - JTAppleCalendar (7.1.8)
   - Kingfisher (7.3.2)
   - SkeletonView (1.30.2)
   - SnapKit (5.6.0)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Alamofire
   - Cosmos (~> 23.0)
   - IQKeyboardManagerSwift
+  - JTAppleCalendar (~> 7.1)
   - Kingfisher (~> 7.0)
   - SkeletonView
   - SnapKit
@@ -27,6 +29,7 @@ SPEC REPOS:
     - Alamofire
     - Cosmos
     - IQKeyboardManagerSwift
+    - JTAppleCalendar
     - Kingfisher
     - SkeletonView
     - SnapKit
@@ -39,6 +42,7 @@ SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  JTAppleCalendar: b7fb40852f5f319fe55c8ec3861f1de0edc99cc8
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   SkeletonView: 2a4536db5ded1b422459a73e05e08b20c6b3a69b
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
@@ -47,6 +51,6 @@ SPEC CHECKSUMS:
   SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 05fcab5b5253aa3dd56a45d38f64166bb176bbe7
+PODFILE CHECKSUM: 145a199ae41067a933c01cab704afdfb37c5879e
 
 COCOAPODS: 1.12.1

@@ -16,4 +16,5 @@ target 'Rentify App' do
   pod 'IQKeyboardManagerSwift'
   pod 'Cosmos', '~> 23.0'
   pod 'SwiftyJSON'
+  pod 'JTAppleCalendar', '~> 7.1'
 end

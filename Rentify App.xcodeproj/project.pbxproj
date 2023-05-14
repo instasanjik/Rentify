@@ -56,6 +56,8 @@
 		04B8F1652A0F76E1000B788B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8F1642A0F76E1000B788B /* SearchViewController.swift */; };
 		04B8F1692A0F7A67000B788B /* CriteriaTableViewCellString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8F1682A0F7A67000B788B /* CriteriaTableViewCellString.swift */; };
 		04B8F16B2A0F7B6C000B788B /* CriteriaTableViewCellBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8F16A2A0F7B6C000B788B /* CriteriaTableViewCellBool.swift */; };
+		04B8F16E2A116918000B788B /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8F16D2A116918000B788B /* DateCell.swift */; };
+		04B8F1702A116C02000B788B /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8F16F2A116C02000B788B /* DateHeader.swift */; };
 		04C821522A0D744200FA96A8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C821512A0D744200FA96A8 /* Server.swift */; };
 		04C821552A0D7A6E00FA96A8 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C821542A0D7A6E00FA96A8 /* CacheManager.swift */; };
 		04C821572A0D7C1900FA96A8 /* ProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C821562A0D7C1900FA96A8 /* ProgressHud.swift */; };
@@ -122,6 +124,8 @@
 		04B8F1642A0F76E1000B788B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		04B8F1682A0F7A67000B788B /* CriteriaTableViewCellString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTableViewCellString.swift; sourceTree = "<group>"; };
 		04B8F16A2A0F7B6C000B788B /* CriteriaTableViewCellBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTableViewCellBool.swift; sourceTree = "<group>"; };
+		04B8F16D2A116918000B788B /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		04B8F16F2A116C02000B788B /* DateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeader.swift; sourceTree = "<group>"; };
 		04C821512A0D744200FA96A8 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		04C821542A0D7A6E00FA96A8 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		04C821562A0D7C1900FA96A8 /* ProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHud.swift; sourceTree = "<group>"; };
@@ -420,6 +424,15 @@
 			path = SearchViewController;
 			sourceTree = "<group>";
 		};
+		04B8F16C2A116901000B788B /* CalendarViews */ = {
+			isa = PBXGroup;
+			children = (
+				04B8F16D2A116918000B788B /* DateCell.swift */,
+				04B8F16F2A116C02000B788B /* DateHeader.swift */,
+			);
+			path = CalendarViews;
+			sourceTree = "<group>";
+		};
 		04C821502A0D743500FA96A8 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +455,7 @@
 		04E2546229F79F2800AD84EC /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				04B8F16C2A116901000B788B /* CalendarViews */,
 				04E2546529F7A09100AD84EC /* HouseHeaderTableViewCell.swift */,
 				04E2546729F7A0A000AD84EC /* HousePriceTableViewCell.swift */,
 				04E2546929F7A0B300AD84EC /* HouseOverviewTableViewCell.swift */,
@@ -610,12 +624,14 @@
 				047FA03829F3C1B000C5FCBB /* PasswordRecoveryViewController.swift in Sources */,
 				047FA09429F3D0F000C5FCBB /* ProfileViewController.swift in Sources */,
 				047FA08829F3CA5B00C5FCBB /* HousesNavigationViewController.swift in Sources */,
+				04B8F16E2A116918000B788B /* DateCell.swift in Sources */,
 				0493858829F2BE060032386F /* AppDelegate.swift in Sources */,
 				047FA08629F3CA2300C5FCBB /* FavoritesNavigationViewController.swift in Sources */,
 				04E2546A29F7A0B300AD84EC /* HouseOverviewTableViewCell.swift in Sources */,
 				047FA03E29F3C68000C5FCBB /* SignUpViewController.swift in Sources */,
 				047FA08A29F3CA7000C5FCBB /* MainNavigationViewController.swift in Sources */,
 				04E2546C29F7A0C700AD84EC /* HouseCalendarTableViewCell.swift in Sources */,
+				04B8F1702A116C02000B788B /* DateHeader.swift in Sources */,
 				047FA03A29F3C2F600C5FCBB /* OTPViewController.swift in Sources */,
 				047FA06429F3C8B100C5FCBB /* Logger.swift in Sources */,
 				04C821552A0D7A6E00FA96A8 /* CacheManager.swift in Sources */,

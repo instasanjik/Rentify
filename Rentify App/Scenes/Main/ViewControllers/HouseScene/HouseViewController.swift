@@ -64,7 +64,7 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
                                               avatarLink: "https://images.pexels.com/photos/936019/pexels-photo-936019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                                               rating: 3.5,
                                               offersCount: 192,
-                                              email: "yerenk.kalibek@gmail.com",
+                                              email: "yeren.kalibek@gmail.com",
                                               phoneNumber: "77479102829"),
                            overview: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled")
             return cell
@@ -97,7 +97,7 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             return 170
         case 3:
-            return 257
+            return 270
         case 4:
             return 214
         case 5:
