@@ -138,6 +138,27 @@ extension String {
         return ceil(boundingBox.width)
     }
     
+    public func beautifulPrice() -> String {
+        let numStr = self
+        var numArray = Array(numStr.reversed())  // Reverse the input string and convert it to an array
+        let numLen = numArray.count
+        
+        if numLen <= 3 {
+            return numStr  // No need to format if the number has 3 or fewer digits
+        }
+        
+        var formattedArray = [Character]()
+        
+        for i in 0..<numLen {
+            formattedArray.append(numArray[i])
+            if (i+1) % 3 == 0 && (i+1) != numLen {
+                formattedArray.append(",")
+            }
+        }
+        
+        return String(formattedArray.reversed())  // Reverse the formatted array and convert it back to a string
+    }
+
     
 }
 

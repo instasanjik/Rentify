@@ -23,17 +23,18 @@ class HousePriceTableViewCell: UITableViewCell {
         idView.layer.borderColor = UIColor.tintColor.cgColor
     }
     
-    func setData(id: String, price: String, reviews: String, address: String) {
+    func setupData(id: String, price: String, reviews: String, address: String) {
         idLabel.text = "ID: \(id)"
         switch User.shared.metric {
         case .dollar:
-            priceLabel.text = "$ \(price)"
+            priceLabel.text = "$\(price.beautifulPrice())"
         case .tg:
             if let price = Double(price) {
                 Server.sharedInstance.convertCurrency(amount: price, from: "USD", to: "KZT") { result in
                     switch result {
                     case .success(let convertedAmount):
-                        self.priceLabel.text = "\(convertedAmount) KZT"
+                        Logger.log(.success, String(convertedAmount))
+                        self.priceLabel.text = "\(String(Int(convertedAmount)).beautifulPrice()) KZT"
                     case .failure(let error):
                         print("Error: \(error.localizedDescription)")
                     }
@@ -44,7 +45,7 @@ class HousePriceTableViewCell: UITableViewCell {
                 Server.sharedInstance.convertCurrency(amount: price, from: "USD", to: "RUB") { result in
                     switch result {
                     case .success(let convertedAmount):
-                        self.priceLabel.text = "\(convertedAmount) KZT"
+                        self.priceLabel.text = "\(String(convertedAmount).beautifulPrice()) RUB"
                     case .failure(let error):
                         print("Error: \(error.localizedDescription)")
                     }

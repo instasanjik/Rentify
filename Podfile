@@ -15,4 +15,5 @@ target 'Rentify App' do
   pod 'Kingfisher', '~> 7.0'
   pod 'IQKeyboardManagerSwift'
   pod 'Cosmos', '~> 23.0'
+  pod 'SwiftyJSON'
 end

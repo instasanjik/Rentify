@@ -945,9 +945,6 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID: 20192" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUU-yQ-jfR">
                                                                             <rect key="frame" x="8" y="2.666666666666667" width="60" height="15.666666666666664"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="60" id="MeN-0Z-CiG"/>
-                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                             <color key="textColor" systemColor="tintColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -985,6 +982,9 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="111.67" id="0nS-fU-ULc"/>
+                                                                    </constraints>
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>

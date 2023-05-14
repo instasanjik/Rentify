@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import Kingfisher
+import SwiftyJSON
 
 enum Metric {
     case dollar
@@ -21,7 +22,7 @@ class User {
     var email: String? = nil
     var avatarLink: String? = nil
     var userName: String? = nil
-    var metric: Metric = .dollar
+    var metric: Metric = .tg
 }
 
 class Server {
@@ -127,20 +128,18 @@ class Server {
     }
     
     func convertCurrency(amount: Double, from: String, to: String, completion: @escaping (Result<Double, Error>) -> Void) {
-        let baseUrl = "https://api.ratesapi.io/api/latest"
-        let parameters = ["base": from, "symbols": to]
-        AF.request(baseUrl, parameters: parameters).validate().responseJSON { response in
+        let url = "https://api.apilayer.com/fixer/convert?to=\(to)&from=USD&amount=\(amount)"
+        //
+        let headers: HTTPHeaders = [
+            "apikey": "IeyAgQ3DWic1Xfw0yaYHHvgPTqSDnKIO"
+        ]
+        AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
-                guard let json = value as? [String: Any],
-                      let rates = json["rates"] as? [String: Double],
-                      let rate = rates[to]
-                else {
-                    completion(.failure(NSError(domain: "Error parsing JSON", code: 0)))
-                    return
-                }
-                let convertedAmount = amount * rate
-                completion(.success(convertedAmount))
+                let json = JSON(response.data!)
+                print(json)
+                let convertedAmount = json["result"].doubleValue
+                completion(.success(Double(Int(convertedAmount)/100*100)))
             case .failure(let error):
                 completion(.failure(error))
             }
