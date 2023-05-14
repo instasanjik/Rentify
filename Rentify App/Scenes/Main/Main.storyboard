@@ -1470,6 +1470,9 @@
                                                                     </constraints>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" title="See all"/>
+                                                                    <connections>
+                                                                        <action selector="seeAllTapped:" destination="UDg-XV-5FK" eventType="touchUpInside" id="o1f-5M-uHm"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>

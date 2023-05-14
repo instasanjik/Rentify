@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol HouseGalleryTableViewCellDelegate: AnyObject {
+    func seeAllTapped(at index: Int)
+}
+
 class HouseGalleryTableViewCell: UITableViewCell {
+    
+    var delegate: HouseGalleryTableViewCellDelegate?
     
     var photoCount = 10
     var isPlusNeeded = false
@@ -17,19 +23,20 @@ class HouseGalleryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         galleryCollectionView.delegate = self
         galleryCollectionView.dataSource = self
     }
     
     func setupData(photoLinks: [String]) {
-        
+        delegate?.seeAllTapped(at: 0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    @IBAction func seeAllTapped(_ sender: Any) {
+    }
+    
 }
 
 extension HouseGalleryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -63,6 +70,10 @@ extension HouseGalleryTableViewCell: UICollectionViewDelegate, UICollectionViewD
             cell.imageView.image = UIImage(named: "House-\(Int.random(in: 1...22))")
             return cell
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.seeAllTapped(at: indexPath.row)
     }
     
     

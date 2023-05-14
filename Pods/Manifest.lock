@@ -1,4 +1,6 @@
 PODS:
+  - Agrume (5.8.6):
+    - SwiftyGif
   - Alamofire (5.6.2)
   - Cosmos (23.0.0)
   - IQKeyboardManagerSwift (6.5.10)
@@ -12,6 +14,7 @@ PODS:
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
+  - Agrume
   - Alamofire
   - Cosmos (~> 23.0)
   - IQKeyboardManagerSwift
@@ -26,6 +29,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Agrume
     - Alamofire
     - Cosmos
     - IQKeyboardManagerSwift
@@ -39,6 +43,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Agrume: 0fc0056444b81009b74fbe7bce71ce1f7561f50b
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
@@ -51,6 +56,6 @@ SPEC CHECKSUMS:
   SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 145a199ae41067a933c01cab704afdfb37c5879e
+PODFILE CHECKSUM: ef9b08fbf51fca82e3d3f48b3d538c59a8fc059a
 
 COCOAPODS: 1.12.1

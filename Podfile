@@ -17,4 +17,5 @@ target 'Rentify App' do
   pod 'Cosmos', '~> 23.0'
   pod 'SwiftyJSON'
   pod 'JTAppleCalendar', '~> 7.1'
+  pod 'Agrume'
 end

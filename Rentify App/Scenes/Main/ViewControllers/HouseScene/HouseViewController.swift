@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Agrume
 
 class HouseViewController: UIViewController {
     
@@ -61,15 +62,15 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            var cell = tableView.dequeueReusableCell(withIdentifier: "HouseHeaderTableViewCell", for: indexPath) as! HouseHeaderTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseHeaderTableViewCell", for: indexPath) as! HouseHeaderTableViewCell
             cell.setupData(imageLink: "https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
             return cell
         case 1:
-            var cell = tableView.dequeueReusableCell(withIdentifier: "HousePriceTableViewCell", for: indexPath) as! HousePriceTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HousePriceTableViewCell", for: indexPath) as! HousePriceTableViewCell
             cell.setupData(id: "102923", price: PRICE, reviews: "3.1 (6 reviews)", address: "A.Pushkin st. - Republic Avenue, HC \"Rose\"")
             return cell
         case 2:
-            var cell = tableView.dequeueReusableCell(withIdentifier: "HouseOverviewTableViewCell", for: indexPath) as! HouseOverviewTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseOverviewTableViewCell", for: indexPath) as! HouseOverviewTableViewCell
             cell.setupData(landlord: Landlord(id: "82910",
                                               name: "Yeren",
                                               surname: "Kalibek",
@@ -81,23 +82,23 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
                            overview: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled")
             return cell
         case 3:
-            var cell = tableView.dequeueReusableCell(withIdentifier: "HouseCalendarTableViewCell", for: indexPath) as! HouseCalendarTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseCalendarTableViewCell", for: indexPath) as! HouseCalendarTableViewCell
             cell.delegate = self
             return cell
         case 4:
-            var cell = tableView.dequeueReusableCell(withIdentifier: "HouseFacilitiesTableViewCell", for: indexPath) as! HouseFacilitiesTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseFacilitiesTableViewCell", for: indexPath) as! HouseFacilitiesTableViewCell
             cell.setupData(facilities: [])
             return cell
         case 5:
-            var cell = tableView.dequeueReusableCell(withIdentifier: "HouseGalleryTableViewCell", for: indexPath) as! HouseGalleryTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseGalleryTableViewCell", for: indexPath) as! HouseGalleryTableViewCell
+            cell.delegate = self
             return cell
         case 6:
-            var cell = tableView.dequeueReusableCell(withIdentifier: "HouseLocationTableViewCell", for: indexPath) as! HouseLocationTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseLocationTableViewCell", for: indexPath) as! HouseLocationTableViewCell
             return cell
         default:
             return UITableViewCell()
         }
-        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -143,5 +144,21 @@ extension HouseViewController: HouseCalendarTableViewCellDelegate {
         }
     }
     
+    
+}
+
+extension HouseViewController: HouseGalleryTableViewCellDelegate {
+    
+    
+    func seeAllTapped(at index: Int) {
+        var images: [UIImage] = []
+        for index in 5...19 {
+            images.append(UIImage(named: "House-\(index)")!)
+        }
+        
+        let agrume = Agrume(images: images, startIndex: index, background: .blurred(.light))
+        
+        agrume.show(from: self)
+    }
     
 }
