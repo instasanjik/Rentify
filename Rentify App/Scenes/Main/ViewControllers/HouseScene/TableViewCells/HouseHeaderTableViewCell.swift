@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HouseHeaderTableViewCell: UITableViewCell {
 
@@ -13,12 +14,14 @@ class HouseHeaderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        adPreviewImageView.image = UIImage(named: "House-1")
     }
     
     func setupData(imageLink: String) {
-        
+        if let url = URL(string: imageLink) {
+            adPreviewImageView.kf.setImage(with: url)
+        } else {
+            adPreviewImageView.image = UIImage(named: "No_Image")
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

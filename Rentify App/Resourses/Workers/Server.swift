@@ -9,12 +9,19 @@ import Foundation
 import Alamofire
 import Kingfisher
 
+enum Metric {
+    case dollar
+    case tg
+    case rub
+}
+
 class User {
     static let shared = User()
     
     var email: String? = nil
     var avatarLink: String? = nil
     var userName: String? = nil
+    var metric: Metric = .dollar
 }
 
 class Server {
@@ -117,5 +124,26 @@ class Server {
         User.shared.avatarLink = "https://sun9-34.userapi.com/impg/oRYpVlutkxYc2ZCIaBc7T039YJN4ho2MNU7Qvw/uvuRJ0T3e18.jpg?size=1620x2160&quality=95&sign=1225a282ccc277050b612f059f2a36d0&type=album"
         User.shared.email = "koshkarbayev.07@gmail.com"
         handler()
+    }
+    
+    func convertCurrency(amount: Double, from: String, to: String, completion: @escaping (Result<Double, Error>) -> Void) {
+        let baseUrl = "https://api.ratesapi.io/api/latest"
+        let parameters = ["base": from, "symbols": to]
+        AF.request(baseUrl, parameters: parameters).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                guard let json = value as? [String: Any],
+                      let rates = json["rates"] as? [String: Double],
+                      let rate = rates[to]
+                else {
+                    completion(.failure(NSError(domain: "Error parsing JSON", code: 0)))
+                    return
+                }
+                let convertedAmount = amount * rate
+                completion(.success(convertedAmount))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

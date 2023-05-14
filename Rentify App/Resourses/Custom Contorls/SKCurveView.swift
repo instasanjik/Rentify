@@ -44,7 +44,6 @@ class SKCurveView: UIView {
         freeform.addArc(withCenter: CGPoint(x: 329, y: 16), radius: 16, startAngle: 0, endAngle: .pi*3/2, clockwise: false)
         freeform.addLine(to: CGPoint(x: 16, y: 0))
         freeform.addArc(withCenter: CGPoint(x: 16, y: 16), radius: 16, startAngle: .pi*3/2, endAngle: .pi, clockwise: false)
-        
         shapeLayer.path = freeform.cgPath
         
         shapeLayer.fillColor = UIColor.white.cgColor

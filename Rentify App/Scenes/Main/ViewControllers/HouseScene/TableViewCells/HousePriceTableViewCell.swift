@@ -18,7 +18,6 @@ class HousePriceTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         idView.clipsToBounds = true
         idView.layer.borderWidth = 1
         idView.layer.borderColor = UIColor.tintColor.cgColor
@@ -26,7 +25,32 @@ class HousePriceTableViewCell: UITableViewCell {
     
     func setData(id: String, price: String, reviews: String, address: String) {
         idLabel.text = "ID: \(id)"
-        priceLabel.text = "$\(price)"
+        switch User.shared.metric {
+        case .dollar:
+            priceLabel.text = "$ \(price)"
+        case .tg:
+            if let price = Double(price) {
+                Server.sharedInstance.convertCurrency(amount: price, from: "USD", to: "KZT") { result in
+                    switch result {
+                    case .success(let convertedAmount):
+                        self.priceLabel.text = "\(convertedAmount) KZT"
+                    case .failure(let error):
+                        print("Error: \(error.localizedDescription)")
+                    }
+                }
+            }
+        case .rub:
+            if let price = Double(price) {
+                Server.sharedInstance.convertCurrency(amount: price, from: "USD", to: "RUB") { result in
+                    switch result {
+                    case .success(let convertedAmount):
+                        self.priceLabel.text = "\(convertedAmount) KZT"
+                    case .failure(let error):
+                        print("Error: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
         ratingLabel.text = reviews
         addressLabel.text = address
     }

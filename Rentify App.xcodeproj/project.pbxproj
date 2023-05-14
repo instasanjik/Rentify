@@ -792,6 +792,7 @@
 				DEVELOPMENT_TEAM = N53NK75LZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rentify App/Resourses/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Rentify;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Authorization;
@@ -821,6 +822,7 @@
 				DEVELOPMENT_TEAM = N53NK75LZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rentify App/Resourses/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Rentify;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Authorization;
