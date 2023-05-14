@@ -16,7 +16,7 @@ class FavoriteTableViewCell: UITableViewCell {
         previewView.setupView(additionalViewBackgroundColor: .black,
                               additionalViewFont: .systemFont(ofSize: 14, weight: .medium),
                               additionalViewText: "$1000",
-                              imageForShowing: UIImage(named: "House-\(Int.random(in: 1...22))"))
+                              imageForShowing: "")
         // Initialization code
     }
 

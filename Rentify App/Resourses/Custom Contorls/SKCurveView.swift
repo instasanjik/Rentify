@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import Kingfisher
 
 class SKCurveView: UIView {
     
@@ -23,8 +23,11 @@ class SKCurveView: UIView {
     func setupView(additionalViewBackgroundColor color: UIColor = .blue,
                    additionalViewFont font: UIFont = .systemFont(ofSize: 16, weight: .medium),
                    additionalViewText text: String = "1 day",
-                   imageForShowing: UIImage? = nil) {
-        let imageView = UIImageView(image: imageForShowing)
+                   imageForShowing: String) {
+        let imageView = UIImageView()
+        if let url = URL(string: imageForShowing) {
+            imageView.kf.setImage(with: url)
+        }
         imageView.frame = bounds
         imageView.contentMode = .scaleAspectFill
         

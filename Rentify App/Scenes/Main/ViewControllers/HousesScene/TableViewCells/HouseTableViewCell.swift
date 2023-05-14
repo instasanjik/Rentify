@@ -10,13 +10,22 @@ import UIKit
 class HouseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var previewView: SKCurveView!
+    @IBOutlet weak var additionalInfoLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var regionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        previewView.setupView(additionalViewBackgroundColor: .tintColor,
-                              additionalViewText: "1 day",
-                              imageForShowing: UIImage(named: "House-\(Int.random(in: 1...22))"))
         // Initialization code
+    }
+    
+    func setupData(promise: RentedPromise) {
+        previewView.setupView(additionalViewBackgroundColor: .tintColor,
+                              additionalViewText: promise.timeLeft,
+                              imageForShowing: promise.previewImageLink)
+        additionalInfoLabel.text = promise.additionalInfo
+        addressLabel.text = promise.address
+        regionLabel.text = promise.region
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
