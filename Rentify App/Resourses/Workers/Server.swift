@@ -22,7 +22,7 @@ class User {
     var email: String? = nil
     var avatarLink: String? = nil
     var userName: String? = nil
-    var metric: Metric = .tg
+    var metric: Metric = .dollar
 }
 
 class Server {

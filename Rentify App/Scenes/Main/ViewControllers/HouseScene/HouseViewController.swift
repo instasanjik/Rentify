@@ -36,19 +36,30 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HouseHeaderTableViewCell", for: indexPath) as! HouseHeaderTableViewCell
-            cell.setupData(imageLink: "")
+            cell.setupData(imageLink: "https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
         case 1:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HousePriceTableViewCell", for: indexPath) as! HousePriceTableViewCell
             cell.setupData(id: "102923", price: "1920", reviews: "3.1 (6 reviews)", address: "A.Pushkin st. - Republic Avenue, HC \"Rose\"")
             return cell
         case 2:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HouseOverviewTableViewCell", for: indexPath) as! HouseOverviewTableViewCell
+            cell.setupData(landlord: Landlord(id: "82910",
+                                              name: "Yeren",
+                                              surname: "Kalibek",
+                                              avatarLink: "https://images.pexels.com/photos/936019/pexels-photo-936019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                                              rating: 3.5,
+                                              offersCount: 192,
+                                              email: "yerenk.kalibek@gmail.com",
+                                              phoneNumber: "77479102829"),
+                           overview: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled")
             return cell
         case 3:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HouseCalendarTableViewCell", for: indexPath) as! HouseCalendarTableViewCell
+            
             return cell
         case 4:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HouseFacilitiesTableViewCell", for: indexPath) as! HouseFacilitiesTableViewCell
+            cell.setupData(facilities: [])
             return cell
         case 5:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HouseGalleryTableViewCell", for: indexPath) as! HouseGalleryTableViewCell
