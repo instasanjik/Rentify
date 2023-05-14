@@ -1799,6 +1799,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_Favorites" translatesAutoresizingMaskIntoConstraints="NO" id="pOC-ci-KfR">
+                                <rect key="frame" x="73.666666666666686" y="318.66666666666669" width="246" height="284.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="284" id="OTJ-qG-CRz"/>
+                                    <constraint firstAttribute="width" constant="246" id="qIy-nl-025"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3U-k1-SZ5">
+                                <rect key="frame" x="126.66666666666669" y="626.66666666666663" width="140" height="40"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.043137254899999998" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="4uF-yE-FZ0"/>
+                                    <constraint firstAttribute="height" constant="40" id="yHI-9z-qpv"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Find listings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="findListingsTapped:" destination="j6V-lK-qi2" eventType="touchUpInside" id="5Va-cy-H73"/>
+                                    <action selector="findListingsTapped:" destination="xVT-se-d2x" eventType="touchUpInside" id="JWr-7z-naD"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dh9-DM-3AN">
                                 <rect key="frame" x="24" y="103" width="345" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1854,6 +1882,9 @@
                                                             <integer key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="callTapped:" destination="Vcg-ZZ-u6E" eventType="touchUpInside" id="aQk-gB-5Nk"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq8-fr-w62" customClass="SKButton" customModule="Rentify_App" customModuleProvider="target">
                                                     <rect key="frame" x="156" y="281" width="140" height="40"/>
@@ -1865,6 +1896,9 @@
                                                     <state key="normal" title="Chat">
                                                         <color key="titleColor" red="0.043137254899999998" green="0.043137254899999998" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="chatTapped:" destination="Vcg-ZZ-u6E" eventType="touchUpInside" id="f8T-gY-UFm"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG7-6Q-mTW">
                                                     <rect key="frame" x="310" y="281" width="35" height="40"/>
@@ -1908,38 +1942,14 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="additionalInfoLabel" destination="q1l-PA-bRK" id="bNF-m2-Hnt"/>
+                                            <outlet property="addressLabel" destination="Sum-14-6Jp" id="tB8-fO-BaX"/>
                                             <outlet property="previewView" destination="1xk-0g-hAf" id="0ev-ad-duy"/>
+                                            <outlet property="regionLabel" destination="PYA-gm-6E2" id="JjK-55-e8V"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No_Rented" translatesAutoresizingMaskIntoConstraints="NO" id="pOC-ci-KfR">
-                                <rect key="frame" x="73.666666666666686" y="318.66666666666669" width="246" height="284.00000000000006"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="284" id="OTJ-qG-CRz"/>
-                                    <constraint firstAttribute="width" constant="246" id="qIy-nl-025"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3U-k1-SZ5">
-                                <rect key="frame" x="126.66666666666669" y="626.66666666666663" width="140" height="40"/>
-                                <color key="backgroundColor" red="0.043137254899999998" green="0.043137254899999998" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="4uF-yE-FZ0"/>
-                                    <constraint firstAttribute="height" constant="40" id="yHI-9z-qpv"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Find listings">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="findListingsTapped:" destination="j6V-lK-qi2" eventType="touchUpInside" id="5Va-cy-H73"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p3h-5b-6ej"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1953,11 +1963,6 @@
                             <constraint firstItem="Dh9-DM-3AN" firstAttribute="top" secondItem="p3h-5b-6ej" secondAttribute="top" id="lAE-Pi-d02"/>
                             <constraint firstItem="p3h-5b-6ej" firstAttribute="trailing" secondItem="Dh9-DM-3AN" secondAttribute="trailing" constant="24" id="vs9-54-Yk2"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Dh9-DM-3AN"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="OoV-Zs-333"/>
                     <connections>
@@ -2134,6 +2139,7 @@
         <image name="Landlord" width="126" height="126"/>
         <image name="Like_Icon" width="32" height="32"/>
         <image name="Message_Icon" width="96" height="97"/>
+        <image name="No_Favorites" width="218" height="284"/>
         <image name="No_Rented" width="246" height="284"/>
         <image name="Search_by_criteria_button" width="1444" height="176"/>
         <image name="Share_Icon" width="32" height="32"/>
