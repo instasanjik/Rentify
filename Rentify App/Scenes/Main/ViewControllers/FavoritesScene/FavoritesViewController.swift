@@ -31,6 +31,12 @@ class FavoritesViewController: UIViewController {
         mainTableView.showsVerticalScrollIndicator = false
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if favorites.isEmpty {
+            mainTableView.isHidden = true
+        }
+    }
+    
     @IBAction func findListingsTapped(_ sender: Any) {
         tabBarController?.selectedIndex = 2
     }
