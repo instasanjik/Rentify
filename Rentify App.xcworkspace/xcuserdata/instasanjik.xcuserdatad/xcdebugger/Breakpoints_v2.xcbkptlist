@@ -78,8 +78,8 @@
             filePath = "Rentify App/Scenes/Main/ViewControllers/HouseScene/HouseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,8 +378,8 @@
             filePath = "Rentify App/Scenes/Main/ViewControllers/HouseScene/TableViewCells/HouseCalendarTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "handleCellTextColor(cell:cellState:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,8 +394,8 @@
             filePath = "Rentify App/Scenes/Main/ViewControllers/HouseScene/TableViewCells/HouseCalendarTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "handleCellTextColor(cell:cellState:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -410,8 +410,8 @@
             filePath = "Rentify App/Scenes/Main/ViewControllers/HouseScene/TableViewCells/HouseCalendarTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "handleCellTextColor(cell:cellState:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,10 +426,26 @@
             filePath = "Rentify App/Scenes/Main/ViewControllers/HouseScene/TableViewCells/HouseCalendarTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "handleCellTextColor(cell:cellState:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "956B27AF-2D84-4BD7-9270-E5E6B419F70F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rentify App/Scenes/Main/ViewControllers/HouseScene/HouseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "datesSelected(days:totalDays:totalWeekends:)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

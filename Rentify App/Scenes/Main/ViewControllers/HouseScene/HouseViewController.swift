@@ -13,8 +13,10 @@ class HouseViewController: UIViewController {
     @IBOutlet weak var likeBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var contentTableView: UITableView!
     @IBOutlet weak var footerView: UIView!
-    @IBOutlet weak var totalPriceLabel: UIStackView!
-    @IBOutlet weak var footerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet var footerBottomConstraint: NSLayoutConstraint!
+    
+    let PRICE = "1920"
     
     var isAdFavorite = false {
         didSet {
@@ -28,7 +30,8 @@ class HouseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBarController?.tabBar.isHidden = true
+        footerBottomConstraint.constant = -120
+//        tabBarController?.tabBar.isHidden = true
         shareBarButtonItem.image = UIImage(named: "Share_Icon")!.withRenderingMode(.alwaysOriginal)
         isAdFavorite = false
         footerView.layer.borderColor = UIColor.systemGray3.cgColor
@@ -36,7 +39,7 @@ class HouseViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        tabBarController?.tabBar.isHidden = false
+//        tabBarController?.tabBar.isHidden = false
     }
     
     @IBAction func likeTapped(_ sender: UIBarButtonItem) {
@@ -63,7 +66,7 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HousePriceTableViewCell", for: indexPath) as! HousePriceTableViewCell
-            cell.setupData(id: "102923", price: "1920", reviews: "3.1 (6 reviews)", address: "A.Pushkin st. - Republic Avenue, HC \"Rose\"")
+            cell.setupData(id: "102923", price: PRICE, reviews: "3.1 (6 reviews)", address: "A.Pushkin st. - Republic Avenue, HC \"Rose\"")
             return cell
         case 2:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HouseOverviewTableViewCell", for: indexPath) as! HouseOverviewTableViewCell
@@ -79,7 +82,7 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 3:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HouseCalendarTableViewCell", for: indexPath) as! HouseCalendarTableViewCell
-            
+            cell.delegate = self
             return cell
         case 4:
             var cell = tableView.dequeueReusableCell(withIdentifier: "HouseFacilitiesTableViewCell", for: indexPath) as! HouseFacilitiesTableViewCell
@@ -115,6 +118,28 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
             return 264+100
         default:
             return 1000
+        }
+    }
+    
+    
+}
+
+extension HouseViewController: HouseCalendarTableViewCellDelegate {
+    
+    func datesSelected(days: [Date], totalDays: Int, totalWeekends: Int) {
+        totalPriceLabel.text = "$\(String((Int(PRICE) ?? 0) / 31 * totalDays).beautifulPrice())"
+        if totalDays == 0 {
+            footerBottomConstraint.constant = -120
+        } else {
+            footerBottomConstraint.constant = 0
+        }
+        self.view.setNeedsUpdateConstraints()
+        self.view.setNeedsLayout()
+        self.footerView.setNeedsUpdateConstraints()
+        self.footerView.setNeedsLayout()
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+            self.footerView.layoutIfNeeded()
         }
     }
     

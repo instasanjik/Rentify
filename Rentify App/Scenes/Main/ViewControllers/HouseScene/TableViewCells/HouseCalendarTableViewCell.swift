@@ -9,10 +9,20 @@ import UIKit
 import JTAppleCalendar
 
 protocol HouseCalendarTableViewCellDelegate: AnyObject {
-    func datesSelected(days: [Date], totalDays: Int)
+    func datesSelected(days: [Date], totalDays: Int, totalWeekends: Int)
 }
 
 class HouseCalendarTableViewCell: UITableViewCell {
+    
+    var selectedDays: [Date] = [] {
+        didSet {
+            var totalWeekends = 0
+            selectedDays.forEach { if $0.dayOfWeek == "St" || $0.dayOfWeek == "Sn" { totalWeekends += 1 }  }
+            delegate?.datesSelected(days: selectedDays, totalDays: selectedDays.count, totalWeekends: totalWeekends)
+        }
+    }
+    
+    var delegate: HouseCalendarTableViewCellDelegate?
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     let testCalendar = Calendar(identifier: .gregorian)
@@ -64,11 +74,18 @@ extension HouseCalendarTableViewCell: JTAppleCalendarViewDataSource, JTAppleCale
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         print(date)
+        selectedDays.append(date)
         configureCell(view: cell, cellState: cellState)
     }
 
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         print(date)
+        for (index, sdate) in selectedDays.enumerated() {
+            if sdate == date {
+                selectedDays.remove(at: index)
+                break
+            }
+        }
         configureCell(view: cell, cellState: cellState)
     }
     
