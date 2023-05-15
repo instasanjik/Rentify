@@ -27,6 +27,7 @@ class CacheManager {
     
     var favorites: [FavoritePromise] = []
     var rentedPromises: [RentedPromise] = []
+    var ads: [Ad] = []
     
     private let userDefaults: UserDefaults
     

@@ -342,7 +342,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8RD-5L-QCD"/>
                     <connections>
-                        <outlet property="mainTalbeView" destination="aIV-pq-3ga" id="h1K-k7-FZ1"/>
+                        <outlet property="mainTableView" destination="aIV-pq-3ga" id="h1K-k7-FZ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

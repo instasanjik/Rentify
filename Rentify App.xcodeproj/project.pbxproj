@@ -14,6 +14,7 @@
 		046E13A42A126FA900E040DD /* FavoritePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13A32A126FA900E040DD /* FavoritePromise.swift */; };
 		046E13A62A126FCA00E040DD /* RentedPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13A52A126FCA00E040DD /* RentedPromise.swift */; };
 		046E13A82A12700F00E040DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13A72A12700F00E040DD /* User.swift */; };
+		046E13AA2A12B2DF00E040DD /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13A92A12B2DF00E040DD /* Ad.swift */; };
 		047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */; };
 		047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03329F3BE0600C5FCBB /* SKTextField.swift */; };
 		047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03529F3BED200C5FCBB /* LoginViewController.swift */; };
@@ -85,6 +86,7 @@
 		046E13A32A126FA900E040DD /* FavoritePromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePromise.swift; sourceTree = "<group>"; };
 		046E13A52A126FCA00E040DD /* RentedPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentedPromise.swift; sourceTree = "<group>"; };
 		046E13A72A12700F00E040DD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		046E13A92A12B2DF00E040DD /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		047FA03329F3BE0600C5FCBB /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		047FA03529F3BED200C5FCBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				046E13A32A126FA900E040DD /* FavoritePromise.swift */,
 				046E13A52A126FCA00E040DD /* RentedPromise.swift */,
 				046E13A72A12700F00E040DD /* User.swift */,
+				046E13A92A12B2DF00E040DD /* Ad.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 			files = (
 				047FA09029F3D0AA00C5FCBB /* HousesViewController.swift in Sources */,
 				04E2546429F79F4F00AD84EC /* HouseViewController.swift in Sources */,
+				046E13AA2A12B2DF00E040DD /* Ad.swift in Sources */,
 				04A7F85B29F416FF00B7EDC8 /* BodyTableViewCell.swift in Sources */,
 				04B8F16B2A0F7B6C000B788B /* CriteriaTableViewCellBool.swift in Sources */,
 				046E13A82A12700F00E040DD /* User.swift in Sources */,

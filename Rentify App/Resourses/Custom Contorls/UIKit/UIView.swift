@@ -18,12 +18,12 @@ extension UIView {
         layer.add(animation, forKey: "shake")
     }
     
-    func showLoading() {
+    func showLoading(style: UIActivityIndicatorView.Style = .large) {
         self.subviews.forEach({ $0.isHidden = true })
         let loadingView = UIActivityIndicatorView()
         loadingView.startAnimating()
         loadingView.hidesWhenStopped = true
-        loadingView.style = .large
+        loadingView.style = style
         Logger.log(.success, "Loading started")
         self.addSubview(loadingView)
         loadingView.snp.makeConstraints { make in

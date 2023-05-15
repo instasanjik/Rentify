@@ -10,6 +10,10 @@ import Alamofire
 import Kingfisher
 import SwiftyJSON
 
+enum AdType {
+    case all, houses, aparments, rooms
+}
+
 class Server {
     
     static let sharedInstance = Server()
@@ -194,6 +198,18 @@ class Server {
 //        print(headers)
         
         Timer.scheduledTimer(withTimeInterval: 1.3, repeats: false) { _ in
+            handler([])
+        }
+    }
+    
+    func getAds(type: AdType, handler: @escaping ([Ad])-> Void) {
+        //        guard let accessToken = accessToken else { return }
+        //        let headers: HTTPHeaders = [
+        //            "access_token" : accessToken
+        //        ]
+        //        print(headers)
+        
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
             handler([])
         }
     }

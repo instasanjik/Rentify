@@ -11,27 +11,6 @@ protocol BodyTableViewCellDelegate: AnyObject {
     func didSelectItemAt()
 }
 
-class Ad {
-    var previewImageLink: String = ""
-    var type: String = ""
-    var price: String = ""
-    var rating: String = ""
-    var address: String = ""
-    var numberOfBedrooms: String = ""
-    var numberOfBathRooms: String = ""
-    var area: String = ""
-    
-    init(previewImageLink: String, type: String, price: String, rating: String, address: String, numberOfBedrooms: String, numberOfBathRooms: String) {
-        self.previewImageLink = previewImageLink
-        self.type = type
-        self.price = price
-        self.rating = rating
-        self.address = address
-        self.numberOfBedrooms = numberOfBedrooms
-        self.numberOfBathRooms = numberOfBathRooms
-    }
-}
-
 class BodyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var listTableView: UITableView!
@@ -45,6 +24,14 @@ class BodyTableViewCell: UITableViewCell {
         listTableView.delegate = self
         listTableView.showsVerticalScrollIndicator = false
         listTableView.isScrollEnabled = false
+        
+        listTableView.showLoading(style: .medium)
+        Server.sharedInstance.getAds(type: .all) { ads in
+            self.adsForDisplaying = ads
+            CacheManager.shared.ads = ads
+            self.listTableView.hideLoading()
+//            if sel
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

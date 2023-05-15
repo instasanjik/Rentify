@@ -9,13 +9,16 @@ import UIKit
 
 class MainListViewController: UIViewController {
     
-    @IBOutlet weak var mainTalbeView: UITableView!
+    @IBOutlet weak var mainTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainTalbeView.dataSource = self
-        mainTalbeView.delegate = self
+        mainTableView.dataSource = self
+        mainTableView.delegate = self
+        mainTableView.rowHeight = UITableView.automaticDimension
+        mainTableView.estimatedRowHeight = 287 + 24 + 12
+        
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -39,14 +42,14 @@ extension MainListViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            return 287 + 24 + 12
-        default:
-            return 10 * 309 + 100
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+////        switch indexPath.row {
+////        case 0:
+////            return 287 + 24 + 12
+////        default:
+////            return 10 * 309 + 100
+////        }
+//    }
     
     
 }
@@ -61,7 +64,7 @@ extension MainListViewController: BodyTableViewCellDelegate {
 extension MainListViewController: HeaderTableViewCellDelegate {
     
     func typeRefreshed(to type: SpaceType?, all: Bool) {
-        if let cell = mainTalbeView.cellForRow(at: IndexPath(row: 1, section: 0)) as? BodyTableViewCell {
+        if let cell = mainTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? BodyTableViewCell {
             cell.listTableView.reloadData()
         }
     }
