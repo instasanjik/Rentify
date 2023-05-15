@@ -2092,7 +2092,6 @@
                                         <connections>
                                             <outlet property="blockIconImageView" destination="nPs-j7-xnp" id="N6n-Mk-u0Y"/>
                                             <outlet property="nameLabel" destination="bDe-wM-sat" id="fjk-kt-7oF"/>
-                                            <segue destination="nnz-2s-FiV" kind="show" id="OgN-Sn-vct"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2342,22 +2341,23 @@
         <!--My awards-->
         <scene sceneID="nHl-AB-u4d">
             <objects>
-                <viewController id="nnz-2s-FiV" sceneMemberID="viewController">
+                <viewController restorationIdentifier="AwardsViewController" storyboardIdentifier="AwardsViewController" hidesBottomBarWhenPushed="YES" id="nnz-2s-FiV" customClass="AwardsViewController" customModule="Rentify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yDg-NB-0GV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xkD-47-bOC">
-                                <rect key="frame" x="24" y="103" width="345" height="715"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xkD-47-bOC">
+                                <rect key="frame" x="24" y="59" width="345" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A4I-2W-GPu">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A4I-2W-GPu">
+                                    <size key="itemSize" width="158" height="188"/>
+                                    <size key="estimatedItemSize" width="158" height="188"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ex1-D9-91v">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AwardCollectionViewCell" id="Ex1-D9-91v" customClass="AwardCollectionViewCell" customModule="Rentify_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="188"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EiE-cq-l9j">
@@ -2398,11 +2398,13 @@
                                                         <constraint firstItem="Da8-9n-tBl" firstAttribute="centerX" secondItem="IPn-SW-U0J" secondAttribute="centerX" id="5Qi-gF-87F"/>
                                                         <constraint firstItem="yGk-md-Dir" firstAttribute="leading" secondItem="IPn-SW-U0J" secondAttribute="leading" id="A0v-gp-eld"/>
                                                         <constraint firstAttribute="bottom" secondItem="oDc-LS-BjF" secondAttribute="bottom" constant="4" id="BQV-Qv-mct"/>
+                                                        <constraint firstAttribute="width" constant="158" id="EVk-2U-GiW"/>
                                                         <constraint firstItem="yGk-md-Dir" firstAttribute="top" secondItem="Da8-9n-tBl" secondAttribute="bottom" constant="4" id="KEp-SC-atV"/>
                                                         <constraint firstItem="oDc-LS-BjF" firstAttribute="leading" secondItem="IPn-SW-U0J" secondAttribute="leading" constant="4" id="RgC-Th-Wb3"/>
                                                         <constraint firstAttribute="trailing" secondItem="oDc-LS-BjF" secondAttribute="trailing" constant="4" id="SUz-Uf-H5O"/>
                                                         <constraint firstAttribute="trailing" secondItem="yGk-md-Dir" secondAttribute="trailing" id="ew0-hp-LTM"/>
                                                         <constraint firstItem="oDc-LS-BjF" firstAttribute="top" secondItem="yGk-md-Dir" secondAttribute="bottom" constant="8" id="fu8-vp-UFC"/>
+                                                        <constraint firstAttribute="height" constant="188" id="jvp-rx-4pM"/>
                                                         <constraint firstItem="Da8-9n-tBl" firstAttribute="top" secondItem="IPn-SW-U0J" secondAttribute="top" constant="24" id="mDU-CJ-kah"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -2423,8 +2425,18 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="158" height="188"/>
+                                        <connections>
+                                            <outlet property="bgView" destination="IPn-SW-U0J" id="bON-LM-XWG"/>
+                                            <outlet property="descriptionLabel" destination="oDc-LS-BjF" id="tzL-qF-bbn"/>
+                                            <outlet property="logoImageview" destination="Da8-9n-tBl" id="tvI-ro-mCc"/>
+                                            <outlet property="nameLabel" destination="yGk-md-Dir" id="gDz-GQ-zGv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="nnz-2s-FiV" id="PUc-dH-1li"/>
+                                    <outlet property="delegate" destination="nnz-2s-FiV" id="Jz9-gC-4SL"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qQA-Cb-hPK"/>
@@ -2437,6 +2449,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My awards" id="iTX-Ec-UQY"/>
+                    <connections>
+                        <outlet property="mainCOllectionView" destination="xkD-47-bOC" id="ZES-92-Paf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0w-U7-YZw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,6 +17,7 @@
 		046E13AA2A12B2DF00E040DD /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13A92A12B2DF00E040DD /* Ad.swift */; };
 		046E13AC2A12D5C000E040DD /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13AB2A12D5C000E040DD /* EditProfileViewController.swift */; };
 		046E13AE2A12F3FD00E040DD /* AwardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */; };
+		046E13B12A12F49000E040DD /* AwardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13B02A12F49000E040DD /* AwardCollectionViewCell.swift */; };
 		047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */; };
 		047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03329F3BE0600C5FCBB /* SKTextField.swift */; };
 		047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03529F3BED200C5FCBB /* LoginViewController.swift */; };
@@ -91,6 +92,7 @@
 		046E13A92A12B2DF00E040DD /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		046E13AB2A12D5C000E040DD /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsViewController.swift; sourceTree = "<group>"; };
+		046E13B02A12F49000E040DD /* AwardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardCollectionViewCell.swift; sourceTree = "<group>"; };
 		047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		047FA03329F3BE0600C5FCBB /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		047FA03529F3BED200C5FCBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,15 @@
 				046E13A92A12B2DF00E040DD /* Ad.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		046E13AF2A12F47600E040DD /* AwardsViews */ = {
+			isa = PBXGroup;
+			children = (
+				046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */,
+				046E13B02A12F49000E040DD /* AwardCollectionViewCell.swift */,
+			);
+			path = AwardsViews;
 			sourceTree = "<group>";
 		};
 		047FA02F29F3B9AA00C5FCBB /* ViewControllers */ = {
@@ -454,7 +465,7 @@
 				047FA09329F3D0F000C5FCBB /* ProfileViewController.swift */,
 				04A7F85529F3E41300B7EDC8 /* ProfileBlockTableViewCell.swift */,
 				046E13AB2A12D5C000E040DD /* EditProfileViewController.swift */,
-				046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */,
+				046E13AF2A12F47600E040DD /* AwardsViews */,
 			);
 			path = ProfileScene;
 			sourceTree = "<group>";
@@ -721,6 +732,7 @@
 				0456B7A52A0DB1CD0071120C /* SKUsernameTextField.swift in Sources */,
 				047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */,
 				048DC70C29F3D55F006BB476 /* AdTableViewCell.swift in Sources */,
+				046E13B12A12F49000E040DD /* AwardCollectionViewCell.swift in Sources */,
 				046E13A42A126FA900E040DD /* FavoritePromise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

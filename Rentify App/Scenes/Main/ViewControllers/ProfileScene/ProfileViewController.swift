@@ -83,8 +83,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func openAwardsScene() {
-        Logger.log(.action, "Awards tapped")
-        present(ProgressHud.showComingSoonAlert(), animated: true, completion: nil)
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AwardsViewController") as! AwardsViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func openNotificationScene() {
