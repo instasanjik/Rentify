@@ -17,7 +17,7 @@ class Ad {
     var numberOfBathRooms: String = ""
     var area: String = ""
     
-    init(previewImageLink: String, type: String, price: String, rating: String, address: String, numberOfBedrooms: String, numberOfBathRooms: String) {
+    init(previewImageLink: String, type: String, price: String, rating: String, address: String, numberOfBedrooms: String, numberOfBathRooms: String, area: String) {
         self.previewImageLink = previewImageLink
         self.type = type
         self.price = price

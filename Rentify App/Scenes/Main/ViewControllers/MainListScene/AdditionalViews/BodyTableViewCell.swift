@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol BodyTableViewCellDelegate: AnyObject {
     func didSelectItemAt()
+    func didReturnItems(newCount: Int)
 }
 
 class BodyTableViewCell: UITableViewCell {
@@ -16,7 +18,17 @@ class BodyTableViewCell: UITableViewCell {
     @IBOutlet weak var listTableView: UITableView!
     var delegate: BodyTableViewCellDelegate?
     
-    var adsForDisplaying: [Ad] = []
+    var adType: AdType = .all
+    
+    var adsForDisplaying: [Ad] = [] {
+        didSet {
+            listTableView.reloadData()
+            listTableView.snp.makeConstraints { make in
+                make.height.equalTo(adsForDisplaying.count * 309 + 100)
+            }
+            delegate?.didReturnItems(newCount: adsForDisplaying.count)
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +38,7 @@ class BodyTableViewCell: UITableViewCell {
         listTableView.isScrollEnabled = false
         
         listTableView.showLoading(style: .medium)
-        Server.sharedInstance.getAds(type: .all) { ads in
+        Server.sharedInstance.getAds(type: adType) { ads in
             self.adsForDisplaying = ads
             CacheManager.shared.ads = ads
             self.listTableView.hideLoading()
@@ -36,6 +48,13 @@ class BodyTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func refreshList() {
+        Server.sharedInstance.getAds(type: adType) { ads in
+            self.adsForDisplaying = ads
+            CacheManager.shared.ads = ads
+        }
     }
 
 }

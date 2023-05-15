@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HeaderTableViewCellDelegate: AnyObject {
-    func typeRefreshed(to type: SpaceType?, all: Bool)
+    func typeRefreshed(to type: AdType)
 }
 
 class HeaderTableViewCell: UITableViewCell {
@@ -74,19 +74,17 @@ extension HeaderTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var spaceType: SpaceType? = .house
+        var spaceType: AdType = .all
         switch indexPath.row {
-        case 0: spaceType = .house
-        case 1: spaceType = .house
-        case 2: spaceType = .aparts
-        case 3: spaceType = .room
+        case 0: spaceType = .all
+        case 1: spaceType = .houses
+        case 2: spaceType = .aparments
+        case 3: spaceType = .rooms
         default:
-            spaceType = nil
-            delegate?.typeRefreshed(to: spaceType, all: true)
             return
         }
         
-        delegate?.typeRefreshed(to: spaceType!, all: false)
+        delegate?.typeRefreshed(to: spaceType)
     }
     
 }

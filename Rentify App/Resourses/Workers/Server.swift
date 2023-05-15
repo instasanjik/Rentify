@@ -209,8 +209,38 @@ class Server {
         //        ]
         //        print(headers)
         
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-            handler([])
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+            if .random() {
+                handler([
+                    Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                       type: "House",
+                       price: "1200",
+                       rating: "3.4",
+                       address: "Arman Qala 4, Bukhar Zhyrau 30/1",
+                       numberOfBedrooms: "3",
+                       numberOfBathRooms: "4",
+                       area: "130"),
+                    Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                       type: "House",
+                       price: "1200",
+                       rating: "3.4",
+                       address: "Arman Qala 4, Bukhar Zhyrau 30/1",
+                       numberOfBedrooms: "3",
+                       numberOfBathRooms: "4",
+                       area: "130")
+                ])
+            } else {
+                handler([
+                    Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                       type: "House",
+                       price: "1200",
+                       rating: "3.4",
+                       address: "Arman Qala 4, Bukhar Zhyrau 30/1",
+                       numberOfBedrooms: "3",
+                       numberOfBathRooms: "4",
+                       area: "130")
+                ])
+            }
         }
     }
     
