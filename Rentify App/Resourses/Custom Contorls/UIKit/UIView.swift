@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 extension UIView {
     
@@ -17,5 +18,36 @@ extension UIView {
         layer.add(animation, forKey: "shake")
     }
     
+    func showLoading() {
+        self.subviews.forEach({ $0.isHidden = true })
+        let loadingView = UIActivityIndicatorView()
+        loadingView.startAnimating()
+        loadingView.hidesWhenStopped = true
+        loadingView.style = .large
+        Logger.log(.success, "Loading started")
+        self.addSubview(loadingView)
+        loadingView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+    }
+    
+    func hideLoading() {
+        Logger.log(.success, "Loading stopped")
+        allSubViewsOf(type: UIActivityIndicatorView.self).forEach({ $0.removeFromSuperview() })
+        self.subviews.forEach({ $0.isHidden = false })
+    }
+    
+    func allSubViewsOf<T : UIView>(type : T.Type) -> [T]{
+        var all = [T]()
+        func getSubview(view: UIView) {
+            if let aView = view as? T{
+                all.append(aView)
+            }
+            guard view.subviews.count>0 else { return }
+            view.subviews.forEach{ getSubview(view: $0) }
+        }
+        getSubview(view: self)
+        return all
+    }
     
 }

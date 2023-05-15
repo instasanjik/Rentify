@@ -22,8 +22,14 @@ class FavoritesViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if favorites.isEmpty {
-            mainTableView.isHidden = true
+        view.showLoading()
+        
+        Server.sharedInstance.getFavorites { result in
+            self.favorites = result
+            self.view.hideLoading()
+            if self.favorites.isEmpty {
+                self.mainTableView.isHidden = true
+            }
         }
     }
     

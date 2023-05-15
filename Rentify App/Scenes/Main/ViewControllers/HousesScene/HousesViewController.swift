@@ -24,8 +24,14 @@ class HousesViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if rentedPromises.count == 0 {
-            housesTableView.isHidden = true
+        view.showLoading()
+        
+        Server.sharedInstance.getRentedPromises { result in
+            self.rentedPromises = result
+            self.view.hideLoading()
+            if self.rentedPromises.isEmpty {
+                self.housesTableView.isHidden = true
+            }
         }
     }
     
