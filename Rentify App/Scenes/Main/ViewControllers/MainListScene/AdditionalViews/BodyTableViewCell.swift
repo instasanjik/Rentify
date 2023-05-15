@@ -18,7 +18,11 @@ class BodyTableViewCell: UITableViewCell {
     @IBOutlet weak var listTableView: UITableView!
     var delegate: BodyTableViewCellDelegate?
     
-    var adType: AdType = .all
+    var adType: AdType = .all {
+        didSet {
+            getNewList()
+        }
+    }
     
     var adsForDisplaying: [Ad] = [] {
         didSet {
@@ -26,6 +30,7 @@ class BodyTableViewCell: UITableViewCell {
             listTableView.snp.makeConstraints { make in
                 make.height.equalTo(adsForDisplaying.count * 309 + 100)
             }
+            
             delegate?.didReturnItems(newCount: adsForDisplaying.count)
         }
     }
@@ -37,13 +42,7 @@ class BodyTableViewCell: UITableViewCell {
         listTableView.showsVerticalScrollIndicator = false
         listTableView.isScrollEnabled = false
         
-        listTableView.showLoading(style: .medium)
-        Server.sharedInstance.getAds(type: adType) { ads in
-            self.adsForDisplaying = ads
-            CacheManager.shared.ads = ads
-            self.listTableView.hideLoading()
-//            if sel
-        }
+        getNewList()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,6 +53,16 @@ class BodyTableViewCell: UITableViewCell {
         Server.sharedInstance.getAds(type: adType) { ads in
             self.adsForDisplaying = ads
             CacheManager.shared.ads = ads
+        }
+    }
+    
+    func getNewList() {
+        adsForDisplaying.removeAll()
+        listTableView.showLoading(style: .medium)
+        Server.sharedInstance.getAds(type: adType) { ads in
+            self.adsForDisplaying = ads
+            CacheManager.shared.ads = ads
+            self.listTableView.hideLoading()
         }
     }
 

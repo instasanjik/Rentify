@@ -18,11 +18,11 @@ class MainListViewController: UIViewController {
         mainTableView.dataSource = self
         mainTableView.delegate = self
         
-        mainTableView.cr.addHeadRefresh(animator: NormalHeaderAnimator()) {
-            if let cell = self.mainTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? BodyTableViewCell {
-                cell.refreshList()
-            }
-        }
+//        mainTableView.cr.addHeadRefresh(animator: NormalHeaderAnimator()) {
+//            if let cell = self.mainTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? BodyTableViewCell {
+//                cell.refreshList()
+//            }
+//        }
         
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -52,7 +52,6 @@ extension MainListViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return 287 + 24 + 12
         default:
-            Logger.log(.warning, "\(adsCount)")
             return CGFloat(adsCount * 309 + 100)
         }
     }
@@ -61,9 +60,11 @@ extension MainListViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MainListViewController: BodyTableViewCellDelegate {
+    
     func didReturnItems(newCount: Int) {
+        mainTableView.beginUpdates()
         adsCount = newCount
-        mainTableView.reloadRows(at: [IndexPath(item: 1, section: 0)], with: .none)
+        mainTableView.endUpdates()
     }
     
     func didSelectItemAt() {

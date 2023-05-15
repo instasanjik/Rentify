@@ -25,5 +25,6 @@ class Ad {
         self.address = address
         self.numberOfBedrooms = numberOfBedrooms
         self.numberOfBathRooms = numberOfBathRooms
+        self.area = area
     }
 }

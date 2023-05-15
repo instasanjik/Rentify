@@ -34,7 +34,7 @@ class AdTableViewCell: UITableViewCell {
         addressLabel.text = ad.address
         numberOfBedsLabel.text = ad.numberOfBedrooms
         numberOfBathRoomsLabel.text = ad.numberOfBathRooms
-        totalAreaLabel.text = "\(ad.area)sqft"
+        totalAreaLabel.text = "\(ad.area) sqft"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
