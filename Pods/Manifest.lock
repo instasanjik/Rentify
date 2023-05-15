@@ -3,6 +3,7 @@ PODS:
     - SwiftyGif
   - Alamofire (5.6.2)
   - Cosmos (23.0.0)
+  - CRRefresh (1.1.3)
   - IQKeyboardManagerSwift (6.5.10)
   - JTAppleCalendar (7.1.8)
   - Kingfisher (7.3.2)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - Agrume
   - Alamofire
   - Cosmos (~> 23.0)
+  - CRRefresh
   - IQKeyboardManagerSwift
   - JTAppleCalendar (~> 7.1)
   - Kingfisher (~> 7.0)
@@ -32,6 +34,7 @@ SPEC REPOS:
     - Agrume
     - Alamofire
     - Cosmos
+    - CRRefresh
     - IQKeyboardManagerSwift
     - JTAppleCalendar
     - Kingfisher
@@ -46,6 +49,7 @@ SPEC CHECKSUMS:
   Agrume: 0fc0056444b81009b74fbe7bce71ce1f7561f50b
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  CRRefresh: 1415d4ae06837fa7bb064c44f2e102f3ef517044
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   JTAppleCalendar: b7fb40852f5f319fe55c8ec3861f1de0edc99cc8
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
@@ -56,6 +60,6 @@ SPEC CHECKSUMS:
   SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: ef9b08fbf51fca82e3d3f48b3d538c59a8fc059a
+PODFILE CHECKSUM: 2efb22d4aa8bc7eedbff0df70e8ea99bc8a5f5fb
 
 COCOAPODS: 1.12.1

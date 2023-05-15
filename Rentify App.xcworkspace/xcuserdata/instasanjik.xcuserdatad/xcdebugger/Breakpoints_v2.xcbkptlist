@@ -458,8 +458,8 @@
             filePath = "Rentify App/Scenes/Main/ViewControllers/HousesScene/HousesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,8 +474,8 @@
             filePath = "Rentify App/Resourses/Workers/Server.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "getRentedPromises(handler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,8 +490,8 @@
             filePath = "Rentify App/Resourses/Workers/Server.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "getRentedPromises(handler:)"
             landmarkType = "7">
          </BreakpointContent>

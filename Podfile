@@ -18,4 +18,5 @@ target 'Rentify App' do
   pod 'SwiftyJSON'
   pod 'JTAppleCalendar', '~> 7.1'
   pod 'Agrume'
+  pod 'CRRefresh'
 end

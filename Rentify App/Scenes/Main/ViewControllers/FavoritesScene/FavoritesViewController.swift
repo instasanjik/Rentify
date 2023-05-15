@@ -6,19 +6,31 @@
 //
 
 import UIKit
+import CRRefresh
 
 
 class FavoritesViewController: UIViewController {
 
     @IBOutlet weak var mainTableView: UITableView!
     
-    var favorites: [FavoritePromise] = []
+    var favorites: [FavoritePromise] = [] {
+        didSet {
+            mainTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainTableView.delegate = self
         mainTableView.dataSource = self
         mainTableView.showsVerticalScrollIndicator = false
+        
+        mainTableView.cr.addHeadRefresh(animator: NormalHeaderAnimator()) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                /// Stop refresh when your job finished, it will reset refresh footer if completion is true
+                self.mainTableView.cr.endHeaderRefresh()
+            })
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

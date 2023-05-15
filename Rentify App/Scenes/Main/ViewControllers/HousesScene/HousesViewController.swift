@@ -11,7 +11,11 @@ class HousesViewController: UIViewController {
 
     @IBOutlet weak var housesTableView: UITableView!
     
-    var rentedPromises: [RentedPromise] = []
+    var rentedPromises: [RentedPromise] = [] {
+        didSet {
+            housesTableView.reloadData()
+        }
+    }
     
     
     override func viewDidLoad() {

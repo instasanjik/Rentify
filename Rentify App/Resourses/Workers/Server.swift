@@ -174,7 +174,15 @@ class Server {
         //        ]
         
         Timer.scheduledTimer(withTimeInterval: 1.3, repeats: false) { _ in
-            handler([])
+            handler([
+                FavoritePromise(previewLink: "https://images.pexels.com/photos/2134224/pexels-photo-2134224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                                price: "1200",
+                                additionalInfo: "3 room apartments, 120sq., 4/10 floor",
+                                address: "Saken Seifullin st., - Republic Avenue, HC “Vernyy”",
+                                region: "Asnata, Esil area",
+                                landlordPhoneNumber: "77479881965",
+                                landlordEmail: "main@mail.com")
+            ])
         }
     }
     
