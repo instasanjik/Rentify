@@ -217,6 +217,20 @@
 			path = GalleryViews;
 			sourceTree = "<group>";
 		};
+		046E13A12A126ED600E040DD /* CutromViews */ = {
+			isa = PBXGroup;
+			children = (
+				047FA04B29F3C8B100C5FCBB /* CircularProgressBarView.swift */,
+				047FA04C29F3C8B100C5FCBB /* DefaultWhiteButton.swift */,
+				047FA03329F3BE0600C5FCBB /* SKTextField.swift */,
+				047FA04D29F3C8B100C5FCBB /* SKCardView.swift */,
+				0456B7A22A0DA8550071120C /* SKButton.swift */,
+				0456B7A42A0DB1CD0071120C /* SKUsernameTextField.swift */,
+				04B8F1612A0EEF03000B788B /* SKCurveView.swift */,
+			);
+			path = CutromViews;
+			sourceTree = "<group>";
+		};
 		047FA02F29F3B9AA00C5FCBB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,14 +242,8 @@
 		047FA03229F3BDF500C5FCBB /* Custom Contorls */ = {
 			isa = PBXGroup;
 			children = (
-				047FA03329F3BE0600C5FCBB /* SKTextField.swift */,
-				047FA04B29F3C8B100C5FCBB /* CircularProgressBarView.swift */,
-				047FA04C29F3C8B100C5FCBB /* DefaultWhiteButton.swift */,
-				047FA04D29F3C8B100C5FCBB /* SKCardView.swift */,
+				046E13A12A126ED600E040DD /* CutromViews */,
 				047FA04229F3C8B100C5FCBB /* Extensions */,
-				0456B7A22A0DA8550071120C /* SKButton.swift */,
-				0456B7A42A0DB1CD0071120C /* SKUsernameTextField.swift */,
-				04B8F1612A0EEF03000B788B /* SKCurveView.swift */,
 			);
 			path = "Custom Contorls";
 			sourceTree = "<group>";

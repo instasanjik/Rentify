@@ -16,6 +16,16 @@ class FavoritePromise {
     var landlordPhoneNumber: String = ""
     var landlordEmail: String = ""
     
+    
+    init(previewLink: String, price: String, additionalInfo: String, address: String, region: String, landlordPhoneNumber: String, landlordEmail: String) {
+        self.previewLink = previewLink
+        self.price = price
+        self.additionalInfo = additionalInfo
+        self.address = address
+        self.region = region
+        self.landlordPhoneNumber = landlordPhoneNumber
+        self.landlordEmail = landlordEmail
+    }
 }
 
 class FavoritesViewController: UIViewController {
