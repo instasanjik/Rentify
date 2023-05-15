@@ -26,30 +26,15 @@ class HousePriceTableViewCell: UITableViewCell {
     func setupData(id: String, price: String, reviews: String, address: String) {
         idLabel.text = "ID: \(id)"
         switch User.shared.metric {
-        case .dollar:
+        case .usd:
             priceLabel.text = "$\(price.beautifulPrice())"
-        case .tg:
+        case .kzt:
             if let price = Double(price) {
-                Server.sharedInstance.convertCurrency(amount: price, from: "USD", to: "KZT") { result in
-                    switch result {
-                    case .success(let convertedAmount):
-                        Logger.log(.success, String(convertedAmount))
-                        self.priceLabel.text = "\(String(Int(convertedAmount)).beautifulPrice()) KZT"
-                    case .failure(let error):
-                        print("Error: \(error.localizedDescription)")
-                    }
-                }
+                self.priceLabel.text = "\(String(Int(price * Server.sharedInstance.currencyMultiplyer)).beautifulPrice()) KZT"
             }
         case .rub:
             if let price = Double(price) {
-                Server.sharedInstance.convertCurrency(amount: price, from: "USD", to: "RUB") { result in
-                    switch result {
-                    case .success(let convertedAmount):
-                        self.priceLabel.text = "\(String(convertedAmount).beautifulPrice()) RUB"
-                    case .failure(let error):
-                        print("Error: \(error.localizedDescription)")
-                    }
-                }
+                self.priceLabel.text = "\(String(Int(price * Server.sharedInstance.currencyMultiplyer)).beautifulPrice()) RUB"
             }
         }
         ratingLabel.text = reviews

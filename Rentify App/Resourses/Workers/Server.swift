@@ -10,24 +10,11 @@ import Alamofire
 import Kingfisher
 import SwiftyJSON
 
-enum Metric {
-    case dollar
-    case tg
-    case rub
-}
-
-class User {
-    static let shared = User()
-    
-    var email: String? = nil
-    var avatarLink: String? = nil
-    var userName: String? = nil
-    var metric: Metric = .dollar
-}
-
 class Server {
     
     static let sharedInstance = Server()
+    
+    var currencyMultiplyer: Double = 1
     
     var accessToken: String? = nil
     var refreshToken: String? = nil {
@@ -93,6 +80,32 @@ class Server {
                         handler(value.image, "@\(User.shared.userName ?? "@undefined")")
                     case .failure:
                         handler(nil, "@\(User.shared.userName ?? "@undefined")")
+                }
+            }
+        }
+    }
+    
+    func setCurrentCurrency(need: Metric) {
+        switch need {
+        case .usd:
+            currencyMultiplyer = 1
+        case .kzt:
+            Server.sharedInstance.convertCurrency(amount: 1, from: "USD", to: "KZT") { result in
+                switch result {
+                case .success(let convertedAmount):
+                    Logger.log(.success, String(convertedAmount))
+                    self.currencyMultiplyer = convertedAmount
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
+        case .rub:
+            Server.sharedInstance.convertCurrency(amount: 1, from: "USD", to: "RUB") { result in
+                switch result {
+                case .success(let convertedAmount):
+                    self.currencyMultiplyer = convertedAmount
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
                 }
             }
         }

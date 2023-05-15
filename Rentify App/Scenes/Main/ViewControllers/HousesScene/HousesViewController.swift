@@ -7,14 +7,6 @@
 
 import UIKit
 
-class RentedPromise {
-    var timeLeft: String = ""
-    var previewImageLink: String = ""
-    var additionalInfo: String = ""
-    var address: String = ""
-    var region: String = ""
-}
-
 class HousesViewController: UIViewController {
 
     @IBOutlet weak var housesTableView: UITableView!
@@ -40,16 +32,6 @@ class HousesViewController: UIViewController {
     @IBAction func findListingsTapped(_ sender: Any) {
         tabBarController?.selectedIndex = 2
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
