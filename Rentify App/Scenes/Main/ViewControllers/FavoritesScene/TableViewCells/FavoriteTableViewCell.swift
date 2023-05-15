@@ -24,9 +24,10 @@ class FavoriteTableViewCell: UITableViewCell {
     
     func setupData(promise: FavoritePromise) {
         self.promise = promise
+        
         previewView.setupView(additionalViewBackgroundColor: .black,
                               additionalViewFont: .systemFont(ofSize: 14, weight: .medium),
-                              additionalViewText: promise.price,
+                              additionalViewText: promise.price.getCurrencyBasedPrice(),
                               imageForShowing: promise.previewLink)
         additionalInfoLabel.text = promise.additionalInfo
         addressLabel.text = promise.address

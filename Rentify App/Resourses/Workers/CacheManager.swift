@@ -10,6 +10,24 @@ import Foundation
 class CacheManager {
     static let shared = CacheManager()
     
+    var favoritesNeedRequest = true {
+        didSet {
+            Timer.scheduledTimer(withTimeInterval: 60, repeats: false) { _ in
+                self.favoritesNeedRequest = true
+            }
+        }
+    }
+    var rentedPromisesNeedRequest = true {
+        didSet {
+            Timer.scheduledTimer(withTimeInterval: 60, repeats: false) { _ in
+                self.rentedPromisesNeedRequest = true
+            }
+        }
+    }
+    
+    var favorites: [FavoritePromise] = []
+    var rentedPromises: [RentedPromise] = []
+    
     private let userDefaults: UserDefaults
     
     private init() {

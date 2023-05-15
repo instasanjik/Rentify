@@ -197,4 +197,12 @@ class Server {
             handler([])
         }
     }
+    
+    func likeAd(adID: String) {
+        CacheManager.shared.favoritesNeedRequest = true
+    }
+    
+    func unlikeAd(adID: String) {
+        CacheManager.shared.favoritesNeedRequest = true
+    }
 }

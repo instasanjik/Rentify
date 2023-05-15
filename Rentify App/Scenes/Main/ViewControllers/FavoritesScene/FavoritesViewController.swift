@@ -26,23 +26,37 @@ class FavoritesViewController: UIViewController {
         mainTableView.showsVerticalScrollIndicator = false
         
         mainTableView.cr.addHeadRefresh(animator: NormalHeaderAnimator()) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                /// Stop refresh when your job finished, it will reset refresh footer if completion is true
+            Server.sharedInstance.getFavorites { result in
+                CacheManager.shared.favorites = result
                 self.mainTableView.cr.endHeaderRefresh()
-            })
+                self.favorites = result
+                if self.favorites.isEmpty {
+                    self.mainTableView.isHidden = true
+                }
+            }
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    fileprivate func reloadPage() {
+        if !CacheManager.shared.favoritesNeedRequest { return }
         view.showLoading()
         
         Server.sharedInstance.getFavorites { result in
             self.favorites = result
+            CacheManager.shared.favorites = result
+            if !result.isEmpty {
+                CacheManager.shared.favoritesNeedRequest = false
+            }
             self.view.hideLoading()
             if self.favorites.isEmpty {
                 self.mainTableView.isHidden = true
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        reloadPage()
     }
     
     @IBAction func findListingsTapped(_ sender: Any) {
@@ -64,6 +78,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath) as! FavoriteTableViewCell
         cell.selectionStyle = .none
+        cell.setupData(promise: favorites[indexPath.row])
         return cell
     }
     

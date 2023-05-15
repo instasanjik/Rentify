@@ -160,5 +160,19 @@ extension String {
     }
 
     
+    func getCurrencyBasedPrice() -> String {
+        if User.shared.metric == .usd {
+            return "$\(self.beautifulPrice())"
+        }
+        
+        guard let price = Double(self) else { return "ERROR" }
+        
+        if User.shared.metric == .kzt {
+            return "\(String(price * Server.sharedInstance.currencyMultiplyer).beautifulPrice()) KZT"
+        } else {
+            return "\(String(price * Server.sharedInstance.currencyMultiplyer).beautifulPrice()) RUB"
+        }
+    }
+    
 }
 

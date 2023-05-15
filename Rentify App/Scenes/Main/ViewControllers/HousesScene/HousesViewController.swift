@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CRRefresh
 
 class HousesViewController: UIViewController {
 
@@ -24,19 +25,39 @@ class HousesViewController: UIViewController {
         housesTableView.dataSource = self
         housesTableView.showsVerticalScrollIndicator = false
         
+        
+        housesTableView.cr.addHeadRefresh(animator: NormalHeaderAnimator()) {
+            Server.sharedInstance.getRentedPromises { result in
+                CacheManager.shared.rentedPromises = result
+                self.housesTableView.cr.endHeaderRefresh()
+                self.rentedPromises = result
+                if self.rentedPromises.isEmpty {
+                    self.housesTableView.isHidden = true
+                }
+            }
+        }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    fileprivate func reloadPage() {
+        if !CacheManager.shared.rentedPromisesNeedRequest { return }
         view.showLoading()
         
         Server.sharedInstance.getRentedPromises { result in
             self.rentedPromises = result
+            CacheManager.shared.rentedPromises = result
+            if !result.isEmpty {
+                CacheManager.shared.rentedPromisesNeedRequest = false
+            }
             self.view.hideLoading()
             if self.rentedPromises.isEmpty {
                 self.housesTableView.isHidden = true
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        reloadPage()
     }
     
     @IBAction func findListingsTapped(_ sender: Any) {
