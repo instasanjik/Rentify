@@ -251,4 +251,36 @@ class Server {
     func unlikeAd(adID: String) {
         CacheManager.shared.favoritesNeedRequest = true
     }
+    
+    func editUserProfile(user: User, newAvatar: UIImage?, handler: @escaping (Bool) -> Void) {
+        
+        if let image = newAvatar {
+            uploadImage(image: image) { isSuccess in
+                if isSuccess {
+                    // avatar uploaded to the server. need to send metadata
+                    handler(true)
+                } else {
+                    handler(false)
+                    return
+                }
+            }
+        }
+        
+        
+        let parameters = [
+            "username" : user.userName,
+            "email" : user.email,
+            "metric" : user.metric.getAbbr()
+        ]
+        
+        // upload metadata
+        Timer.scheduledTimer(withTimeInterval: 1.3, repeats: false) { _ in
+            handler(true)
+            return
+        }
+    }
+    
+    fileprivate func uploadImage(image: UIImage, handler: @escaping (Bool) -> Void) {
+        
+    }
 }

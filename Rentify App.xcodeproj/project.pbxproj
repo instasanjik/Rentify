@@ -15,6 +15,8 @@
 		046E13A62A126FCA00E040DD /* RentedPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13A52A126FCA00E040DD /* RentedPromise.swift */; };
 		046E13A82A12700F00E040DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13A72A12700F00E040DD /* User.swift */; };
 		046E13AA2A12B2DF00E040DD /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13A92A12B2DF00E040DD /* Ad.swift */; };
+		046E13AC2A12D5C000E040DD /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13AB2A12D5C000E040DD /* EditProfileViewController.swift */; };
+		046E13AE2A12F3FD00E040DD /* AwardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */; };
 		047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */; };
 		047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03329F3BE0600C5FCBB /* SKTextField.swift */; };
 		047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03529F3BED200C5FCBB /* LoginViewController.swift */; };
@@ -87,6 +89,8 @@
 		046E13A52A126FCA00E040DD /* RentedPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentedPromise.swift; sourceTree = "<group>"; };
 		046E13A72A12700F00E040DD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		046E13A92A12B2DF00E040DD /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
+		046E13AB2A12D5C000E040DD /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsViewController.swift; sourceTree = "<group>"; };
 		047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		047FA03329F3BE0600C5FCBB /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		047FA03529F3BED200C5FCBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -449,6 +453,8 @@
 			children = (
 				047FA09329F3D0F000C5FCBB /* ProfileViewController.swift */,
 				04A7F85529F3E41300B7EDC8 /* ProfileBlockTableViewCell.swift */,
+				046E13AB2A12D5C000E040DD /* EditProfileViewController.swift */,
+				046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */,
 			);
 			path = ProfileScene;
 			sourceTree = "<group>";
@@ -667,6 +673,7 @@
 				04E2546629F7A09100AD84EC /* HouseHeaderTableViewCell.swift in Sources */,
 				047FA06A29F3C8B100C5FCBB /* CircularProgressBarView.swift in Sources */,
 				04A7F85929F416F400B7EDC8 /* HeaderTableViewCell.swift in Sources */,
+				046E13AC2A12D5C000E040DD /* EditProfileViewController.swift in Sources */,
 				04E2546829F7A0A000AD84EC /* HousePriceTableViewCell.swift in Sources */,
 				047FA07B29F3C8B100C5FCBB /* UIView.swift in Sources */,
 				047FA0A229F3D4B200C5FCBB /* TypeCollectionViewCell.swift in Sources */,
@@ -709,6 +716,7 @@
 				04B8F1692A0F7A67000B788B /* CriteriaTableViewCellString.swift in Sources */,
 				04E2547329F7A11300AD84EC /* HouseLocationTableViewCell.swift in Sources */,
 				047FA06829F3C8B100C5FCBB /* String.swift in Sources */,
+				046E13AE2A12F3FD00E040DD /* AwardsViewController.swift in Sources */,
 				046E139D2A118EF200E040DD /* FacillitiesCollectionViewCell.swift in Sources */,
 				0456B7A52A0DB1CD0071120C /* SKUsernameTextField.swift in Sources */,
 				047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */,

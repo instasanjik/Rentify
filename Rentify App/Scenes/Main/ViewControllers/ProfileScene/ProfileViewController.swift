@@ -78,8 +78,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func openSettingsScene() {
-        Logger.log(.action, "Settings tapped")
-        present(ProgressHud.showComingSoonAlert(), animated: true, completion: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func openAwardsScene() {
