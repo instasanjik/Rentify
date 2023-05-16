@@ -12,7 +12,7 @@ import CoreLocation
 
 class HouseViewController: UIViewController {
     
-    var isRented: Bool = true
+    var isRented: Bool = false
     
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var likeBarButtonItem: UIBarButtonItem!
