@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 import Kingfisher
 import SwiftyJSON
+import CoreLocation
 
 enum AdType {
     case all, houses, aparments, rooms
@@ -155,7 +156,7 @@ class Server {
         
         AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
             switch response.result {
-            case .success(let value):
+            case .success(_):
                 let json = JSON(response.data!)
                 print(json)
                 let convertedAmount = json["result"].doubleValue
@@ -167,11 +168,11 @@ class Server {
     }
     
     func getFavorites(handler: @escaping ([FavoritePromise]) -> Void) {
-//        guard let accessToken = accessToken else { return }
-//        let headers: HTTPHeaders = [
-//            "access_token" : accessToken
-//        ]
-//        print(headers)
+        //        guard let accessToken = accessToken else { return }
+        //        let headers: HTTPHeaders = [
+        //            "access_token" : accessToken
+        //        ]
+        //        print(headers)
         
         //        let parameters = [
         //
@@ -191,11 +192,11 @@ class Server {
     }
     
     func getRentedPromises(handler: @escaping ([RentedPromise]) -> Void) {
-//        guard let accessToken = accessToken else { return }
-//        let headers: HTTPHeaders = [
-//            "access_token" : accessToken
-//        ]
-//        print(headers)
+        //        guard let accessToken = accessToken else { return }
+        //        let headers: HTTPHeaders = [
+        //            "access_token" : accessToken
+        //        ]
+        //        print(headers)
         
         Timer.scheduledTimer(withTimeInterval: 1.3, repeats: false) { _ in
             handler([])
@@ -210,37 +211,24 @@ class Server {
         //        print(headers)
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-//            if .random() {
-                handler([
-                    Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                       type: "House",
-                       price: "1200",
-                       rating: "3.4",
-                       address: "Arman Qala 4, Bukhar Zhyrau 30/1",
-                       numberOfBedrooms: "3",
-                       numberOfBathRooms: "4",
-                       area: "130"),
-                    Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                       type: "House",
-                       price: "1200",
-                       rating: "3.4",
-                       address: "Arman Qala 4, Bukhar Zhyrau 30/1",
-                       numberOfBedrooms: "3",
-                       numberOfBathRooms: "4",
-                       area: "130")
-                ])
-//            } else {
-//                handler([
-//                    Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-//                       type: "House",
-//                       price: "1200",
-//                       rating: "3.4",
-//                       address: "Arman Qala 4, Bukhar Zhyrau 30/1",
-//                       numberOfBedrooms: "3",
-//                       numberOfBathRooms: "4",
-//                       area: "130")
-//                ])
-//            }
+            handler([
+                Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                   type: "House",
+                   price: "1200",
+                   rating: "3.4",
+                   address: "Arman Qala 4, Bukhar Zhyrau 30/1",
+                   numberOfBedrooms: "3",
+                   numberOfBathRooms: "4",
+                   area: "130"),
+                Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                   type: "House",
+                   price: "1200",
+                   rating: "3.4",
+                   address: "Arman Qala 4, Bukhar Zhyrau 30/1",
+                   numberOfBedrooms: "3",
+                   numberOfBathRooms: "4",
+                   area: "130")
+            ])
         }
     }
     
@@ -253,7 +241,6 @@ class Server {
     }
     
     func editUserProfile(user: User, newAvatar: UIImage?, handler: @escaping (Bool) -> Void) {
-        
         if let image = newAvatar {
             uploadImage(image: image) { isSuccess in
                 if isSuccess {
@@ -282,5 +269,86 @@ class Server {
     
     fileprivate func uploadImage(image: UIImage, handler: @escaping (Bool) -> Void) {
         
+    }
+    
+    func getFullHouse(id: String, handler: @escaping (HouseFull) -> Void) {
+//        guard let accessToken = accessToken else { return }
+        let headers: HTTPHeaders = [
+            "access_token" : accessToken ?? ""
+        ]
+        
+        let parameters = [
+            "apartment_id" : id
+        ]
+        
+        handler(HouseFull(imageLink: "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                          id: "2019302",
+                          price: "1920",
+                          reviews: "1.4 (1 reviews)",
+                          address: "asda",
+                          landlord: .init(id: "19293",
+                                          name: "Danil",
+                                          surname: "Shevchenko",
+                                          avatarLink: "https://images.pexels.com/photos/1933873/pexels-photo-1933873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                                          rating: 3.4,
+                                          offersCount: 192,
+                                          email: "shevchenko@mail.ru",
+                                          phoneNumber: "77479281192"),
+                          overview: "Lorem ipsum bla bla bla",
+                          busyDates: [],
+                          facilities: [],
+                          imageLinks: [],
+                          location: CLLocation(latitude: 0, longitude: 0)))
+        
+//        AF.request(URLs.getHouseFull, method: .get, parameters: parameters, headers: headers).validate().responseJSON { response in
+//            switch response.result {
+//            case .success(_):
+//                let json = JSON(response.data!)
+//
+//                var busyDates: [Date] = []
+//                var imageLinks: [String] = []
+//                var facilities: [String] = []
+//
+//                for facility in json["facilities"].array ?? [] {
+//                    facilities.append(facility["name"].stringValue)
+//                }
+//
+//                for imageLink in json["image_links"].array ?? [] {
+//                    imageLinks.append(imageLink.stringValue)
+//                }
+//
+//                for busyDate in json["busy_dates"].array ?? [] {
+//                    let date = Date(timeStamp: busyDate.stringValue)
+//                    busyDates.append(date)
+//                }
+//
+//                let location: CLLocation = CLLocation(latitude: json["latitude"].doubleValue,
+//                                                      longitude: json["longitude"].doubleValue)
+//
+//                let landlord: Landlord = Landlord(id:           json["landlord"]["landlord_id"].stringValue,
+//                                                  name:         json["landlord"]["name"].stringValue,
+//                                                  surname:      json["landlord"]["surname"].stringValue,
+//                                                  avatarLink:   json["landlord"]["avatar_link"].stringValue,
+//                                                  rating:       json["landlord"]["rating"].doubleValue,
+//                                                  offersCount:  json["landlord"]["offers_count"].intValue,
+//                                                  email:        json["landlord"]["email"].stringValue,
+//                                                  phoneNumber:  json["landlord"]["phone_number"].stringValue)
+//
+//                let houseFull: HouseFull = HouseFull(imageLink:     json["preview_link"].stringValue,
+//                                                     id:            json["id"].stringValue,
+//                                                     price:         String(json["price"].floatValue),
+//                                                     reviews:       json["reviews"].stringValue,
+//                                                     landlord:      landlord,
+//                                                     overview:      json["overview"].stringValue,
+//                                                     busyDates:     busyDates,
+//                                                     facilities:    facilities,
+//                                                     imageLinks:    imageLinks,
+//                                                     location:      location)
+//
+//                handler(houseFull)
+//            case .failure(let error):
+//                Logger.log(.error, "Error: \(error)")
+//            }
+//        }
     }
 }

@@ -18,6 +18,7 @@
 		046E13AC2A12D5C000E040DD /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13AB2A12D5C000E040DD /* EditProfileViewController.swift */; };
 		046E13AE2A12F3FD00E040DD /* AwardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */; };
 		046E13B12A12F49000E040DD /* AwardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13B02A12F49000E040DD /* AwardCollectionViewCell.swift */; };
+		046E13B32A14099600E040DD /* HouseFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13B22A14099600E040DD /* HouseFull.swift */; };
 		047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */; };
 		047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03329F3BE0600C5FCBB /* SKTextField.swift */; };
 		047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03529F3BED200C5FCBB /* LoginViewController.swift */; };
@@ -93,6 +94,7 @@
 		046E13AB2A12D5C000E040DD /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsViewController.swift; sourceTree = "<group>"; };
 		046E13B02A12F49000E040DD /* AwardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardCollectionViewCell.swift; sourceTree = "<group>"; };
+		046E13B22A14099600E040DD /* HouseFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseFull.swift; sourceTree = "<group>"; };
 		047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		047FA03329F3BE0600C5FCBB /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		047FA03529F3BED200C5FCBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				046E13A52A126FCA00E040DD /* RentedPromise.swift */,
 				046E13A72A12700F00E040DD /* User.swift */,
 				046E13A92A12B2DF00E040DD /* Ad.swift */,
+				046E13B22A14099600E040DD /* HouseFull.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				04B8F16E2A116918000B788B /* DateCell.swift in Sources */,
 				0493858829F2BE060032386F /* AppDelegate.swift in Sources */,
 				047FA08629F3CA2300C5FCBB /* FavoritesNavigationViewController.swift in Sources */,
+				046E13B32A14099600E040DD /* HouseFull.swift in Sources */,
 				04E2546A29F7A0B300AD84EC /* HouseOverviewTableViewCell.swift in Sources */,
 				047FA03E29F3C68000C5FCBB /* SignUpViewController.swift in Sources */,
 				047FA08A29F3CA7000C5FCBB /* MainNavigationViewController.swift in Sources */,

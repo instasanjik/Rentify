@@ -9,4 +9,6 @@ import Foundation
 
 class URLs {
     static let reportProblemAPI = "http://192.168.0.169:1234/send"
+    
+    static let getHouseFull = ""
 }
