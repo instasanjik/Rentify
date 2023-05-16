@@ -40,6 +40,7 @@ class HouseFull {
         self.id = id
         self.price = price
         self.reviews = reviews
+        self.address = address
         self.landlord = landlord
         self.overview = overview
         self.busyDates = busyDates

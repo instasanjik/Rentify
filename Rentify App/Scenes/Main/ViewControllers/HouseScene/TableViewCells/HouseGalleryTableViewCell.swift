@@ -28,7 +28,7 @@ class HouseGalleryTableViewCell: UITableViewCell {
     }
     
     func setupData(photoLinks: [String]) {
-        delegate?.seeAllTapped(at: 0)
+//        delegate?.seeAllTapped(at: 0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

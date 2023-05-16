@@ -14,15 +14,20 @@ protocol ControlPanelViewDelegate: AnyObject {
 class ControlPanelTableViewCell: UITableViewCell {
     
     var delegate: ControlPanelViewDelegate?
-
+    
+    @IBOutlet weak var bgView: UIView!
+    
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var daysLeftLabel: UILabel!
     
     @IBOutlet weak var checkInLabel: UILabel!
     @IBOutlet weak var daysPassedLabel: UILabel!
+    @IBOutlet weak var leaveButton: SKButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        bgView.layer.borderColor = UIColor.systemGray5.cgColor
+        leaveButton.layer.borderColor = UIColor.systemRed.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

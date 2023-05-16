@@ -12,6 +12,8 @@ import CoreLocation
 
 class HouseViewController: UIViewController {
     
+    var isRented: Bool = true
+    
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var likeBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var contentTableView: UITableView!
@@ -110,73 +112,144 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseHeaderTableViewCell", for: indexPath) as! HouseHeaderTableViewCell
-            if house != nil {
-                cell.setupData(imageLink: house?.imageLink ?? "")
+        if isRented {
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseHeaderTableViewCell", for: indexPath) as! HouseHeaderTableViewCell
+                if house != nil {
+                    cell.setupData(imageLink: house?.imageLink ?? "")
+                }
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ControlPanelTableViewCell", for: indexPath) as! ControlPanelTableViewCell
+                cell.delegate = self
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HousePriceTableViewCell", for: indexPath) as! HousePriceTableViewCell
+                cell.setupData(id: house?.id ?? "",
+                               price: house?.price ?? "",
+                               reviews: house?.reviews ?? "",
+                               address: house?.address ?? "")
+                return cell
+            case 3:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseOverviewTableViewCell", for: indexPath) as! HouseOverviewTableViewCell
+                cell.setupData(landlord: Landlord(id: house?.landlord?.id ?? "",
+                                                  name: house?.landlord?.name ?? "",
+                                                  surname: house?.landlord?.surname ?? "",
+                                                  avatarLink: house?.landlord?.avatarLink ?? "",
+                                                  rating: house?.landlord?.rating ?? 0,
+                                                  offersCount: house?.landlord?.offersCount ?? 0,
+                                                  email: house?.landlord?.email ?? "",
+                                                  phoneNumber: house?.landlord?.phoneNumber ?? ""),
+                               overview: house?.overview ?? "")
+                return cell
+            case 4:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseFacilitiesTableViewCell", for: indexPath) as! HouseFacilitiesTableViewCell
+                cell.setupData(facilities: house?.facilities ?? [])
+                return cell
+            case 5:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseGalleryTableViewCell", for: indexPath) as! HouseGalleryTableViewCell
+                cell.setupData(photoLinks: house?.imageLinks ?? [])
+                cell.delegate = self
+                return cell
+            case 6:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseLocationTableViewCell", for: indexPath) as! HouseLocationTableViewCell
+                cell.setupData(address: house?.address ?? "",
+                               location: house?.location ?? CLLocation(latitude: 0, longitude: 0))
+                return cell
+            default:
+                return UITableViewCell()
             }
-            return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HousePriceTableViewCell", for: indexPath) as! HousePriceTableViewCell
-            cell.setupData(id: house?.id ?? "",
-                           price: house?.price ?? "",
-                           reviews: house?.reviews ?? "",
-                           address: house?.address ?? "")
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseOverviewTableViewCell", for: indexPath) as! HouseOverviewTableViewCell
-            cell.setupData(landlord: Landlord(id: house?.landlord?.id ?? "",
-                                              name: house?.landlord?.name ?? "",
-                                              surname: house?.landlord?.surname ?? "",
-                                              avatarLink: house?.landlord?.avatarLink ?? "",
-                                              rating: house?.landlord?.rating ?? 0,
-                                              offersCount: house?.landlord?.offersCount ?? 0,
-                                              email: house?.landlord?.email ?? "",
-                                              phoneNumber: house?.landlord?.phoneNumber ?? ""),
-                           overview: house?.overview ?? "")
-            return cell
-        case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseCalendarTableViewCell", for: indexPath) as! HouseCalendarTableViewCell
-            cell.delegate = self
-            return cell
-        case 4:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseFacilitiesTableViewCell", for: indexPath) as! HouseFacilitiesTableViewCell
-            cell.setupData(facilities: house?.facilities ?? [])
-            return cell
-        case 5:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseGalleryTableViewCell", for: indexPath) as! HouseGalleryTableViewCell
-            cell.setupData(photoLinks: house?.imageLinks ?? [])
-            cell.delegate = self
-            return cell
-        case 6:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseLocationTableViewCell", for: indexPath) as! HouseLocationTableViewCell
-            cell.setupData(address: house?.address ?? "",
-                           location: house?.location ?? CLLocation(latitude: 0, longitude: 0))
-            return cell
-        default:
-            return UITableViewCell()
+        } else {
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseHeaderTableViewCell", for: indexPath) as! HouseHeaderTableViewCell
+                if house != nil {
+                    cell.setupData(imageLink: house?.imageLink ?? "")
+                }
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HousePriceTableViewCell", for: indexPath) as! HousePriceTableViewCell
+                cell.setupData(id: house?.id ?? "",
+                               price: house?.price ?? "",
+                               reviews: house?.reviews ?? "",
+                               address: house?.address ?? "")
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseOverviewTableViewCell", for: indexPath) as! HouseOverviewTableViewCell
+                cell.setupData(landlord: Landlord(id: house?.landlord?.id ?? "",
+                                                  name: house?.landlord?.name ?? "",
+                                                  surname: house?.landlord?.surname ?? "",
+                                                  avatarLink: house?.landlord?.avatarLink ?? "",
+                                                  rating: house?.landlord?.rating ?? 0,
+                                                  offersCount: house?.landlord?.offersCount ?? 0,
+                                                  email: house?.landlord?.email ?? "",
+                                                  phoneNumber: house?.landlord?.phoneNumber ?? ""),
+                               overview: house?.overview ?? "")
+                return cell
+            case 3:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseCalendarTableViewCell", for: indexPath) as! HouseCalendarTableViewCell
+                cell.delegate = self
+                return cell
+            case 4:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseFacilitiesTableViewCell", for: indexPath) as! HouseFacilitiesTableViewCell
+                cell.setupData(facilities: house?.facilities ?? [])
+                return cell
+            case 5:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseGalleryTableViewCell", for: indexPath) as! HouseGalleryTableViewCell
+                cell.setupData(photoLinks: house?.imageLinks ?? [])
+                cell.delegate = self
+                return cell
+            case 6:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseLocationTableViewCell", for: indexPath) as! HouseLocationTableViewCell
+                cell.setupData(address: house?.address ?? "",
+                               location: house?.location ?? CLLocation(latitude: 0, longitude: 0))
+                return cell
+            default:
+                return UITableViewCell()
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            return 307
-        case 1:
-            return 124
-        case 2:
-            return 170
-        case 3:
-            return 270
-        case 4:
-            return 214
-        case 5:
-            return 116+22
-        case 6:
-            return 264+100
-        default:
-            return 1000
+        if !isRented {
+            switch indexPath.row {
+            case 0:
+                return 307
+            case 1:
+                return 124
+            case 2:
+                return 170
+            case 3:
+                return 270
+            case 4:
+                return 214
+            case 5:
+                return 116+22
+            case 6:
+                return 264+100
+            default:
+                return 1000
+            }
+        } else {
+            switch indexPath.row {
+            case 0:
+                return 307
+            case 1:
+                return 253
+            case 2:
+                return 124
+            case 3:
+                return 170
+            case 4:
+                return 214
+            case 5:
+                return 116+22
+            case 6:
+                return 264+100
+            default:
+                return 1000
+            }
         }
     }
     
@@ -217,6 +290,14 @@ extension HouseViewController: HouseGalleryTableViewCellDelegate {
         let agrume = Agrume(images: images, startIndex: index, background: .blurred(.light))
         
         agrume.show(from: self)
+    }
+    
+    
+}
+
+extension HouseViewController: ControlPanelViewDelegate {
+    func leaveDidTap() {
+        
     }
     
     
