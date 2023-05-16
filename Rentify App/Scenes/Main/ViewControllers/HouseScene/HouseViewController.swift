@@ -8,6 +8,7 @@
 import UIKit
 import Agrume
 import CoreLocation
+//import SkeletonView
 
 class HouseViewController: UIViewController {
     
@@ -28,7 +29,9 @@ class HouseViewController: UIViewController {
     
     var house: HouseFull? = nil {
         didSet {
-//            contentTableView.reloadData()
+            if isViewLoaded {
+                contentTableView.reloadData()
+            }
         }
     }
     
@@ -63,8 +66,40 @@ class HouseViewController: UIViewController {
     }
     
     @IBAction func bookTapped(_ sender: Any) {
-        
+        if let cell = contentTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? HouseCalendarTableViewCell {
+            if isConsecutiveDates(cell.selectedDays) {
+                ProgressHud.showSuccess(withText: "Booked")
+            } else {
+                ProgressHud.showError(withText: "Select consecutive dates!")
+                cell.calendarView.shake()
+            }
+        }
     }
+    
+    func isConsecutiveDates(_ dates: [Date]) -> Bool {
+        let dates = dates.sorted()
+        guard dates.count > 1 else {
+            return true
+        }
+        
+        let calendar = Calendar.current
+        let oneDay: TimeInterval = 60 * 60 * 24
+        
+        for i in 1..<dates.count {
+            let previousDate = dates[i - 1]
+            let currentDate = dates[i]
+            
+            // Check if the difference between dates is exactly one day
+            let difference = calendar.dateComponents([.day], from: previousDate, to: currentDate)
+            if difference.day != 1 {
+                return false
+            }
+        }
+        
+        return true
+    }
+
+
     
 }
 
@@ -78,7 +113,9 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "HouseHeaderTableViewCell", for: indexPath) as! HouseHeaderTableViewCell
-            cell.setupData(imageLink: house?.imageLink ?? "")
+            if house != nil {
+                cell.setupData(imageLink: house?.imageLink ?? "")
+            }
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "HousePriceTableViewCell", for: indexPath) as! HousePriceTableViewCell

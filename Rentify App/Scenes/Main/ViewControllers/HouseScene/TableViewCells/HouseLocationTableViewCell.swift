@@ -11,7 +11,7 @@ import SnapKit
 import MapKit
 
 class HouseLocationTableViewCell: UITableViewCell, MKMapViewDelegate, CLLocationManagerDelegate {
-
+    
     @IBOutlet weak var addressLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
@@ -27,31 +27,32 @@ class HouseLocationTableViewCell: UITableViewCell, MKMapViewDelegate, CLLocation
     func setupData(address: String, location: CLLocation) {
         addressLabel.text = address
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
 
 
 extension MKMapView {
-  func zoomToUserLocation() {
-     self.zoomToUserLocation(latitudinalMeters: 1000, longitudinalMeters: 1000)
-  }
-
-  func zoomToUserLocation(latitudinalMeters:CLLocationDistance,longitudinalMeters:CLLocationDistance)
-  {
-    guard let coordinate = userLocation.location?.coordinate else { return }
-    self.zoomToLocation(location: coordinate, latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
-  }
-
-  func zoomToLocation(location : CLLocationCoordinate2D,latitudinalMeters:CLLocationDistance = 100,longitudinalMeters:CLLocationDistance = 100)
-  {
-      let region = MKCoordinateRegion(center: location, latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
-    setRegion(region, animated: true)
-  }
-
+    
+    func zoomToUserLocation() {
+        self.zoomToUserLocation(latitudinalMeters: 1000, longitudinalMeters: 1000)
+    }
+    
+    func zoomToUserLocation(latitudinalMeters:CLLocationDistance,longitudinalMeters:CLLocationDistance)
+    {
+        guard let coordinate = userLocation.location?.coordinate else { return }
+        self.zoomToLocation(location: coordinate, latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
+    }
+    
+    func zoomToLocation(location : CLLocationCoordinate2D,latitudinalMeters:CLLocationDistance = 100,longitudinalMeters:CLLocationDistance = 100)
+    {
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
+        setRegion(region, animated: true)
+    }
+    
 }

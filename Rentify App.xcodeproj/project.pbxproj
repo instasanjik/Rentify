@@ -19,6 +19,7 @@
 		046E13AE2A12F3FD00E040DD /* AwardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */; };
 		046E13B12A12F49000E040DD /* AwardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13B02A12F49000E040DD /* AwardCollectionViewCell.swift */; };
 		046E13B32A14099600E040DD /* HouseFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13B22A14099600E040DD /* HouseFull.swift */; };
+		046E13B52A143A5000E040DD /* ControlPanelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E13B42A143A5000E040DD /* ControlPanelTableViewCell.swift */; };
 		047FA03129F3B9C700C5FCBB /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */; };
 		047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03329F3BE0600C5FCBB /* SKTextField.swift */; };
 		047FA03629F3BED200C5FCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FA03529F3BED200C5FCBB /* LoginViewController.swift */; };
@@ -95,6 +96,7 @@
 		046E13AD2A12F3FD00E040DD /* AwardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsViewController.swift; sourceTree = "<group>"; };
 		046E13B02A12F49000E040DD /* AwardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardCollectionViewCell.swift; sourceTree = "<group>"; };
 		046E13B22A14099600E040DD /* HouseFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseFull.swift; sourceTree = "<group>"; };
+		046E13B42A143A5000E040DD /* ControlPanelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelTableViewCell.swift; sourceTree = "<group>"; };
 		047FA03029F3B9C700C5FCBB /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		047FA03329F3BE0600C5FCBB /* SKTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTextField.swift; sourceTree = "<group>"; };
 		047FA03529F3BED200C5FCBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				04E2546529F7A09100AD84EC /* HouseHeaderTableViewCell.swift */,
+				046E13B42A143A5000E040DD /* ControlPanelTableViewCell.swift */,
 				04E2546729F7A0A000AD84EC /* HousePriceTableViewCell.swift */,
 				04E2546929F7A0B300AD84EC /* HouseOverviewTableViewCell.swift */,
 				04E2546B29F7A0C700AD84EC /* HouseCalendarTableViewCell.swift */,
@@ -713,6 +716,7 @@
 				047FA03429F3BE0600C5FCBB /* SKTextField.swift in Sources */,
 				047FA06C29F3C8B100C5FCBB /* SKCardView.swift in Sources */,
 				047FA09C29F3D3FA00C5FCBB /* HouseTableViewCell.swift in Sources */,
+				046E13B52A143A5000E040DD /* ControlPanelTableViewCell.swift in Sources */,
 				0493858A29F2BE060032386F /* SceneDelegate.swift in Sources */,
 				047FA08329F3C9B400C5FCBB /* URLs.swift in Sources */,
 				0456B7A32A0DA8550071120C /* SKButton.swift in Sources */,

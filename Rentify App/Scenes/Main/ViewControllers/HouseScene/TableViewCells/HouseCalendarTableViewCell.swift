@@ -31,7 +31,6 @@ class HouseCalendarTableViewCell: UITableViewCell {
         super.awakeFromNib()
         calendarView.ibCalendarDelegate = self
         calendarView.ibCalendarDataSource = self
-//        calendarView.cachedConfiguration?.firstDayOfWeek = .monday
         
         calendarView.scrollDirection = .horizontal
         calendarView.scrollingMode = .stopAtEachCalendarFrame
@@ -42,6 +41,7 @@ class HouseCalendarTableViewCell: UITableViewCell {
         let panGensture = UILongPressGestureRecognizer(target: self, action: #selector(didStartRangeSelecting(gesture:)))
         panGensture.minimumPressDuration = 0.5
         calendarView.addGestureRecognizer(panGensture)
+//        calendarView.ranx/
         // Initialization code
     }
     
@@ -73,7 +73,6 @@ extension HouseCalendarTableViewCell: JTAppleCalendarViewDataSource, JTAppleCale
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        print(date)
         selectedDays.append(date)
         configureCell(view: cell, cellState: cellState)
     }
@@ -197,7 +196,7 @@ extension HouseCalendarTableViewCell: JTAppleCalendarViewDataSource, JTAppleCale
     }
     
     func calendar(_ calendar: JTAppleCalendarView, shouldSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) -> Bool {
-        if date < Date() {
+        if date < Date() || cellState.dateBelongsTo != .thisMonth {
             return false
         }
         return true

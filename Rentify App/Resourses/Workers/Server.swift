@@ -281,24 +281,26 @@ class Server {
             "apartment_id" : id
         ]
         
-        handler(HouseFull(imageLink: "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                          id: "2019302",
-                          price: "1920",
-                          reviews: "1.4 (1 reviews)",
-                          address: "asda",
-                          landlord: .init(id: "19293",
-                                          name: "Danil",
-                                          surname: "Shevchenko",
-                                          avatarLink: "https://images.pexels.com/photos/1933873/pexels-photo-1933873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                                          rating: 3.4,
-                                          offersCount: 192,
-                                          email: "shevchenko@mail.ru",
-                                          phoneNumber: "77479281192"),
-                          overview: "Lorem ipsum bla bla bla",
-                          busyDates: [],
-                          facilities: [],
-                          imageLinks: [],
-                          location: CLLocation(latitude: 0, longitude: 0)))
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+            handler(HouseFull(imageLink: "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                              id: "2019302",
+                              price: "1920",
+                              reviews: "1.4 (1 reviews)",
+                              address: "asda",
+                              landlord: .init(id: "19293",
+                                              name: "Danil",
+                                              surname: "Shevchenko",
+                                              avatarLink: "https://images.pexels.com/photos/1933873/pexels-photo-1933873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                                              rating: 3.4,
+                                              offersCount: 192,
+                                              email: "shevchenko@mail.ru",
+                                              phoneNumber: "77479281192"),
+                              overview: "Lorem ipsum bla bla bla",
+                              busyDates: [],
+                              facilities: [],
+                              imageLinks: [],
+                              location: CLLocation(latitude: 0, longitude: 0)))
+        }
         
 //        AF.request(URLs.getHouseFull, method: .get, parameters: parameters, headers: headers).validate().responseJSON { response in
 //            switch response.result {
