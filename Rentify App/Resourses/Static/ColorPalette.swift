@@ -10,12 +10,11 @@ import UIKit
 class ColorPalette {
     
     static let blue         = #colorLiteral(red: 0.07843137255, green: 0.07843137255, blue: 0.1843137255, alpha: 1)
-    static let darkBlue     = #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.09803921569, alpha: 1)
     
-    static let lightGray    = #colorLiteral(red: 0.8509803922, green: 0.8509803922, blue: 0.8509803922, alpha: 1)
+    static let darkBlue    = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
     static let darkGray     = #colorLiteral(red: 0.1725490196, green: 0.1725490196, blue: 0.1725490196, alpha: 1)
     
-    static let yellow       = #colorLiteral(red: 0.9843137255, green: 0.8745098039, blue: 0.4392156863, alpha: 1)
+    static let tintBlue       = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
     
     //basic colors
     static let white: UIColor           = .white

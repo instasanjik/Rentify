@@ -17,7 +17,8 @@ class FavoritePromise {
     var landlordEmail: String = ""
     
     
-    init(previewLink: String, price: String, additionalInfo: String, address: String, region: String, landlordPhoneNumber: String, landlordEmail: String) {
+    init(previewLink: String, price: String, additionalInfo: String, address: String,
+         region: String, landlordPhoneNumber: String, landlordEmail: String) {
         self.previewLink = previewLink
         self.price = price
         self.additionalInfo = additionalInfo

@@ -14,7 +14,8 @@ class RentedPromise {
     var address: String = ""
     var region: String = ""
     
-    init(timeLeft: String, previewImageLink: String, additionalInfo: String, address: String, region: String) {
+    init(timeLeft: String, previewImageLink: String, additionalInfo: String,
+         address: String, region: String) {
         self.timeLeft = timeLeft
         self.previewImageLink = previewImageLink
         self.additionalInfo = additionalInfo
