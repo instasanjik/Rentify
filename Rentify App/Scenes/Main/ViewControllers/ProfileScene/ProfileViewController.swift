@@ -118,7 +118,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let alertController = UIAlertController(title: "Leave", message: "Are you sure want to leave the application?", preferredStyle: .actionSheet)
         
         let action1 = UIAlertAction(title: "Yes", style: .destructive) { (action) in
-            CacheManager.shared.removeString(forKey: "refreshToken")
+            CacheManager.shared.removeString(forKey: "accessToken")
             self.showAuthorization()
         }
         alertController.addAction(action1)

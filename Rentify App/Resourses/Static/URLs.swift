@@ -12,7 +12,7 @@ class URLs {
     
     static let SERVER_IP = "http://192.168.0.169:8135"
     
-    static let LOGIN = SERVER_IP + "/auth/sign_in"
+    static let LOGIN = SERVER_IP + "/auth/sign-in"
     static let SIGN_UP = SERVER_IP + "/auth/sign-up"
     
     static let GET_ALL_HOUSES = SERVER_IP + "/apartments/"

@@ -21,11 +21,10 @@ class Server {
     
     var currencyMultiplyer: Double = 1
     
-    var accessToken: String? = "nil"
-    var refreshToken: String? = nil {
+    var accessToken: String? = nil {
         didSet {
-            guard refreshToken != nil else { return }
-            CacheManager.shared.cacheString(refreshToken!, forKey: "refreshToken")
+            guard accessToken != nil else { return }
+            CacheManager.shared.cacheString(accessToken!, forKey: "accessToken")
         }
     }
     
@@ -36,13 +35,36 @@ class Server {
         /*
          server responce:
          accessToken = String
-         refreshToken = String
          */
-        Timer.scheduledTimer(withTimeInterval: TimeInterval(Float.random(in: 0.1...1.0)),
-                             repeats: false) { _ in
-            self.accessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2ODM4MzQ1MDEsImV4cCI6MTcxNTM3MDUwMSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1hbmFnZXIiLCJQcm9qZWN0IEFkbWluaXN0cmF0b3IiXX0.JK4-zXyrgr7hj7HG9DiOHA7XSVdwT5LkihREAr3__Hk"
-            self.refreshToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2ODM4MzQ1MDEsImV4cCI6MTcxNTM3MDUwMSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1hbmFnZXIiLCJQcm9qZWN0IEFkbWluaXN0cmF0b3IiXX0.MsdCA3kl9cPbOramcIZ984es_4lHTEMMej3KMFtT4Vw"
-            handler(true)
+        
+        let parameters = [
+            "username" : login,
+            "password" : password
+        ]
+        
+        
+        AF.request(URLs.LOGIN,
+                   method: .post,
+                   parameters: parameters,
+                   encoder: URLEncodedFormParameterEncoder(destination: .httpBody)).responseData { response in
+            
+            var resultString = ""
+            
+            var json: JSON = .null
+            
+            if let data = response.data {
+                try? json = JSON(data: data)
+                resultString = String(data: data, encoding: .utf8)!
+                print(resultString)
+            }
+            
+            if response.response?.statusCode == 200 {
+                self.accessToken = json["access_token"].stringValue
+                handler(true)
+                
+            } else {
+                ProgressHud.showError(withText: "Some error was happened #\(response.response?.statusCode ?? 0)")
+            }
         }
     }
     
@@ -204,31 +226,38 @@ class Server {
     }
     
     func getAds(type: AdType, handler: @escaping ([Ad])-> Void) {
-        //        guard let accessToken = accessToken else { return }
-        //        let headers: HTTPHeaders = [
-        //            "access_token" : accessToken
-        //        ]
-        //        print(headers)
-        
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-            handler([
-                Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                   type: "House",
-                   price: "1200",
-                   rating: "3.4",
-                   address: "Arman Qala 4, Bukhar Zhyrau 30/1",
-                   numberOfBedrooms: "3",
-                   numberOfBathRooms: "4",
-                   area: "130"),
-                Ad(previewImageLink: "https://images.pexels.com/photos/15409431/pexels-photo-15409431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                   type: "House",
-                   price: "1200",
-                   rating: "3.4",
-                   address: "Arman Qala 4, Bukhar Zhyrau 30/1",
-                   numberOfBedrooms: "3",
-                   numberOfBathRooms: "4",
-                   area: "130")
-            ])
+        AF.request(URLs.GET_ALL_HOUSES, method: .get).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                // Parse the JSON data
+                let ads = json.arrayValue.compactMap { adJSON -> Ad? in
+                    guard let adDict = adJSON.dictionary,
+                          let previewImageLink = adDict["images"]?.array?.first?.string,
+                          let type = adDict["overview"]?.string,
+                          let price = adDict["price"]?.int,
+                          let beds = adDict["beds"]?.int,
+                          let baths = adDict["baths"]?.int,
+                          let totalArea = adDict["total_area"]?.int else {
+                        return nil
+                    }
+                    
+                    return Ad(previewImageLink: previewImageLink,
+                              type: type,
+                              price: "\(price)",
+                              rating: "5.0 (0 reviews)",
+                              address: "Arman kala 4, Býhar jyraý 30/2",
+                              numberOfBedrooms: "\(beds)",
+                              numberOfBathRooms: "\(baths)",
+                              area: "\(totalArea)")
+                }
+                
+                handler(ads)
+            case .failure(let error):
+                // Handle the request error
+                print("Error: \(error)")
+            }
         }
     }
     
@@ -272,85 +301,57 @@ class Server {
     }
     
     func getFullHouse(id: String, handler: @escaping (HouseFull) -> Void) {
-//        guard let accessToken = accessToken else { return }
-        let headers: HTTPHeaders = [
-            "access_token" : accessToken ?? ""
-        ]
         
-        let parameters = [
-            "apartment_id" : id
-        ]
+                AF.request(URLs.GET_HOUSE_BY_ID + id, method: .get).validate().responseJSON { response in
+                    switch response.result {
+                    case .success(_):
+                        let json = JSON(response.data!)
         
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
-            handler(HouseFull(imageLink: "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                              id: "2019302",
-                              price: "1920",
-                              reviews: "1.4 (1 reviews)",
-                              address: "asda",
-                              landlord: .init(id: "19293",
-                                              name: "Danil",
-                                              surname: "Shevchenko",
-                                              avatarLink: "https://images.pexels.com/photos/1933873/pexels-photo-1933873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                                              rating: 3.4,
-                                              offersCount: 192,
-                                              email: "shevchenko@mail.ru",
-                                              phoneNumber: "77479281192"),
-                              overview: "Lorem ipsum bla bla bla",
-                              busyDates: [],
-                              facilities: [],
-                              imageLinks: [],
-                              location: CLLocation(latitude: 0, longitude: 0)))
-        }
+                        var busyDates: [Date] = []
+                        var imageLinks: [String] = []
+                        var facilities: [String] = []
         
-//        AF.request(URLs.getHouseFull, method: .get, parameters: parameters, headers: headers).validate().responseJSON { response in
-//            switch response.result {
-//            case .success(_):
-//                let json = JSON(response.data!)
-//
-//                var busyDates: [Date] = []
-//                var imageLinks: [String] = []
-//                var facilities: [String] = []
-//
-//                for facility in json["facilities"].array ?? [] {
-//                    facilities.append(facility["name"].stringValue)
-//                }
-//
-//                for imageLink in json["image_links"].array ?? [] {
-//                    imageLinks.append(imageLink.stringValue)
-//                }
-//
-//                for busyDate in json["busy_dates"].array ?? [] {
-//                    let date = Date(timeStamp: busyDate.stringValue)
-//                    busyDates.append(date)
-//                }
-//
-//                let location: CLLocation = CLLocation(latitude: json["latitude"].doubleValue,
-//                                                      longitude: json["longitude"].doubleValue)
-//
-//                let landlord: Landlord = Landlord(id:           json["landlord"]["landlord_id"].stringValue,
-//                                                  name:         json["landlord"]["name"].stringValue,
-//                                                  surname:      json["landlord"]["surname"].stringValue,
-//                                                  avatarLink:   json["landlord"]["avatar_link"].stringValue,
-//                                                  rating:       json["landlord"]["rating"].doubleValue,
-//                                                  offersCount:  json["landlord"]["offers_count"].intValue,
-//                                                  email:        json["landlord"]["email"].stringValue,
-//                                                  phoneNumber:  json["landlord"]["phone_number"].stringValue)
-//
-//                let houseFull: HouseFull = HouseFull(imageLink:     json["preview_link"].stringValue,
-//                                                     id:            json["id"].stringValue,
-//                                                     price:         String(json["price"].floatValue),
-//                                                     reviews:       json["reviews"].stringValue,
-//                                                     landlord:      landlord,
-//                                                     overview:      json["overview"].stringValue,
-//                                                     busyDates:     busyDates,
-//                                                     facilities:    facilities,
-//                                                     imageLinks:    imageLinks,
-//                                                     location:      location)
-//
-//                handler(houseFull)
-//            case .failure(let error):
-//                Logger.log(.error, "Error: \(error)")
-//            }
-//        }
+                        for facility in json["facilities"].array ?? [] {
+                            facilities.append(facility["name"].stringValue)
+                        }
+        
+                        for imageLink in json["image_links"].array ?? [] {
+                            imageLinks.append(imageLink.stringValue)
+                        }
+        
+                        for busyDate in json["busy_dates"].array ?? [] {
+                            let date = Date(timeStamp: busyDate.stringValue)
+                            busyDates.append(date)
+                        }
+        
+                        let location: CLLocation = CLLocation(latitude: json["latitude"].doubleValue,
+                                                              longitude: json["longitude"].doubleValue)
+        
+                        let landlord: Landlord = Landlord(id:           json["landlord"]["landlord_id"].stringValue,
+                                                          name:         json["landlord"]["name"].stringValue,
+                                                          surname:      json["landlord"]["surname"].stringValue,
+                                                          avatarLink:   json["landlord"]["avatar_link"].stringValue,
+                                                          rating:       json["landlord"]["rating"].doubleValue,
+                                                          offersCount:  json["landlord"]["offers_count"].intValue,
+                                                          email:        json["landlord"]["email"].stringValue,
+                                                          phoneNumber:  json["landlord"]["phone_number"].stringValue)
+        
+                        let houseFull: HouseFull = HouseFull(imageLink:     json["preview_link"].stringValue,
+                                                             id:            json["id"].stringValue,
+                                                             price:         String(json["price"].floatValue),
+                                                             reviews:       json["reviews"].stringValue,
+                                                             address:       json["address"].stringValue,
+                                                             landlord:      landlord,
+                                                             overview:      json["overview"].stringValue,
+                                                             busyDates:     busyDates,
+                                                             facilities:    facilities,
+                                                             imageLinks:    imageLinks,
+                                                             location:      location)
+        
+                        handler(houseFull)
+                    case .failure(let error):
+                        Logger.log(.error, "Error: \(error)")
+                    }
+                }
     }
 }

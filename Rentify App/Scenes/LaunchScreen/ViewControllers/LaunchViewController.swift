@@ -16,9 +16,9 @@ class LaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let refreshToken = CacheManager.shared.getString(forKey: "refreshToken") {
+        if let accessToken = CacheManager.shared.getString(forKey: "accessToken") {
             isUserLogged = true
-            Server.sharedInstance.refreshToken = refreshToken
+            Server.sharedInstance.accessToken = accessToken
         }
             
     }

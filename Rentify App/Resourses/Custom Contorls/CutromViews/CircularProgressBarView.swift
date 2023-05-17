@@ -58,7 +58,7 @@ extension CircularProgressBarView {
         progressLayer.lineCap = .round
         progressLayer.lineWidth = lineWidth
         progressLayer.strokeEnd = 0
-        progressLayer.strokeColor = ColorPalette.yellow.cgColor
+        progressLayer.strokeColor = ColorPalette.darkBlue.cgColor
         layer.addSublayer(progressLayer)
 
         addSubview(centerValueLabel)
