@@ -24,10 +24,10 @@ class HousePriceTableViewCell: UITableViewCell {
     }
     
     func setupData(id: String, price: String, reviews: String, address: String) {
-        idLabel.text = "ID: \(id)"
+        idLabel.text = "ID: \(id.suffix(6).uppercased())"
         switch User.shared.metric {
         case .usd:
-            priceLabel.text = "$\(price.beautifulPrice())"
+            priceLabel.text = "$\(price)"
         case .kzt:
             if let price = Double(price) {
                 self.priceLabel.text = "\(String(Int(price * Server.sharedInstance.currencyMultiplyer)).beautifulPrice()) KZT"

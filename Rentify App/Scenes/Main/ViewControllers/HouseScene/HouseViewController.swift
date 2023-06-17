@@ -37,7 +37,7 @@ class HouseViewController: UIViewController {
         }
     }
     
-    let PRICE = "1920"
+    var PRICE = "13"
     
     var isAdFavorite = false {
         didSet {
@@ -52,15 +52,20 @@ class HouseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         footerBottomConstraint.constant = -120
-//        tabBarController?.tabBar.isHidden = true
         shareBarButtonItem.image = UIImage(named: "Share_Icon")!.withRenderingMode(.alwaysOriginal)
         isAdFavorite = false
         footerView.layer.borderColor = UIColor.systemGray3.cgColor
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+        super.viewDidAppear(animated)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
         super.viewDidDisappear(animated)
-//        tabBarController?.tabBar.isHidden = false
     }
     
     @IBAction func likeTapped(_ sender: UIBarButtonItem) {
@@ -71,6 +76,7 @@ class HouseViewController: UIViewController {
         if let cell = contentTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? HouseCalendarTableViewCell {
             if isConsecutiveDates(cell.selectedDays) {
                 ProgressHud.showSuccess(withText: "Booked")
+                Server.sharedInstance.bookNow(id: apartmentsId, dates: [])
             } else {
                 ProgressHud.showError(withText: "Select consecutive dates!")
                 cell.calendarView.shake()
@@ -130,6 +136,7 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
                                price: house?.price ?? "",
                                reviews: house?.reviews ?? "",
                                address: house?.address ?? "")
+                self.PRICE = house?.price ?? ""
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HouseOverviewTableViewCell", for: indexPath) as! HouseOverviewTableViewCell
@@ -259,7 +266,7 @@ extension HouseViewController: UITableViewDelegate, UITableViewDataSource {
 extension HouseViewController: HouseCalendarTableViewCellDelegate {
     
     func datesSelected(days: [Date], totalDays: Int, totalWeekends: Int) {
-        totalPriceLabel.text = "$\(String((Int(PRICE) ?? 0) / 31 * totalDays).beautifulPrice())"
+        totalPriceLabel.text = "$\(String((Int(PRICE) ?? 0) * totalDays))"
         if totalDays == 0 {
             footerBottomConstraint.constant = -120
         } else {

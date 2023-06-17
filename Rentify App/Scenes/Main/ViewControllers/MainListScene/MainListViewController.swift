@@ -67,9 +67,9 @@ extension MainListViewController: BodyTableViewCellDelegate {
         mainTableView.endUpdates()
     }
     
-    func didSelectItemAt() {
+    func didSelectItemAt(id: String) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HouseViewController") as? HouseViewController {
-            vc.apartmentsId = ""
+            vc.apartmentsId = id
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

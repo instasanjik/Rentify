@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol BodyTableViewCellDelegate: AnyObject {
-    func didSelectItemAt()
+    func didSelectItemAt(id: String)
     func didReturnItems(newCount: Int)
 }
 
@@ -86,7 +86,7 @@ extension BodyTableViewCell: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectItemAt()
+        delegate?.didSelectItemAt(id: adsForDisplaying[indexPath.row].id)
     }
     
     

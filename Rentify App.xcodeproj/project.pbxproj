@@ -376,8 +376,8 @@
 		047FA09D29F3D45800C5FCBB /* MainListScene */ = {
 			isa = PBXGroup;
 			children = (
-				04B8F1632A0F76CD000B788B /* SearchViewController */,
 				047FA09129F3D0BC00C5FCBB /* MainListViewController.swift */,
+				04B8F1632A0F76CD000B788B /* SearchViewController */,
 				047FA0A029F3D49200C5FCBB /* AdditionalViews */,
 			);
 			path = MainListScene;

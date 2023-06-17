@@ -8,6 +8,7 @@
 import Foundation
 
 class Ad {
+    var id: String!
     var previewImageLink: String = ""
     var type: String = ""
     var price: String = ""
@@ -18,7 +19,7 @@ class Ad {
     var area: String = ""
     
     init(previewImageLink: String, type: String, price: String, rating: String,
-         address: String, numberOfBedrooms: String, numberOfBathRooms: String, area: String) {
+         address: String, numberOfBedrooms: String, numberOfBathRooms: String, area: String, id: String) {
         self.previewImageLink = previewImageLink
         self.type = type
         self.price = price
@@ -27,5 +28,6 @@ class Ad {
         self.numberOfBedrooms = numberOfBedrooms
         self.numberOfBathRooms = numberOfBathRooms
         self.area = area
+        self.id = id
     }
 }

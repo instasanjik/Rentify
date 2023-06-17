@@ -140,11 +140,11 @@ extension String {
     
     public func beautifulPrice() -> String {
         let numStr = self
-        var numArray = Array(numStr.reversed())  // Reverse the input string and convert it to an array
+        var numArray = Array(numStr.reversed())
         let numLen = numArray.count
         
         if numLen <= 3 {
-            return numStr  // No need to format if the number has 3 or fewer digits
+            return numStr
         }
         
         var formattedArray = [Character]()
@@ -156,7 +156,7 @@ extension String {
             }
         }
         
-        return String(formattedArray.reversed())  // Reverse the formatted array and convert it back to a string
+        return String(formattedArray.reversed())  
     }
 
     

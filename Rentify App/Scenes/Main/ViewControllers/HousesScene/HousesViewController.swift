@@ -84,10 +84,10 @@ extension HousesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HouseViewController") as? HouseViewController {
-            vc.isRented = true
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+//        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HouseViewController") as? HouseViewController {
+//            vc.isRented = true
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
     }
     
     
